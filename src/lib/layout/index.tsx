@@ -9,7 +9,12 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
-	return <Header />;
+	return (
+		<Box>
+			<Header />
+			{children}
+		</Box>
+	);
 };
 
 export default Layout;

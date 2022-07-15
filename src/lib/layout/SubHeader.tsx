@@ -1,18 +1,10 @@
-import {
-	Flex,
-	Link,
-	Text,
-	useColorModeValue,
-} from '@chakra-ui/react';
+import { Flex, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 export default function SubHeader() {
 	return (
 		<Flex
-			backgroundColor={useColorModeValue(
-				'brand.sub',
-				'brand.sub_dark',
-			)}
+			backgroundColor={useColorModeValue('brand.sub', 'brand.sub_dark')}
 			minWidth='max-content'
 			alignItems='center'
 			px='20%'
@@ -26,12 +18,6 @@ export default function SubHeader() {
 			<NextLink href='/'>
 				<Link>
 					<Text>Home</Text>
-				</Link>
-			</NextLink>
-
-			<NextLink href='/store'>
-				<Link>
-					<Text>Shop</Text>
 				</Link>
 			</NextLink>
 
@@ -56,6 +42,12 @@ export default function SubHeader() {
 			<NextLink href='/store/categories/electronics'>
 				<Link>
 					<Text>Electronics</Text>
+				</Link>
+			</NextLink>
+
+			<NextLink href='/categories/among-us'>
+				<Link>
+					<Text>Among Us</Text>
 				</Link>
 			</NextLink>
 		</Flex>

@@ -1,7 +1,17 @@
 import { createSlice, createAsyncThunk, AnyAction } from '@reduxjs/toolkit';
+import { Product } from 'lib/types/product';
+import { GetProductsConfig } from 'lib/types/ProductRequestConfig';
 import productService from './productService';
 
-const initialState = {
+interface ProductState {
+	products: Product[];
+	isError: boolean;
+	isSuccess: boolean;
+	isLoading: boolean;
+	message: string;
+}
+
+const initialState: ProductState = {
 	products: [],
 	isError: false,
 	isSuccess: false,
@@ -11,9 +21,9 @@ const initialState = {
 
 export const getProducts = createAsyncThunk(
 	'products/get',
-	async (config: string[], thunkAPI) => {
+	async (config: GetProductsConfig, thunkAPI) => {
 		try {
-			return await productService.getProducts(config);
+			return productService.getProducts(config);
 		} catch (error: any) {
 			const message =
 				(error.response &&

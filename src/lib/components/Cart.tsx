@@ -15,14 +15,10 @@ import {
 } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import CartItem from './CartItem';
-import { getProducts } from 'lib/features/products/productSlice';
 import { useAppDispatch, useAppSelector } from 'lib/app/hooks';
-import { clearCart, setCart } from 'lib/features/user/userSlice';
 import HR from './HR';
 
 export default function Cart() {
-	const dispatch = useAppDispatch();
-
 	const ShoppingCartIcon = createIcon({
 		displayName: 'ShoppingCartIcon',
 		viewBox: '0 0 48 48',
@@ -35,11 +31,6 @@ export default function Cart() {
 	const btnRef = React.useRef(null);
 
 	const cart = useAppSelector((state) => state.userReducer.cart);
-	const products = useAppSelector((state) => state.productReducer.products);
-
-	useEffect(() => {
-		dispatch(setCart(products));
-	}, [cart, dispatch]);
 
 	return (
 		<>
@@ -93,7 +84,7 @@ export default function Cart() {
 											category: string;
 											image: string;
 										},
-										i,
+										i: number,
 									) => {
 										return (
 											<>
@@ -105,7 +96,7 @@ export default function Cart() {
 													image={product.image}
 												/>
 
-												{i != products.length - 1 && <HR />}
+												{/* {i != products.length - 1 && <HR />} */}
 											</>
 										);
 									},
@@ -123,11 +114,7 @@ export default function Cart() {
 							width='100%'
 							size='lg'
 							borderRadius='7px'
-							onClick={() => {
-								dispatch(
-									getProducts(['limit=12', 'sort=desc', 'category=clothing']),
-								);
-							}}
+							onClick={() => {}}
 						>
 							Checkout
 						</Button>
