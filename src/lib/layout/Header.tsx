@@ -11,7 +11,14 @@ import ShoppingBagFilledIcon from 'lib/Icons/ShoppingBagFilledIcon';
 
 const Header = () => {
 	return (
-		<Flex minWidth='max-content' flexDirection='column' position='sticky'>
+		<Flex
+			minWidth='max-content'
+			flexDirection='column'
+			width='full'
+			top='0'
+			position='sticky'
+			zIndex={100}
+		>
 			<Flex
 				as='header'
 				minWidth='max-content'

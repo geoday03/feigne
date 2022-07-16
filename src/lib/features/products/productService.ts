@@ -12,70 +12,98 @@ const getProducts = async (config: GetProductsConfig) => {
 					res.push(products.amongUsProducts.amongUsDolls[i]);
 				}
 
+				return res;
+
 			case 'amongUsToys':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.amongUsProducts.amongUsToys[i]);
 				}
+
+				return res;
 
 			case 'computerMonitors':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.electronicProducts.computerMonitors[i]);
 				}
 
+				return res;
+
 			case 'gamingHeadset':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.electronicProducts.gamingHeadsets[i]);
 				}
+
+				return res;
 
 			case 'gamingLaptops':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.electronicProducts.gamingLaptops[i]);
 				}
 
+				return res;
+
 			case 'ramSticks':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.electronicProducts.ramSticks[i]);
 				}
+
+				return res;
 
 			case 'SSDs':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.electronicProducts.SSDs[i]);
 				}
 
+				return res;
+
 			case 'jewelry':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.jewelryProducts.jewelry[i]);
 				}
+
+				return res;
 
 			case 'mensJackets':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.mensClothingProducts.mensJackets[i]);
 				}
 
+				return res;
+
 			case 'mensShirts':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.mensClothingProducts.mensShirts[i]);
 				}
+
+				return res;
 
 			case 'mensPants':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.mensClothingProducts.mensPants[i]);
 				}
 
+				return res;
+
 			case 'womensJackets':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.womensClothingProducts.womensJackets[i]);
 				}
+
+				return res;
 
 			case 'womensShirts':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.womensClothingProducts.womensShirts[i]);
 				}
 
+				return res;
+
 			case 'womensPants':
 				for (let i = 0; i < config.resultLimit; i++) {
 					res.push(products.womensClothingProducts.womensPants[i]);
 				}
+
+				return res;
 
 			// Categories
 			case 'amongUs':
@@ -84,9 +112,12 @@ const getProducts = async (config: GetProductsConfig) => {
 					if (lastPush == Object.keys(products.amongUsProducts).length) {
 						lastPush = 0;
 					}
+
 					res.push(Object.values(products.amongUsProducts)[lastPush][i]);
 					lastPush++;
 				}
+
+				return res;
 
 			case 'electronics':
 				var lastPush = 0;
@@ -94,9 +125,12 @@ const getProducts = async (config: GetProductsConfig) => {
 					if (lastPush == Object.keys(products.electronicProducts).length) {
 						lastPush = 0;
 					}
+
 					res.push(Object.values(products.electronicProducts)[lastPush][i]);
 					lastPush++;
 				}
+
+				return res;
 
 			case 'mensClothing':
 				var lastPush = 0;
@@ -104,9 +138,12 @@ const getProducts = async (config: GetProductsConfig) => {
 					if (lastPush == Object.keys(products.mensClothingProducts).length) {
 						lastPush = 0;
 					}
+
 					res.push(Object.values(products.mensClothingProducts)[lastPush][i]);
 					lastPush++;
 				}
+
+				return res;
 
 			case 'womensClothing':
 				var lastPush = 0;
@@ -114,9 +151,12 @@ const getProducts = async (config: GetProductsConfig) => {
 					if (lastPush == Object.keys(products.womensClothingProducts).length) {
 						lastPush = 0;
 					}
+
 					res.push(Object.values(products.womensClothingProducts)[lastPush][i]);
 					lastPush++;
 				}
+
+				return res;
 		}
 	}
 

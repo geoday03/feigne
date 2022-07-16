@@ -21,6 +21,9 @@ export default function DeliveryLocation() {
 			<Button
 				onClick={onOpen}
 				backgroundColor='rgba(0,0,0,0)'
+				onFocus={(e) =>
+					(e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0)')
+				}
 				_hover={{ backgroundColor: 'rgba(0,0,0,0)' }}
 				mx='1rem'
 				leftIcon={

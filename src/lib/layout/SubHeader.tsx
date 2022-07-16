@@ -21,6 +21,12 @@ export default function SubHeader() {
 				</Link>
 			</NextLink>
 
+			<NextLink href='/'>
+				<Link>
+					<Text>Shop</Text>
+				</Link>
+			</NextLink>
+
 			<NextLink href='/store/categories/clothing/men'>
 				<Link>
 					<Text>Men's Clothing</Text>

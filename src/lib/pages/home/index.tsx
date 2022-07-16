@@ -1,4 +1,12 @@
-import { Box, Flex, useColorMode } from '@chakra-ui/react';
+import {
+	Box,
+	Center,
+	Flex,
+	Image,
+	Text,
+	useColorMode,
+	useColorModeValue,
+} from '@chakra-ui/react';
 import { useAppDispatch, useAppSelector } from 'lib/app/hooks';
 import ProductCard from 'lib/components/ProductCard';
 import { getProducts } from 'lib/features/products/productSlice';
@@ -9,51 +17,49 @@ const Home = () => {
 	const { products } = useAppSelector((state) => state.productReducer);
 
 	useEffect(() => {
-		dispatch(getProducts({ resultLimit: 7 }));
-	}, []);
+		dispatch(getProducts({ resultLimit: 5, category: 'womensClothing' }));
+	}, [useAppSelector]);
 
 	return (
-		<Box
-			display={{ md: 'flex' }}
-			flexDirection='column'
-			p='20px'
-			minHeight='70vh'
-			gap='10px'
-			mb='55px'
-			ml='auto'
-			mr='auto'
-			w='full'
-		>
-			{'Row'}
-			<Box pt='20px' pb='20px'>
+		<Box display={{ md: 'flex' }} flexDirection='column' overflowX='clip'>
+			<Image
+				src='/feigne-member-exclusive.png'
+				height='auto'
+				width='100%'
+				fit='cover'
+				margin='0 auto'
+			/>
+			<Box
+				mt='-25%'
+				width='1500'
+				height='400px'
+				zIndex='1'
+				bgGradient={`linear(to-b, #1998ff, ${useColorModeValue(
+					'background.light',
+					'background.dark',
+				)})`}
+			/>
+
+			<Box width='60%' mx='6%' mt='-24%' pt='20px' pb='20px' zIndex='2'>
+				<Text fontFamily='sectionTitle'>Recommended Items</Text>
 				{Object.keys(products).length > 0 ? (
-					<Flex direction='row' gap='17px' alignContent='center'>
+					<Flex direction='row' gap='2%' alignContent='center'>
 						{products.map((product) => (
-							<ProductCard
-								key={product.id}
-								id={product.id}
-								title={product.title}
-								price={product.price}
-								image={product.image}
-							/>
-						))}
-					</Flex>
-				) : (
-					<Box>ok</Box>
-				)}
-			</Box>
-			Row
-			<Box pt='20px' pb='15px'>
-				{Object.keys(products).length > 0 ? (
-					<Flex direction='row' gap='17px' alignContent='ce'>
-						{products.map((product) => (
-							<ProductCard
-								key={product.id}
-								id={product.id}
-								title={product.title}
-								price={product.price}
-								image={product.image}
-							/>
+							<Box
+								p='25px'
+								backgroundColor={useColorModeValue(
+									'background.light',
+									'background.dark',
+								)}
+							>
+								<ProductCard
+									key={product.id}
+									id={product.id}
+									title={product.title}
+									price={product.price}
+									image={product.image}
+								/>
+							</Box>
 						))}
 					</Flex>
 				) : (
