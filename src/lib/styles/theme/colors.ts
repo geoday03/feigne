@@ -1,8 +1,4 @@
-import {
-	DeepPartial,
-	Theme,
-	useColorModeValue,
-} from '@chakra-ui/react';
+import { DeepPartial, Theme, useColorModeValue } from '@chakra-ui/react';
 
 /** extend additional color here */
 const extendedColors = {
@@ -13,7 +9,7 @@ const extendedColors = {
 		sub_dark: '#161b22',
 	},
 	background: {
-		light: '#fff',
+		light: '#EAEDED',
 		dark: '#0d1117',
 	},
 	text: {
