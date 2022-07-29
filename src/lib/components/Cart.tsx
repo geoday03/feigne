@@ -39,12 +39,10 @@ export default function Cart() {
 				ref={btnRef}
 				color='text.dark'
 				backgroundColor='cart.green'
-				leftIcon={
-					<ShoppingCartIcon mx='10px' boxSize='24px' fill='text.dark' />
-				}
+				leftIcon={<ShoppingCartIcon boxSize='24px' fill='text.dark' />}
 				onClick={onOpen}
 			>
-				<Text fontSize='15px' fontWeight='600' mr='10px'>
+				<Text fontSize='15px' fontWeight='600'>
 					{cart.length}
 				</Text>
 			</Button>

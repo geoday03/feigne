@@ -1,4 +1,4 @@
-import { Center, Flex, Heading, Link } from '@chakra-ui/react';
+import { Center, Flex, Box, Heading, Link } from '@chakra-ui/react';
 import SubHeader from './SubHeader';
 import SearchBar from 'lib/components/SearchBar';
 import NextLink from 'next/link';
@@ -30,12 +30,7 @@ const Header = () => {
 				<HeaderDrawer />
 
 				<NextLink href='/'>
-					<Link
-						textDecor='none'
-						_hover={{ textDecoration: 'none' }}
-						width='15%'
-						ml='-2rem'
-					>
+					<Link textDecor='none' _hover={{ textDecoration: 'none' }}>
 						<Center height='3.5rem' float='left'>
 							<ShoppingBagFilledIcon boxSize='1.65rem' fill='white' mr='-1px' />
 							<Heading color='white' fontSize='1.6rem' letterSpacing='0'>
@@ -47,7 +42,9 @@ const Header = () => {
 
 				<SearchBar />
 
-				<AddressModal />
+				<Box>
+					<AddressModal />
+				</Box>
 
 				<Cart />
 

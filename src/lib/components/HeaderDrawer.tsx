@@ -10,9 +10,6 @@ import {
 	DrawerBody,
 	Input,
 	DrawerFooter,
-	useColorMode,
-	textDecoration,
-	color,
 } from '@chakra-ui/react';
 import React from 'react';
 
@@ -25,10 +22,21 @@ export default function HeaderDrawer() {
 			<Button
 				ref={btnRef}
 				onClick={onOpen}
-				leftIcon={<HamburgerIcon boxSize='1.6rem' color='white' />}
+				leftIcon={
+					<HamburgerIcon
+						width='2rem'
+						height='3.5rem'
+						pl='6px'
+						color='white'
+						mr='-2rem'
+					/>
+				}
 				backgroundColor='rgba(0,0,0,0)'
 				height='3.5rem'
 				_hover={{ backgroundColor: 'rgba(0,0,0,0)' }}
+				onFocus={(e) =>
+					(e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0)')
+				}
 			/>
 			<Drawer
 				isOpen={isOpen}

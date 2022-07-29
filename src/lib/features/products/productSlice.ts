@@ -1,17 +1,9 @@
 import { createSlice, createAsyncThunk, AnyAction } from '@reduxjs/toolkit';
-import { Product } from 'lib/types/product';
 import { GetProductsConfig } from 'lib/types/ProductRequestConfig';
+import { ProductStateConfig } from 'lib/types/state/ProductStateConfig';
 import productService from './productService';
 
-interface ProductState {
-	products: Product[];
-	isError: boolean;
-	isSuccess: boolean;
-	isLoading: boolean;
-	message: string;
-}
-
-const initialState: ProductState = {
+const initialState: ProductStateConfig = {
 	products: [],
 	isError: false,
 	isSuccess: false,

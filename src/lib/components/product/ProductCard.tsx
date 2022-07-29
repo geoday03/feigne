@@ -4,10 +4,8 @@ import {
 	Image,
 	Text,
 	Flex,
-	AspectRatio,
 	Center,
 	Stack,
-	Heading,
 	useColorModeValue,
 } from '@chakra-ui/react';
 import ShoppingBagFilledIcon from 'lib/Icons/ShoppingBagFilledIcon';
@@ -28,7 +26,7 @@ export default function ProductCard(product: ProductCardConfig) {
 						src={product.image}
 						alt={product.title}
 						height='170px'
-						borderRadius='lg'
+						borderRadius='md'
 						object-fit='cover'
 						ml='auto'
 						mr='auto'
