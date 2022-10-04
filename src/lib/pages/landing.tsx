@@ -1,43 +1,28 @@
-import { Box, Flex, Image, Text, useColorModeValue } from '@chakra-ui/react';
-import ProductRow from 'lib/components/product/ProductRow';
+import { Box, Flex, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import CTAButton from "lib/components/CTAButton";
+import ProductRow from "lib/components/product/ProductRow";
+import Slideshow from "lib/components/Slideshow";
 
-const Home = () => {
-	return (
-		<Box display={{ md: 'flex' }} flexDirection='column' overflowX='clip'>
-			<Image
-				src='/feigne-member-exclusive.png'
-				height='auto'
-				width='100%'
-				fit='cover'
-				margin='0 auto'
-			/>
-			<Box
-				pt='20px'
-				mt='-24%'
-				width='1500'
-				height='500px'
-				zIndex='1'
-				pb='15px'
-				bgGradient={`linear(to-b, #1998ff, ${useColorModeValue(
-					'background.light',
-					'background.dark',
-				)})`}
-				borderRadius='2rem'
-			>
-				<ProductRow
-					amount={5}
-					rowTitle='Recommended Items'
-					category='amongUs'
-				/>
-			</Box>
-
-			<ProductRow amount={5} rowTitle='Jewelry' category='jewelry' />
-
-			<Box background=>
-				<ProductRow amount={5} rowTitle='Clothing' category='clothing' />
-			</Box>
-		</Box>
-	);
+const Landing = () => {
+  return (
+    <Box
+      display={{ md: "flex" }}
+      flexDirection="column"
+      overflowX="clip"
+      bgColor={useColorModeValue("background.light", "background.dark")}
+      height="87.4vh"
+      width="200vh"
+    >
+      <Slideshow />
+      <Box
+        width="75%"
+        height="100%"
+        mx="auto"
+        bgGradient="linear(to-b, brand.primary, rgba(0,0,0,0))"
+        borderBottomRadius="xl"
+      ></Box>
+    </Box>
+  );
 };
 
-export default Home;
+export default Landing;

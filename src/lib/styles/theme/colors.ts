@@ -9,8 +9,8 @@ const extendedColors = {
 		sub_dark: '#161b22',
 	},
 	background: {
-		light: '#EAEDED',
-		dark: '#0d1117',
+		light: 'white',
+		dark: '#080b0c',
 	},
 	text: {
 		light: '#343538',
