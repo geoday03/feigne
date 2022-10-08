@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import CTAButton from "lib/components/CTAButton";
 import ProductRow from "lib/components/product/ProductRow";
-import Slideshow from "lib/components/Slideshow";
+import Slideshow from "lib/components/Carousel";
 
 const Landing = () => {
   return (
