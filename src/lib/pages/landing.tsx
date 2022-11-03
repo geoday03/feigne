@@ -8,13 +8,6 @@ import { useEffect } from "react";
 import { getProducts } from "lib/features/products/productSlice";
 
 const Landing = () => {
-  const dispatch = useAppDispatch();
-  const { products } = useAppSelector((state) => state.productReducer);
-
-  useEffect(() => {
-    dispatch(getProducts({ resultLimit: 3, category: "jewelry" }));
-  }, [dispatch]);
-
   return (
     <Box
       display={{ md: "flex" }}
@@ -25,14 +18,7 @@ const Landing = () => {
       width="200vh"
     >
       <Box width="75%" height="100%" mx="auto" borderBottomRadius="xl">
-        <Box width="200px" height="200px" px="10%">
-          <ProductCard
-            id={products[0].id}
-            title={products[0].title}
-            price={products[0].price}
-            image={products[0].image}
-          />
-        </Box>
+        <ProductRow amount={4} rowTitle="Product Category" category="e" />
       </Box>
     </Box>
   );

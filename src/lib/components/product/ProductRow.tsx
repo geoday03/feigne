@@ -13,7 +13,9 @@ export default function ProductRow(props: {
   const { products } = useAppSelector((state) => state.productReducer);
 
   useEffect(() => {
-    dispatch(getProducts({ resultLimit: props.amount, category: "jewelry" }));
+    dispatch(
+      getProducts({ resultLimit: props.amount, category: props.category })
+    );
   }, [dispatch]);
 
   return (
@@ -29,21 +31,13 @@ export default function ProductRow(props: {
         {props.rowTitle}
       </Text>
 
-      {Object.keys(products).length > 0 ? (
-        <Flex direction="row" gap="2%" alignContent="center">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              title={product.title}
-              price={product.price}
-              image={product.image}
-            />
+      <Flex direction="row" gap="2%" alignContent="center">
+        {Array(4)
+          .fill(0)
+          .map(() => (
+            <ProductCard />
           ))}
-        </Flex>
-      ) : (
-        <Box>nothing here</Box>
-      )}
+      </Flex>
     </Box>
   );
 }

@@ -16,12 +16,15 @@ export default function ProductCard(product: ProductCardConfig) {
   return (
     <Center flexDirection="column">
       <Box
-        maxW={"200px"}
-        w={"full"}
+        maxW={"350px"}
+        w="350px"
         pos={"relative"}
-        p="15px"
-        backgroundColor="background.dark"
+        backgroundColor={useColorModeValue(
+          "background.light",
+          "background.dark"
+        )}
         borderRadius="xl"
+        m="1rem"
       >
         <Box
           pos={"relative"}
@@ -30,10 +33,14 @@ export default function ProductCard(product: ProductCardConfig) {
           borderRadius="xl"
         >
           <Image
-            src={product.image}
-            alt={product.title}
+            src={
+              product.image ||
+              "https://media1.giphy.com/media/5ndj4ozcEmprzwU4bI/giphy.gif?cid=6c09b952o64vjpqk1jdx4k8q0ihlo5ixeg318rneg6pp3ws1&rid=giphy.gif&ct=s"
+            }
+            alt={product.title || "Product Title"}
             height="170px"
             object-fit="cover"
+            rounded="lg"
             borderRadius="xl"
             ml="auto"
             mr="auto"
@@ -42,11 +49,11 @@ export default function ProductCard(product: ProductCardConfig) {
 
         <Stack>
           <Text fontWeight="semibold" as="h4" noOfLines={1}>
-            {product.price}
+            {product.price || "$4.20"}
           </Text>
 
           <Text noOfLines={2} mt="1px">
-            {product.title}
+            {product.title || "Product Title"}
           </Text>
 
           <Flex
