@@ -9,18 +9,16 @@ import { getProducts } from "lib/features/products/productSlice";
 
 const Landing = () => {
   return (
-    <Box
-      display={{ md: "flex" }}
-      flexDirection="column"
-      overflowX="clip"
+    <Flex
       bgColor={useColorModeValue("background.light", "background.dark")}
-      height="87.4vh"
-      width="200vh"
+      p="0"
+      m="0"
+      h="100%"
     >
-      <Box width="75%" height="100%" mx="auto" borderBottomRadius="xl">
+      <Box mx="auto">
         <ProductRow amount={4} rowTitle="Product Category" category="e" />
       </Box>
-    </Box>
+    </Flex>
   );
 };
 

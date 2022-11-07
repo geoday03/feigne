@@ -50,7 +50,7 @@ const Header = () => {
           <SearchBar />
         </Box>
 
-        <Box ml="auto">
+        <Box ml="auto" mr="10px">
           <AddressModal />
         </Box>
 
@@ -59,7 +59,16 @@ const Header = () => {
         <ThemeToggle />
       </Flex>
 
-      <SubHeader />
+      <Box
+        mx="auto"
+        w="100%"
+        pt="35px"
+        borderTopColor={useColorModeValue("gray.200", "rgba(0,0,0,0)")}
+        borderTopWidth="1px"
+        bgColor={useColorModeValue("background.light", "background.dark")}
+      >
+        <SubHeader />
+      </Box>
     </Flex>
   );
 };

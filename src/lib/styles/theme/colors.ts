@@ -10,7 +10,7 @@ const extendedColors = {
   },
   background: {
     light: "white",
-    dark: "#080b0c",
+    dark: "#181a1b",
   },
   text: {
     light: "#343538",

@@ -1,4 +1,12 @@
-import { Box, Text, useColorModeValue, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  useColorModeValue,
+  Flex,
+  Grid,
+  GridItem,
+  Center,
+} from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "lib/app/hooks";
 import ProductCard from "./ProductCard";
 import { getProducts } from "lib/features/products/productSlice";
@@ -9,35 +17,27 @@ export default function ProductRow(props: {
   rowTitle: string;
   category: string;
 }) {
-  const dispatch = useAppDispatch();
-  const { products } = useAppSelector((state) => state.productReducer);
-
-  useEffect(() => {
-    dispatch(
-      getProducts({ resultLimit: props.amount, category: props.category })
-    );
-  }, [dispatch]);
-
   return (
-    <Box width="60%" mx="6%" zIndex="2" mt="8px">
-      <Text
-        fontFamily="body"
-        fontWeight="600"
-        fontSize="lg"
-        color={useColorModeValue("text.light", "text.dark")}
-        width="250px"
-        p="8px"
-      >
-        {props.rowTitle}
-      </Text>
+    <Center>
+      <Box p="5px">
+        <Text
+          fontFamily="body"
+          fontWeight="600"
+          fontSize="lg"
+          p="8px"
+          color={useColorModeValue("text.light", "text.dark")}
+        >
+          {props.rowTitle}
+        </Text>
 
-      <Flex direction="row" gap="2%" alignContent="center">
-        {Array(4)
-          .fill(0)
-          .map(() => (
-            <ProductCard />
-          ))}
-      </Flex>
-    </Box>
+        <Grid templateColumns="repeat(4, 1fr)">
+          {Array(16)
+            .fill(0)
+            .map(() => (
+              <GridItem children={<ProductCard />} />
+            ))}
+        </Grid>
+      </Box>
+    </Center>
   );
 }
