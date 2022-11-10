@@ -24,14 +24,14 @@ export default function ProductRow(props: {
           fontFamily="body"
           fontWeight="600"
           fontSize="lg"
-          p="8px"
           color={useColorModeValue("text.light", "text.dark")}
+          pl="15px"
         >
           {props.rowTitle}
         </Text>
 
         <Grid templateColumns="repeat(4, 1fr)">
-          {Array(16)
+          {Array(props.amount)
             .fill(0)
             .map(() => (
               <GridItem children={<ProductCard />} />

@@ -16,7 +16,7 @@ const Landing = () => {
       h="100%"
     >
       <Box mx="auto">
-        <ProductRow amount={4} rowTitle="Product Category" category="e" />
+        <ProductRow amount={16} rowTitle="Product Category" category="e" />
       </Box>
     </Flex>
   );
