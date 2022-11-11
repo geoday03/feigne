@@ -1,5 +1,6 @@
 import {
   AspectRatio,
+  border,
   Box,
   Button,
   Center,
@@ -9,10 +10,14 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import DeliveryLocation from "lib/components/AddressModal";
+import BrandedButton from "lib/components/buttons/BrandedButton";
+import DeliveryLocation from "lib/components/DeliveryAddress";
+import DeliveryEstimate from "lib/components/DeliveryEstimate";
 import ProductRow from "lib/components/product/ProductRow";
 import { LocationIcon } from "lib/Icons/LocationIconSet";
 import LockIcon from "lib/Icons/LockIcon";
+import TruckIcon from "lib/Icons/TruckIcon";
+import { BrandJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -26,14 +31,15 @@ export default function Product() {
     quantity.push(i);
   }
 
+  const backgroundColor = useColorModeValue(
+    "background.light",
+    "background.dark"
+  );
+  const borderColor = useColorModeValue("border.light", "border.dark");
+  const textColor = useColorModeValue("text.light", "text.dark");
+
   return (
-    <Box
-      backgroundColor={useColorModeValue("background.light", "background.dark")}
-      h="100%"
-      w="75%"
-      pt="60px"
-      mx="auto"
-    >
+    <Box backgroundColor={backgroundColor} h="100%" w="75%" pt="60px" mx="auto">
       <Flex direction="row" gap="3rem">
         <Box w="100%">
           <Image
@@ -44,10 +50,11 @@ export default function Product() {
         </Box>
 
         <Box w="100%">
-          <Box borderBottomWidth="1px" borderBottomColor="gray.300" pb="30px">
+          <Box borderBottomWidth="1px" borderColor={borderColor} pb="30px">
             <Text fontSize="2rem" mb="10px">
               Product Title
             </Text>
+
             <Text fontWeight="350px" fontSize="1.5rem">
               $3,523
             </Text>
@@ -80,58 +87,46 @@ export default function Product() {
         <Box
           rounded="2xl"
           borderWidth="1px"
-          borderColor="gray.300"
+          borderColor={borderColor}
           w="55%"
           p="15px"
         >
-          <Text fontWeight="350px" fontSize="1.5rem" mb="20px">
+          <Text fontSize="1.5rem" mb="30px">
             $3,523
           </Text>
-
-          <Text fontSize="15px" mb="20px">
-            FREE delivery <strong>TONIGHT</strong>. Order within{" "}
-            <Text color={useColorModeValue("green", "#4af179")}>
-              69 seconds
-            </Text>
-          </Text>
-
-          <Box mb="20px">
-            <Text fontSize="15px" fontWeight="500">
-              Deliver to John Doe
-            </Text>
-            <DeliveryLocation />
-          </Box>
 
           <Flex fontSize="16px" fontWeight="500" gap="5px" mb="3px">
             Quantity
             <Text color={useColorModeValue("green", "#4af179")}> IN STOCK</Text>
           </Flex>
-          <Select placeholder="1" w="30%" mb="45px">
+          <Select placeholder="1" w="30%" mb="30px" borderColor={borderColor}>
             {quantity.map((i) => (
               <option>{i}</option>
             ))}
           </Select>
 
-          <Button
-            w="100%"
-            bgGradient="linear(to-l, brand.primary, #FF0080)"
-            mb="10px"
-            rounded="xl"
-          >
-            Add to cart
-          </Button>
-          <Button
-            w="100%"
-            bgGradient="linear(to-l, brand.primary, #FF0080)"
-            rounded="xl"
-            mb="10px"
-          >
-            Buy now
-          </Button>
+          <Box mb="50px">
+            <Text
+              fontSize="15px"
+              fontWeight="semibold"
+              mb="5px"
+              color={textColor}
+            >
+              Deliver to John Doe
+            </Text>
 
-          <Center gap="5px" pt="10px">
-            <LockIcon height="20px" w="25px" />
-            <Text fontSize="20px" fontWeight="370">
+            <DeliveryLocation />
+            <DeliveryEstimate />
+          </Box>
+
+          <BrandedButton>Add to cart</BrandedButton>
+
+          <BrandedButton>Buy now</BrandedButton>
+
+          <Center gap="5px" pt="10px" mr="8px">
+            <LockIcon boxSize="20px" fill={textColor} />
+
+            <Text fontSize="16px" fontWeight="semibold" color={textColor}>
               Secure transaction
             </Text>
           </Center>

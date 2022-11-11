@@ -1,7 +1,16 @@
-import { Center, Flex, Link, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  border,
+  Center,
+  Flex,
+  Link,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 
-export default function SubHeader() {
+export default function Subheader() {
+  const borderColor = useColorModeValue("text.light", "border.dark");
+
   return (
     <Center
       backgroundColor={useColorModeValue("background.light", "background.dark")}
@@ -13,7 +22,7 @@ export default function SubHeader() {
     >
       <NextLink href="/" passHref>
         <Link>
-          <Text borderBottomWidth="3px" borderColor="text.light" pb="20px">
+          <Text borderBottomWidth="3px" borderColor={borderColor} pb="20px">
             Home
           </Text>
         </Link>

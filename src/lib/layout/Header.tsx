@@ -6,15 +6,16 @@ import {
   Link,
   useColorModeValue,
 } from "@chakra-ui/react";
-import SubHeader from "./SubHeader";
+import SubHeader from "./Subheader";
 import SearchBar from "lib/components/SearchBar";
 import NextLink from "next/link";
 import HeaderDrawer from "lib/components/HeaderDrawer";
 
 import ThemeToggle from "./ThemeToggle";
-import AddressModal from "lib/components/AddressModal";
+import AddressModal from "lib/components/DeliveryAddress";
 import Cart from "lib/components/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
+import DeliveryEstimate from "lib/components/DeliveryEstimate";
 
 const Header = () => {
   return (
@@ -46,11 +47,15 @@ const Header = () => {
           </Link>
         </NextLink>
 
-        <Box width="15%" ml="30%">
+        <Box width="17%" ml="30%">
           <SearchBar />
         </Box>
 
-        <Box ml="auto" mr="10px">
+        <Box ml="auto" mr="13px">
+          <DeliveryEstimate />
+        </Box>
+
+        <Box mr="10px">
           <AddressModal />
         </Box>
 

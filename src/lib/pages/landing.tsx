@@ -12,6 +12,7 @@ const Landing = () => {
     <Flex
       bgColor={useColorModeValue("background.light", "background.dark")}
       p="0"
+      pt="20px"
       m="0"
       h="100%"
     >

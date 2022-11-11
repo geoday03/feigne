@@ -19,9 +19,9 @@ export default function SearchBar() {
     <InputGroup
       variant="unstyled"
       borderWidth="1px"
-      borderColor={useColorModeValue("background.light", "gray.600")}
+      borderColor="rgba(0,0,0,0)"
       rounded="3xl"
-      boxShadow="md"
+      boxShadow={useColorModeValue("md", "dark-lg")}
     >
       <InputLeftAddon pl="10px">
         <Fade in={isOpen} unmountOnExit={true}>

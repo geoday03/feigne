@@ -1,16 +1,16 @@
-import { ChakraProvider, localStorageManager } from '@chakra-ui/react';
-import type React from 'react';
+import { ChakraProvider, localStorageManager } from "@chakra-ui/react";
+import type React from "react";
 
-import customTheme from 'lib/styles/theme';
+import customTheme from "lib/styles/theme";
 
 interface ChakraProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const Chakra = ({ children }: ChakraProps) => {
-	return (
-		<ChakraProvider colorModeManager={localStorageManager} theme={customTheme}>
-			{children}
-		</ChakraProvider>
-	);
+  return (
+    <ChakraProvider colorModeManager={localStorageManager} theme={customTheme}>
+      {children}
+    </ChakraProvider>
+  );
 };

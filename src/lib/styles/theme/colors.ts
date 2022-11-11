@@ -13,8 +13,12 @@ const extendedColors = {
     dark: "#181a1b",
   },
   text: {
-    light: "#343538",
+    light: "#1A202C",
     dark: "#ffffff",
+  },
+  border: {
+    light: "#CBD5E0",
+    dark: "#2D3748",
   },
   placeholder: {
     light: "#79818d",
