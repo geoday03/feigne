@@ -17,8 +17,9 @@ export default function BrandedButton({ children }: LayoutProps) {
       bgGradient="linear(to-l, brand.primary, #FF0080)"
       mb="10px"
       rounded="xl"
+      color="text.dark"
       _hover={{
-        color: backgroundColor,
+        bgGradient: "linear(to-l, #d65454, #c70064)",
       }}
     >
       {children}
