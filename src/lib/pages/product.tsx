@@ -11,8 +11,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import BrandedButton from "lib/components/buttons/BrandedButton";
-import DeliveryLocation from "lib/components/DeliveryAddress";
-import DeliveryEstimate from "lib/components/DeliveryEstimate";
+import DeliveryLocation from "lib/components/user/DeliveryAddress";
+import DeliveryEstimate from "lib/components/user/DeliveryEstimate";
 import ProductRow from "lib/components/product/ProductRow";
 import { LocationIcon } from "lib/Icons/LocationIconSet";
 import LockIcon from "lib/Icons/LockIcon";
@@ -134,7 +134,19 @@ export default function Product() {
       </Flex>
 
       <Box mt="2rem">
-        <ProductRow amount={8} rowTitle="Recommended Items" />
+        <ProductRow
+          amount={4}
+          key={0}
+          rowTitle="Recommended Items"
+          category="amongUs"
+        />
+
+        <ProductRow
+          amount={4}
+          key={1}
+          rowTitle="Recommended Items"
+          category="jewelery"
+        />
       </Box>
     </Box>
   );

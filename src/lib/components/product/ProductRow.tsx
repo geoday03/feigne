@@ -8,14 +8,13 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "lib/app/hooks";
-import ProductCard from "./ProductCard";
-import { getProducts } from "lib/features/products/productSlice";
 import { useEffect } from "react";
+import ProductCard from "./ProductCard";
 
 export default function ProductRow(props: {
   amount: number;
   rowTitle: string;
-  category: string;
+  category?: string;
 }) {
   return (
     <Center>

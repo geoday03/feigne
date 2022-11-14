@@ -22,7 +22,6 @@ export default function HeaderDrawer() {
     <>
       <Button
         ref={btnRef}
-        onClick={onOpen}
         p="0"
         ml="20px"
         leftIcon={

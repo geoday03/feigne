@@ -12,10 +12,10 @@ import NextLink from "next/link";
 import HeaderDrawer from "lib/components/HeaderDrawer";
 
 import ThemeToggle from "./ThemeToggle";
-import AddressModal from "lib/components/DeliveryAddress";
+import AddressModal from "lib/components/user/DeliveryAddress";
 import Cart from "lib/components/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
-import DeliveryEstimate from "lib/components/DeliveryEstimate";
+import DeliveryEstimate from "lib/components/user/DeliveryEstimate";
 
 const Header = () => {
   return (

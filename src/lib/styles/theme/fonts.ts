@@ -1,8 +1,8 @@
-import type { DeepPartial, Theme } from '@chakra-ui/react';
+import type { DeepPartial, Theme } from "@chakra-ui/react";
 
-export const fonts: DeepPartial<Theme['fonts']> = {
-	body: 'Eina, -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-	heading: `/* vietnamese */
+export const fonts: DeepPartial<Theme["fonts"]> = {
+  body: 'Eina, -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+  heading: `/* vietnamese */
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;

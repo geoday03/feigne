@@ -39,10 +39,10 @@ export default function ProductCard(product: ProductCardConfig) {
                     "https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
                   }
                   alt={product.title || "Product Title"}
-                  height="300px"
-                  w="360px"
                   object-fit="cover"
                   rounded="lg"
+                  w="360px"
+                  h="300px"
                   borderRadius="xl"
                   ml="auto"
                   mr="auto"
@@ -51,10 +51,10 @@ export default function ProductCard(product: ProductCardConfig) {
 
               <Stack>
                 <Box mb="5px">
-                  <Text noOfLines={2} fontWeight="semibold">
+                  <Text noOfLines={2} fontSize="20px" fontWeight="semibold">
                     {product.title || "Product Title"}
                   </Text>
-                  <Text as="h4" noOfLines={1}>
+                  <Text as="h4" fontSize="17px" noOfLines={1}>
                     {product.price || "$3,523"}
                   </Text>
                 </Box>

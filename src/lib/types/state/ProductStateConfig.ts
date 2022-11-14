@@ -1,9 +1,9 @@
-import { Product } from '../product';
+import { Product } from "../product";
 
 export interface ProductStateConfig {
-	products: Product[];
-	isError: boolean;
-	isSuccess: boolean;
-	isLoading: boolean;
-	message: string;
+  products: Product[][];
+  isError: boolean;
+  isSuccess: boolean;
+  isLoading: boolean;
+  message: string;
 }
