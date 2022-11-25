@@ -1,15 +1,20 @@
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
-let prefix = "";
-let path = "/";
+let assetPrefix = "";
+let basePath = "/";
 
 if (isGithubActions) {
-  // trim off `<owner>/`
-  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
+  const repo = "https://geoday03.github.io/feigne";
 
-  prefix = `/${repo}/`;
-  path = `/${repo}`;
+  assetPrefix = `/${repo}/`;
+  basePath = `/${repo}`;
 }
 
-export const assetPrefix = prefix;
-export const basePath = path;
+module.exports = {
+  assetPrefix: assetPrefix,
+  basePath: basePath,
+  images: {
+    loader: "imgix",
+    path: 'the "domain" of your Imigix source',
+  },
+};
