@@ -5,7 +5,6 @@ import Slideshow from "lib/components/Carousel";
 import ProductCard from "lib/components/product/ProductCard";
 import { useAppDispatch, useAppSelector } from "lib/app/hooks";
 import { useEffect } from "react";
-import { getProducts } from "lib/features/products/productSlice";
 
 const Landing = () => {
   return (

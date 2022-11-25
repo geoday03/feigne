@@ -1,7 +1,6 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "lib/app/hooks";
 import { Product } from "lib/types/product";
-import { userAPI } from "lib/features/user/userAPI";
 import { useState } from "react";
 import ProductQuantity from "./product/ProductQuantity";
 

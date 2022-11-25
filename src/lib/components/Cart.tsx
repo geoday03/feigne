@@ -30,8 +30,6 @@ export default function Cart() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef(null);
 
-  const cart = useAppSelector((state) => state.userReducer.cart);
-
   return (
     <>
       <Button
@@ -42,9 +40,7 @@ export default function Cart() {
         leftIcon={<ShoppingCartIcon boxSize="24px" fill="text.dark" />}
         onClick={onOpen}
       >
-        <Text fontSize="15px" fontWeight="600">
-          {cart.length}
-        </Text>
+        <Text fontSize="15px" fontWeight="600"></Text>
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -69,40 +65,8 @@ export default function Cart() {
 
           <DrawerBody>
             <hr />
-            {cart.length > 0 ? (
-              <Flex direction="column" p="10px" pr="0" mt="1rem">
-                {cart.map(
-                  (
-                    product: {
-                      id: number;
-                      title: string;
-                      quantity: number;
-                      price: number;
-                      description: string;
-                      category: string;
-                      image: string;
-                    },
-                    i: number
-                  ) => {
-                    return (
-                      <>
-                        <CartItem
-                          key={product.description}
-                          title={product.title}
-                          quantity={1}
-                          price={product.price}
-                          image={product.image}
-                        />
 
-                        {/* {i != products.length - 1 && <HR />} */}
-                      </>
-                    );
-                  }
-                )}
-              </Flex>
-            ) : (
-              <Box></Box>
-            )}
+            <Box></Box>
           </DrawerBody>
 
           <DrawerFooter>
