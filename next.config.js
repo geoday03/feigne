@@ -1,12 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    loader: "akamai",
-    path: "",
-  },
-  basePath: "/feigne",
-  assetPrefix: "/feigne",
-};
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
-module.exports = nextConfig;
+export let assetPrefix = "";
+export let basePath = "/";
+
+if (isGithubActions) {
+  const repo = "geoday03/feigne.git";
+
+  assetPrefix = `/${repo}/`;
+  basePath = `/${repo}`;
+}
