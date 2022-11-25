@@ -1,15 +1,10 @@
+// @ts-check
 /**
  * @type {import('next').NextConfig}
  */
-const nextConfig = {
-  images: {
-    loader: "akamai",
-    path: "",
-  },
-  assetPrefix: "./",
+export const nextConfig = {
+  basePath: "/feigne",
 };
-
-export default nextConfig;
 
 module.exports = {
   typescript: {
