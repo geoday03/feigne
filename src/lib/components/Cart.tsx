@@ -66,7 +66,7 @@ export default function Cart() {
           <DrawerBody>
             <hr />
 
-            <Box>.</Box>
+            <Box></Box>
           </DrawerBody>
 
           <DrawerFooter>
