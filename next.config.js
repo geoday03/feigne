@@ -4,7 +4,7 @@ let assetPrefix = "";
 let basePath = "/";
 
 if (isGithubActions) {
-  const repo = "geoday03/feigne";
+  const repo = "geoday03/feigne.git";
 
   assetPrefix = `/${repo}/`;
   basePath = `/${repo}`;
