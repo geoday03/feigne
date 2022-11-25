@@ -28,6 +28,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action
         with:
-          GITHUB_TOKEN: ${{ SHA256:JKEoC/etPUBmFXmM8Anrq0h97YtKAGE7HeGdzjw/8KY }}
+          GITHUB_TOKEN: "SHA256:JKEoC/etPUBmFXmM8Anrq0h97YtKAGE7HeGdzjw/8KY"
           BRANCH: public # The branch the action should deploy to.
           FOLDER: out # The folder the action should deploy.
