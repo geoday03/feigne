@@ -7,7 +7,6 @@ import {
   GridItem,
   Center,
 } from "@chakra-ui/react";
-import { useAppDispatch, useAppSelector } from "lib/app/hooks";
 import { useEffect } from "react";
 import ProductCard from "./ProductCard";
 

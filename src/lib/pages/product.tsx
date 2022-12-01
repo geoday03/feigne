@@ -17,7 +17,6 @@ import ProductRow from "lib/components/product/ProductRow";
 import { LocationIcon } from "lib/Icons/LocationIconSet";
 import LockIcon from "lib/Icons/LockIcon";
 import TruckIcon from "lib/Icons/TruckIcon";
-import { BrandJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import React from "react";
 

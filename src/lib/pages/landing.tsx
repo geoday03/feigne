@@ -1,10 +1,5 @@
 import { Box, Flex, Image, Text, useColorModeValue } from "@chakra-ui/react";
-import CTAButton from "lib/components/CTAButton";
 import ProductRow from "lib/components/product/ProductRow";
-import Slideshow from "lib/components/Carousel";
-import ProductCard from "lib/components/product/ProductCard";
-import { useAppDispatch, useAppSelector } from "lib/app/hooks";
-import { useEffect } from "react";
 
 const Landing = () => {
   return (

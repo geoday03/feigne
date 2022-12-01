@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import CartItem from "./CartItem";
-import { useAppDispatch, useAppSelector } from "lib/app/hooks";
 import HR from "./HR";
 
 export default function Cart() {
