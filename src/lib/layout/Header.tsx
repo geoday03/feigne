@@ -53,7 +53,7 @@ const Header = () => {
           <SearchBar />
         </Center>
 
-        <Box ml="auto">
+        <Box ml="10%">
           <DeliveryEstimate />
         </Box>
 
