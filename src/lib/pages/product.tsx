@@ -38,13 +38,22 @@ export default function Product() {
   const textColor = useColorModeValue("text.light", "text.dark");
 
   return (
-    <Box backgroundColor={backgroundColor} h="100%" w="75%" pt="60px" mx="auto">
+    <Box
+      backgroundColor={backgroundColor}
+      h="100%"
+      w={{ sm: "100%", md: "100%", lg: "100%", xl: "85%" }}
+      pt="60px"
+      mx="auto"
+    >
       <Flex direction="row" gap="3rem">
         <Box w="100%">
           <Image
             src="https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
             borderRadius="3xl"
-            minW="700px"
+            boxSize="550px"
+            minW="450px"
+            position="sticky"
+            top="0"
           />
         </Box>
 
