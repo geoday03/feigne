@@ -41,7 +41,7 @@ export default function Product() {
     <Box
       backgroundColor={backgroundColor}
       h="100%"
-      w={{ sm: "100%", md: "100%", lg: "100%", xl: "85%" }}
+      w={{ sm: "100%", md: "95%", lg: "95%", xl: "85%" }}
       pt="60px"
       mx="auto"
     >
