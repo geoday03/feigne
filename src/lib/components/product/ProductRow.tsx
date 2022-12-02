@@ -15,27 +15,22 @@ export default function ProductRow(props: {
   rowTitle: string;
   category?: string;
 }) {
-  return (
-    <Center>
-      <Box p="5px">
-        <Text
-          fontFamily="body"
-          fontWeight="600"
-          fontSize="lg"
-          color={useColorModeValue("text.light", "text.dark")}
-          pl="15px"
-        >
-          {props.rowTitle}
-        </Text>
+  useEffect(() => {});
 
-        <Grid templateColumns="repeat(4, 1fr)">
-          {Array(props.amount)
-            .fill(0)
-            .map(() => (
-              <GridItem children={<ProductCard />} />
-            ))}
-        </Grid>
-      </Box>
-    </Center>
+  return (
+    <Grid
+      templateColumns={{
+        sm: "repeat(2, 1fr)",
+        md: "repeat(3, 1fr)",
+        lg: "repeat(5, 1fr)",
+      }}
+      gap={6}
+    >
+      {Array.from(Array(props.amount).keys()).map((i) => (
+        <GridItem w="100%">
+          <ProductCard />
+        </GridItem>
+      ))}
+    </Grid>
   );
 }

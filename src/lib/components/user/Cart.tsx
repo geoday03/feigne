@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import CartItem from "./CartItem";
-import HR from "./HR";
+import HR from "../HR";
 
 export default function Cart() {
   const ShoppingCartIcon = createIcon({
@@ -38,8 +38,11 @@ export default function Cart() {
         backgroundColor="cart.green"
         leftIcon={<ShoppingCartIcon boxSize="24px" fill="text.dark" />}
         onClick={onOpen}
+        p="20px"
       >
-        <Text fontSize="15px" fontWeight="600"></Text>
+        <Text fontSize="15px" fontWeight="600">
+          0
+        </Text>
       </Button>
       <Drawer
         isOpen={isOpen}

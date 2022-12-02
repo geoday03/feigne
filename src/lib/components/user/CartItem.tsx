@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { Product } from "lib/types/product";
 import { useState } from "react";
-import ProductQuantity from "./product/ProductQuantity";
+import ProductQuantity from "../product/ProductQuantity";
 
 export default function CartItem(props: {
   title: string;

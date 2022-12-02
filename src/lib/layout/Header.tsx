@@ -13,7 +13,7 @@ import HeaderDrawer from "lib/components/HeaderDrawer";
 
 import ThemeToggle from "./ThemeToggle";
 import AddressModal from "lib/components/user/DeliveryAddress";
-import Cart from "lib/components/Cart";
+import Cart from "lib/components/user/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
 import DeliveryEstimate from "lib/components/user/DeliveryEstimate";
 

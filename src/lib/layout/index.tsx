@@ -13,7 +13,14 @@ const Layout = ({ children }: LayoutProps) => {
     <Box>
       <Header />
 
-      <Box as="main" margin="auto auto" p="0" m="0" transition="0.5s ease-out">
+      <Box
+        as="main"
+        margin="auto auto"
+        p="0"
+        m="0"
+        maxW="100%"
+        transition="0.5s ease-out"
+      >
         {children}
       </Box>
     </Box>
