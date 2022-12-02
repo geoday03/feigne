@@ -20,7 +20,7 @@ export default function SearchBar() {
       variant="unstyled"
       borderWidth="1px"
       borderColor="rgba(0,0,0,0)"
-      rounded="3xl"
+      rounded="full"
       boxShadow={useColorModeValue("md", "dark-lg")}
       w="100%"
     >

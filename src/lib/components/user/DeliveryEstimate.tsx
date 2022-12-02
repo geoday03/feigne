@@ -33,6 +33,12 @@ export default function DeliveryEstimate() {
     <>
       <Button
         size="md"
+        display={{
+          sm: "none",
+          md: "flex",
+          lg: "flex",
+          xl: "flex",
+        }}
         p="0"
         backgroundColor="rgba(0,0,0,0)"
         onFocus={(e) =>
@@ -51,7 +57,26 @@ export default function DeliveryEstimate() {
         }
         color={useColorModeValue("text.light", "text.dark")}
       >
-        Estimated Delivery 1d 4h
+        <Text
+          display={{
+            sm: "none",
+            md: "none",
+            lg: "flex",
+            xl: "flex",
+          }}
+        >
+          Estimated Delivery 1d 4h
+        </Text>
+        <Text
+          display={{
+            sm: "flex",
+            md: "flex",
+            lg: "none",
+            xl: "none",
+          }}
+        >
+          1d 4h
+        </Text>
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered={true} size="xl">

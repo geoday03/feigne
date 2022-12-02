@@ -48,7 +48,7 @@ const Header = () => {
           </Link>
         </NextLink>
 
-        <Center width="100%" ml="auto">
+        <Center width="35%" ml="auto">
           <SearchBar />
         </Center>
 

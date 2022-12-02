@@ -32,6 +32,12 @@ export default function DeliveryLocation() {
     <>
       <Button
         size="md"
+        display={{
+          sm: "none",
+          md: "flex",
+          lg: "flex",
+          xl: "flex",
+        }}
         p="0"
         backgroundColor="rgba(0,0,0,0)"
         onClick={onOpen}
@@ -49,7 +55,26 @@ export default function DeliveryLocation() {
         }
         color={useColorModeValue("text.light", "text.dark")}
       >
-        1337 Got Root Avenue
+        <Text
+          display={{
+            sm: "none",
+            md: "none",
+            lg: "flex",
+            xl: "flex",
+          }}
+        >
+          1337 Got Root Ave
+        </Text>
+        <Text
+          display={{
+            sm: "flex",
+            md: "flex",
+            lg: "none",
+            xl: "none",
+          }}
+        >
+          1337...
+        </Text>
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered={true} size="xl">
