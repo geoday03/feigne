@@ -29,7 +29,7 @@ const Header = () => {
         )}
         maxW="100%"
         padding="10px"
-        gap="3rem"
+        gap="1rem"
         overflow="auto"
       >
         <HeaderDrawer />
@@ -53,11 +53,11 @@ const Header = () => {
           <SearchBar />
         </Center>
 
-        <Box ml="auto" mr="13px">
+        <Box ml="auto">
           <DeliveryEstimate />
         </Box>
 
-        <Box mr="10px">
+        <Box>
           <AddressModal />
         </Box>
 

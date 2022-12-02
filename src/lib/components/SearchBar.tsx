@@ -22,8 +22,9 @@ export default function SearchBar() {
       borderColor="rgba(0,0,0,0)"
       rounded="3xl"
       boxShadow={useColorModeValue("md", "dark-lg")}
+      w="100%"
     >
-      <InputLeftAddon pl="10px">
+      <InputLeftAddon pl="10px" w="100%">
         <Fade in={isOpen} unmountOnExit={true}>
           <Center
             backgroundColor="brand.primary"
@@ -49,7 +50,6 @@ export default function SearchBar() {
           onBlur={() => onToggle()}
           variant="unstyled"
           m="10px"
-          w="13rem"
         />
       </InputLeftAddon>
     </InputGroup>
