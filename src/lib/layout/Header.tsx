@@ -30,12 +30,11 @@ const Header = () => {
         maxW="100%"
         padding="10px"
         gap="1rem"
-        overflow="auto"
       >
         <HeaderDrawer />
 
         <NextLink href="/">
-          <Link textDecor="none" _hover={{ textDecoration: "none" }}>
+          <Link textDecor="none" _hover={{ textDecoration: "none" }} mr="6%">
             <Center height="3.5rem">
               <ShoppingBagFilledIcon boxSize="1.65rem" fill="brand.primary" />
               <Heading
@@ -49,11 +48,11 @@ const Header = () => {
           </Link>
         </NextLink>
 
-        <Center width="20%" ml="auto">
+        <Center width="100%" ml="auto">
           <SearchBar />
         </Center>
 
-        <Box ml="10%">
+        <Box ml="3%">
           <DeliveryEstimate />
         </Box>
 
