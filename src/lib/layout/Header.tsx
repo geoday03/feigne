@@ -27,14 +27,16 @@ const Header = () => {
           "background.light",
           "background.dark"
         )}
+        maxW="100%"
         padding="10px"
-        gap="1rem"
+        gap="3rem"
+        overflow="auto"
       >
         <HeaderDrawer />
 
         <NextLink href="/">
           <Link textDecor="none" _hover={{ textDecoration: "none" }}>
-            <Center height="3.5rem" float="left">
+            <Center height="3.5rem">
               <ShoppingBagFilledIcon boxSize="1.65rem" fill="brand.primary" />
               <Heading
                 color="brand.primary"
@@ -47,9 +49,9 @@ const Header = () => {
           </Link>
         </NextLink>
 
-        <Box width="17%" ml="30%">
+        <Center width="20%" ml="auto">
           <SearchBar />
-        </Box>
+        </Center>
 
         <Box ml="auto" mr="13px">
           <DeliveryEstimate />
@@ -59,14 +61,14 @@ const Header = () => {
           <AddressModal />
         </Box>
 
-        <Cart />
+        <Box>
+          <Cart />
+        </Box>
 
         <ThemeToggle />
       </Flex>
 
       <Box
-        mx="auto"
-        w="100%"
         pt="35px"
         borderTopColor={useColorModeValue("gray.200", "rgba(0,0,0,0)")}
         borderTopWidth="1px"

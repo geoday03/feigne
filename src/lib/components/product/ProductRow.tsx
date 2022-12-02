@@ -18,19 +18,23 @@ export default function ProductRow(props: {
   useEffect(() => {});
 
   return (
-    <Grid
-      templateColumns={{
-        sm: "repeat(2, 1fr)",
-        md: "repeat(3, 1fr)",
-        lg: "repeat(5, 1fr)",
-      }}
-      gap={6}
-    >
-      {Array.from(Array(props.amount).keys()).map((i) => (
-        <GridItem w="100%">
-          <ProductCard />
-        </GridItem>
-      ))}
-    </Grid>
+    <Box>
+      {props.rowTitle}
+
+      <Grid
+        templateColumns={{
+          sm: "repeat(2, 1fr)",
+          md: "repeat(3, 1fr)",
+          lg: "repeat(5, 1fr)",
+        }}
+        gap={6}
+      >
+        {Array.from(Array(props.amount).keys()).map((i) => (
+          <GridItem w="100%">
+            <ProductCard />
+          </GridItem>
+        ))}
+      </Grid>
+    </Box>
   );
 }

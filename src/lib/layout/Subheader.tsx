@@ -15,9 +15,10 @@ export default function Subheader() {
     <Center
       backgroundColor={useColorModeValue("background.light", "background.dark")}
       gap="7%"
+      px="20px"
       fontFamily="body"
       fontWeight="500"
-      fontSize="15px"
+      fontSize={["13px", "13px", "15px"]}
       color={useColorModeValue("text.light", "text.dark")}
     >
       <NextLink href="/" passHref>

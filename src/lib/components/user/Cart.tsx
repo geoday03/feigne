@@ -32,13 +32,16 @@ export default function Cart() {
   return (
     <>
       <Button
-        size="lg"
+        variant="solid"
         ref={btnRef}
+        maxW="5rem"
+        rounded="full"
         color="text.dark"
+        colorScheme="green"
         backgroundColor="cart.green"
         leftIcon={<ShoppingCartIcon boxSize="24px" fill="text.dark" />}
         onClick={onOpen}
-        p="20px"
+        p="30px"
       >
         <Text fontSize="15px" fontWeight="600">
           0
