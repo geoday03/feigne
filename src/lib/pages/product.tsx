@@ -132,16 +132,16 @@ export default function Product() {
         </Box>
       </Flex>
 
-      <Box mt="2rem">
+      <Box mt="2rem" w="100%">
         <ProductRow
-          amount={4}
+          amount={5}
           key={0}
           rowTitle="Recommended Items"
           category="amongUs"
         />
 
         <ProductRow
-          amount={4}
+          amount={5}
           key={1}
           rowTitle="Recommended Items"
           category="jewelery"

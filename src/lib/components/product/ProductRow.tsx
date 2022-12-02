@@ -19,7 +19,9 @@ export default function ProductRow(props: {
 
   return (
     <Box>
-      {props.rowTitle}
+      <Text fontWeight="500" fontSize="20px" mb="10px">
+        {props.rowTitle}
+      </Text>
 
       <Grid
         templateColumns={{
