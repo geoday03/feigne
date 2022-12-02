@@ -98,6 +98,8 @@ export default function Product() {
           borderColor={borderColor}
           w="55%"
           p="15px"
+          position="sticky"
+          top="0"
         >
           <Text fontSize="1.5rem" mb="30px">
             $3,523
