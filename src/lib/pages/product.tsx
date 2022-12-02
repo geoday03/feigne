@@ -142,17 +142,19 @@ export default function Product() {
       </Flex>
 
       <Box mt="2rem" w="100%">
-        <ProductRow
-          amount={5}
-          key={0}
-          rowTitle="Recommended Items"
-          category="amongUs"
-        />
+        <Box pb="1rem">
+          <ProductRow
+            amount={5}
+            key={0}
+            rowTitle="Recommended Items"
+            category="amongUs"
+          />
+        </Box>
 
         <ProductRow
           amount={5}
           key={1}
-          rowTitle="Recommended Items"
+          rowTitle="chungus edition"
           category="jewelery"
         />
       </Box>
