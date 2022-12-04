@@ -3,6 +3,7 @@ import {
   Center,
   Flex,
   Link,
+  Spacer,
   Text,
   useColorModeValue,
   Wrap,
@@ -20,11 +21,12 @@ export default function Subheader() {
       px="20px"
       fontFamily="body"
       fontWeight="500"
-      fontSize={["13px", "13px", "15px"]}
+      fontSize="15px"
       color={useColorModeValue("text.light", "text.dark")}
-      overflow="scroll"
       lineHeight="1"
     >
+      <Spacer />
+
       <WrapItem>
         <NextLink href="/" passHref>
           <Link>
@@ -35,6 +37,8 @@ export default function Subheader() {
         </NextLink>
       </WrapItem>
 
+      <Spacer />
+
       <WrapItem>
         <NextLink href="/" passHref>
           <Link>
@@ -42,6 +46,8 @@ export default function Subheader() {
           </Link>
         </NextLink>
       </WrapItem>
+
+      <Spacer />
 
       <WrapItem>
         <NextLink href="/store/categories/clothing/men" passHref>
@@ -51,6 +57,8 @@ export default function Subheader() {
         </NextLink>
       </WrapItem>
 
+      <Spacer />
+
       <WrapItem>
         <NextLink href="/store/categories/clothing/women" passHref>
           <Link>
@@ -58,6 +66,8 @@ export default function Subheader() {
           </Link>
         </NextLink>
       </WrapItem>
+
+      <Spacer />
 
       <WrapItem>
         <NextLink href="/store/categories/jewelery" passHref>
@@ -67,6 +77,8 @@ export default function Subheader() {
         </NextLink>
       </WrapItem>
 
+      <Spacer />
+
       <WrapItem>
         <NextLink href="/store/categories/electronics" passHref>
           <Link>
@@ -75,6 +87,8 @@ export default function Subheader() {
         </NextLink>
       </WrapItem>
 
+      <Spacer />
+
       <WrapItem>
         <NextLink href="/categories/among-us" passHref>
           <Link>
@@ -82,6 +96,7 @@ export default function Subheader() {
           </Link>
         </NextLink>
       </WrapItem>
+      <Spacer />
     </Wrap>
   );
 }
