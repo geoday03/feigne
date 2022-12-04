@@ -9,11 +9,10 @@ import {
   Select,
   Text,
   useColorModeValue,
-  Wrap,
 } from "@chakra-ui/react";
 import BrandedButton from "lib/components/buttons/BrandedButton";
 import DeliveryLocation from "lib/components/user/DeliveryAddress";
-import DeliveryEstimate from "lib/components/user/ShippingMethod";
+import ShippingMethod from "lib/components/user/ShippingMethod";
 import ProductRow from "lib/components/product/ProductRow";
 import { LocationIcon } from "lib/Icons/LocationIconSet";
 import LockIcon from "lib/Icons/LockIcon";
@@ -46,7 +45,7 @@ export default function Product() {
       pt="60px"
       mx="auto"
     >
-      <Wrap direction="row" gap="3rem">
+      <Flex direction="row" gap="3rem">
         <Box w="100%">
           <Image
             src="https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
@@ -127,7 +126,7 @@ export default function Product() {
             </Text>
 
             <DeliveryLocation />
-            <DeliveryEstimate />
+            <ShippingMethod />
           </Box>
 
           <BrandedButton>Add to cart</BrandedButton>
@@ -142,7 +141,7 @@ export default function Product() {
             </Text>
           </Center>
         </Box>
-      </Wrap>
+      </Flex>
 
       <Box mt="2rem" w="100%">
         <Box pb="1rem">
