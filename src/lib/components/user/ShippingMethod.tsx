@@ -24,7 +24,7 @@ import { LocationIcon } from "lib/Icons/LocationIconSet";
 import TruckIcon from "lib/Icons/TruckIcon";
 import { useState } from "react";
 
-export default function DeliveryEstimate() {
+export default function ShippingMethod() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [value, setValue] = useState("1");
@@ -65,7 +65,7 @@ export default function DeliveryEstimate() {
             xl: "flex",
           }}
         >
-          Estimated Delivery 1d 4h
+          Shipping - Default
         </Text>
         <Text
           display={{

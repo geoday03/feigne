@@ -23,6 +23,7 @@ export default function SearchBar() {
       rounded="full"
       boxShadow={useColorModeValue("md", "dark-lg")}
       w="100%"
+      size="lg"
     >
       <InputLeftAddon pl="10px" w="100%">
         <Fade in={isOpen} unmountOnExit={true}>

@@ -18,7 +18,7 @@ import ThemeToggle from "./ThemeToggle";
 import AddressModal from "lib/components/user/DeliveryAddress";
 import Cart from "lib/components/user/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
-import DeliveryEstimate from "lib/components/user/DeliveryEstimate";
+import DeliveryEstimate from "lib/components/user/ShippingMethod";
 
 const Header = () => {
   return (
@@ -65,7 +65,7 @@ const Header = () => {
 
           <Spacer />
 
-          <Center width="35%">
+          <Center w="35%">
             <SearchBar />
           </Center>
 
@@ -82,9 +82,7 @@ const Header = () => {
           </WrapItem>
 
           <WrapItem>
-            <Center maxH="3rem" ml="1rem">
-              <Cart />
-            </Center>
+            <Cart />
           </WrapItem>
 
           <WrapItem>
