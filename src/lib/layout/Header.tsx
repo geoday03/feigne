@@ -5,6 +5,7 @@ import {
   Heading,
   Link,
   useColorModeValue,
+  Spacer,
 } from "@chakra-ui/react";
 import SubHeader from "./Subheader";
 import SearchBar from "lib/components/SearchBar";
@@ -48,11 +49,15 @@ const Header = () => {
           </Link>
         </NextLink>
 
-        <Center width="35%" ml="auto">
+        <Spacer />
+
+        <Center width="35%">
           <SearchBar />
         </Center>
 
-        <Box ml="3%">
+        <Spacer />
+
+        <Box>
           <DeliveryEstimate />
         </Box>
 

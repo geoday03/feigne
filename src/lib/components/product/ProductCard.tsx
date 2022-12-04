@@ -10,6 +10,7 @@ import {
   AspectRatio,
   LinkBox,
   LinkOverlay,
+  Heading,
 } from "@chakra-ui/react";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
 import { ProductCardConfig } from "lib/types/ProductCardConfig";
@@ -44,9 +45,9 @@ export default function ProductCard(product: ProductCardConfig) {
 
             <Stack>
               <Box mb="5px">
-                <Text noOfLines={2} fontSize="20px" fontWeight="semibold">
+                <Heading noOfLines={2} fontSize="20px" fontWeight="semibold">
                   {product.title || "Product Title"}
-                </Text>
+                </Heading>
                 <Text as="h4" fontSize="17px" noOfLines={1}>
                   {product.price || "$3,523"}
                 </Text>
