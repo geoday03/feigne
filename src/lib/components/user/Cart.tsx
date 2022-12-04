@@ -77,6 +77,7 @@ export default function Cart() {
           <DrawerFooter>
             <Button
               backgroundColor="brand.primary"
+              colorScheme="red"
               color="text.dark"
               width="100%"
               size="lg"

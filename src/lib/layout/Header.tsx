@@ -31,7 +31,7 @@ const Header = () => {
           "background.dark"
         )}
         maxW="100%"
-        padding="10px"
+        padding="1rem"
         gap="1rem"
       >
         <Center w="100%">
