@@ -6,6 +6,8 @@ import {
   Link,
   useColorModeValue,
   Spacer,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import SubHeader from "./Subheader";
 import SearchBar from "lib/components/SearchBar";
@@ -21,7 +23,7 @@ import DeliveryEstimate from "lib/components/user/DeliveryEstimate";
 const Header = () => {
   return (
     <Flex flexDirection="column" top="0" position="sticky" zIndex={100}>
-      <Flex
+      <Wrap
         as="header"
         alignItems="center"
         backgroundColor={useColorModeValue(
@@ -32,22 +34,26 @@ const Header = () => {
         padding="10px"
         gap="1rem"
       >
-        <HeaderDrawer />
+        <WrapItem>
+          <HeaderDrawer />
+        </WrapItem>
 
-        <NextLink href="/">
-          <Link textDecor="none" _hover={{ textDecoration: "none" }} mr="6%">
-            <Center height="3.5rem">
-              <ShoppingBagFilledIcon boxSize="1.65rem" fill="brand.primary" />
-              <Heading
-                color="brand.primary"
-                fontSize="1.6rem"
-                letterSpacing="0"
-              >
-                feigne
-              </Heading>
-            </Center>
-          </Link>
-        </NextLink>
+        <WrapItem>
+          <NextLink href="/">
+            <Link textDecor="none" _hover={{ textDecoration: "none" }} mr="6%">
+              <Center height="3.5rem">
+                <ShoppingBagFilledIcon boxSize="1.65rem" fill="brand.primary" />
+                <Heading
+                  color="brand.primary"
+                  fontSize="1.6rem"
+                  letterSpacing="0"
+                >
+                  feigne
+                </Heading>
+              </Center>
+            </Link>
+          </NextLink>
+        </WrapItem>
 
         <Spacer />
 
@@ -57,20 +63,20 @@ const Header = () => {
 
         <Spacer />
 
-        <Box>
+        <WrapItem>
           <DeliveryEstimate />
-        </Box>
+        </WrapItem>
 
-        <Box>
+        <WrapItem>
           <AddressModal />
-        </Box>
+        </WrapItem>
 
-        <Box>
+        <WrapItem>
           <Cart />
-        </Box>
+        </WrapItem>
 
         <ThemeToggle />
-      </Flex>
+      </Wrap>
 
       <Box
         pt="35px"
