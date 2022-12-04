@@ -34,48 +34,63 @@ const Header = () => {
         padding="10px"
         gap="1rem"
       >
-        <WrapItem>
-          <HeaderDrawer />
-        </WrapItem>
+        <Center w="100%">
+          <WrapItem mr="2rem">
+            <HeaderDrawer />
+          </WrapItem>
 
-        <WrapItem>
-          <NextLink href="/">
-            <Link textDecor="none" _hover={{ textDecoration: "none" }} mr="6%">
-              <Center height="3.5rem">
-                <ShoppingBagFilledIcon boxSize="1.65rem" fill="brand.primary" />
-                <Heading
-                  color="brand.primary"
-                  fontSize="1.6rem"
-                  letterSpacing="0"
-                >
-                  feigne
-                </Heading>
-              </Center>
-            </Link>
-          </NextLink>
-        </WrapItem>
+          <WrapItem>
+            <NextLink href="/">
+              <Link
+                textDecor="none"
+                _hover={{ textDecoration: "none" }}
+                mr="6%"
+              >
+                <Center height="3.5rem">
+                  <ShoppingBagFilledIcon
+                    boxSize="1.65rem"
+                    fill="brand.primary"
+                  />
+                  <Heading
+                    color="brand.primary"
+                    fontSize="1.6rem"
+                    letterSpacing="0"
+                  >
+                    feigne
+                  </Heading>
+                </Center>
+              </Link>
+            </NextLink>
+          </WrapItem>
 
-        <Spacer />
+          <Spacer />
 
-        <Center width="35%">
-          <SearchBar />
+          <Center width="35%">
+            <SearchBar />
+          </Center>
+
+          <Spacer />
+
+          <WrapItem>
+            <DeliveryEstimate />
+          </WrapItem>
+
+          <WrapItem>
+            <Center ml="1rem" mr="1rem">
+              <AddressModal />
+            </Center>
+          </WrapItem>
+
+          <WrapItem>
+            <Center maxH="3rem" ml="1rem">
+              <Cart />
+            </Center>
+          </WrapItem>
+
+          <WrapItem>
+            <ThemeToggle />
+          </WrapItem>
         </Center>
-
-        <Spacer />
-
-        <WrapItem>
-          <DeliveryEstimate />
-        </WrapItem>
-
-        <WrapItem>
-          <AddressModal />
-        </WrapItem>
-
-        <WrapItem>
-          <Cart />
-        </WrapItem>
-
-        <ThemeToggle />
       </Wrap>
 
       <Box

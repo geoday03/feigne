@@ -34,7 +34,7 @@ export default function Cart() {
       <Button
         variant="solid"
         ref={btnRef}
-        maxW="5rem"
+        maxW="6rem"
         rounded="full"
         color="text.dark"
         colorScheme="green"
