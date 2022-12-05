@@ -18,7 +18,7 @@ import ThemeToggle from "./ThemeToggle";
 import AddressModal from "lib/components/user/DeliveryAddress";
 import Cart from "lib/components/user/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
-import DeliveryEstimate from "lib/components/user/ShippingMethod";
+import ShippingMethod from "lib/components/user/ShippingMethod";
 
 const Header = () => {
   return (
@@ -65,18 +65,27 @@ const Header = () => {
 
           <Spacer />
 
-          <Center w="35%">
+          <Center w="35%" ml="3%">
             <SearchBar />
           </Center>
 
           <Spacer />
 
-          <WrapItem>
-            <DeliveryEstimate />
+          <WrapItem ml="3%">
+            <ShippingMethod />
           </WrapItem>
 
           <WrapItem>
-            <Center ml="1rem" mr="1rem">
+            <Center
+              ml="1rem"
+              mr="1rem"
+              display={{
+                sm: "none",
+                md: "flex",
+                lg: "flex",
+                xl: "flex",
+              }}
+            >
               <AddressModal />
             </Center>
           </WrapItem>

@@ -18,7 +18,7 @@ export default function Subheader() {
       gap="7%"
       fontFamily="body"
       fontWeight="500"
-      fontSize={["13px", "13px", "15px"]}
+      fontSize="15px"
       color={useColorModeValue("text.light", "text.dark")}
       lineHeight="1"
       overflow="auto"

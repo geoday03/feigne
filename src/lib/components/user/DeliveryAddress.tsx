@@ -32,12 +32,6 @@ export default function DeliveryLocation() {
     <>
       <Button
         size="md"
-        display={{
-          sm: "none",
-          md: "flex",
-          lg: "flex",
-          xl: "flex",
-        }}
         p="0"
         backgroundColor="rgba(0,0,0,0)"
         onClick={onOpen}
@@ -55,25 +49,8 @@ export default function DeliveryLocation() {
         }
         color={useColorModeValue("text.light", "text.dark")}
       >
-        <Text
-          display={{
-            sm: "none",
-            md: "none",
-            lg: "flex",
-            xl: "flex",
-          }}
-        >
+        <Text maxW="100%" textOverflow="ellipsis">
           1337 Got Root Ave
-        </Text>
-        <Text
-          display={{
-            sm: "flex",
-            md: "flex",
-            lg: "none",
-            xl: "none",
-          }}
-        >
-          1337...
         </Text>
       </Button>
 
@@ -125,6 +102,8 @@ export default function DeliveryLocation() {
                         fontWeight="semibold"
                         ml="50px"
                         fontSize="xl"
+                        maxW="100%"
+                        textOverflow="ellipsis"
                       >
                         1337 Got Root Avenue
                       </Text>

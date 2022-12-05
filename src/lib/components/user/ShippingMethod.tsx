@@ -35,7 +35,7 @@ export default function ShippingMethod() {
         size="md"
         display={{
           sm: "none",
-          md: "flex",
+          md: "none",
           lg: "flex",
           xl: "flex",
         }}
@@ -57,25 +57,8 @@ export default function ShippingMethod() {
         }
         color={useColorModeValue("text.light", "text.dark")}
       >
-        <Text
-          display={{
-            sm: "none",
-            md: "none",
-            lg: "flex",
-            xl: "flex",
-          }}
-        >
+        <Text maxW="100%" textOverflow="ellipsis">
           Shipping - Default
-        </Text>
-        <Text
-          display={{
-            sm: "flex",
-            md: "flex",
-            lg: "none",
-            xl: "none",
-          }}
-        >
-          1d 4h
         </Text>
       </Button>
 

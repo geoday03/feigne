@@ -109,7 +109,7 @@ export default function Product() {
             Quantity
             <Text color={useColorModeValue("green", "#4af179")}> IN STOCK</Text>
           </Flex>
-          <Select placeholder="1" w="30%" mb="30px" borderColor={borderColor}>
+          <Select placeholder="1" w="5rem" mb="30px" borderColor={borderColor}>
             {quantity.map((i) => (
               <option>{i}</option>
             ))}
