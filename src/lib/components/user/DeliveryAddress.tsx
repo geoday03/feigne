@@ -35,10 +35,8 @@ export default function DeliveryLocation() {
         p="0"
         backgroundColor="rgba(0,0,0,0)"
         onClick={onOpen}
-        onFocus={(e) =>
-          (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0)")
-        }
-        _hover={{ backgroundColor: "rgba(0,0,0,0)" }}
+        variant="ghost"
+        colorScheme={useColorModeValue("blackAlpha", "gray")}
         leftIcon={
           <LocationIcon
             backgroundColor="rgba(0,0,0,0)"

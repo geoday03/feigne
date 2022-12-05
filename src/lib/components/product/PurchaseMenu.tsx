@@ -31,7 +31,7 @@ export default function PurchaseMenu(props: { price: string }) {
       rounded="2xl"
       borderWidth="1px"
       borderColor={borderColor}
-      p="15px"
+      p="1rem"
       top="200"
       position="sticky"
     >
@@ -62,7 +62,7 @@ export default function PurchaseMenu(props: { price: string }) {
 
       <BrandedButton>Buy now</BrandedButton>
 
-      <Center gap="5px" pt="10px" mr="8px">
+      <Center gap="5px" pt="10px" mr="8px" mx="auto">
         <LockIcon boxSize="20px" fill={textColor} />
 
         <Text fontSize="16px" fontWeight="semibold" color={textColor}>

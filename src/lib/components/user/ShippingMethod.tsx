@@ -41,10 +41,8 @@ export default function ShippingMethod() {
         }}
         p="0"
         backgroundColor="rgba(0,0,0,0)"
-        onFocus={(e) =>
-          (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0)")
-        }
-        _hover={{ backgroundColor: "rgba(0,0,0,0)" }}
+        variant="ghost"
+        colorScheme={useColorModeValue("blackAlpha", "gray")}
         onClick={onOpen}
         leftIcon={
           <TruckIcon
