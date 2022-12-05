@@ -7,6 +7,7 @@ import {
   Flex,
   Image,
   Select,
+  Spacer,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -19,17 +20,9 @@ import LockIcon from "lib/Icons/LockIcon";
 import TruckIcon from "lib/Icons/TruckIcon";
 import { useRouter } from "next/router";
 import React from "react";
+import PurchaseMenu from "lib/components/product/PurchaseMenu";
 
 export default function Product() {
-  const router = useRouter();
-  const { pid } = router.query;
-
-  let quantity = [];
-
-  for (let i = 2; i < 101; i++) {
-    quantity.push(i);
-  }
-
   const backgroundColor = useColorModeValue(
     "background.light",
     "background.dark"
@@ -42,22 +35,22 @@ export default function Product() {
       backgroundColor={backgroundColor}
       h="100%"
       w={{ sm: "100%", md: "95%", lg: "95%", xl: "85%" }}
+      p="1rem"
       pt="60px"
       mx="auto"
     >
-      <Flex direction="row" gap="3rem">
+      <Flex direction={{ base: "column", md: "row" }} gap="3rem">
         <Box w="100%">
           <Image
             src="https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
             borderRadius="3xl"
-            boxSize="550px"
-            minW="450px"
             position="sticky"
-            top="0"
+            top="200"
+            mx="auto"
           />
         </Box>
 
-        <Box w="100%">
+        <Box w="100%" minW="15rem">
           <Box borderBottomWidth="1px" borderColor={borderColor} pb="30px">
             <Text fontSize="2rem" mb="10px">
               Product Title
@@ -92,54 +85,8 @@ export default function Product() {
           </Text>
         </Box>
 
-        <Box
-          rounded="2xl"
-          borderWidth="1px"
-          borderColor={borderColor}
-          w="55%"
-          p="15px"
-          position="sticky"
-          top="0"
-        >
-          <Text fontSize="1.5rem" mb="30px">
-            $3,523
-          </Text>
-
-          <Flex fontSize="16px" fontWeight="500" gap="5px" mb="3px">
-            Quantity
-            <Text color={useColorModeValue("green", "#4af179")}> IN STOCK</Text>
-          </Flex>
-          <Select placeholder="1" w="5rem" mb="30px" borderColor={borderColor}>
-            {quantity.map((i) => (
-              <option>{i}</option>
-            ))}
-          </Select>
-
-          <Box mb="50px">
-            <Text
-              fontSize="15px"
-              fontWeight="semibold"
-              mb="5px"
-              color={textColor}
-            >
-              Deliver to John Doe
-            </Text>
-
-            <DeliveryLocation />
-            <ShippingMethod />
-          </Box>
-
-          <BrandedButton>Add to cart</BrandedButton>
-
-          <BrandedButton>Buy now</BrandedButton>
-
-          <Center gap="5px" pt="10px" mr="8px">
-            <LockIcon boxSize="20px" fill={textColor} />
-
-            <Text fontSize="16px" fontWeight="semibold" color={textColor}>
-              Secure transaction
-            </Text>
-          </Center>
+        <Box>
+          <PurchaseMenu price="3,523" />
         </Box>
       </Flex>
 
