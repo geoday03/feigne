@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Chakra } from "lib/components/Chakra";
 import Layout from "lib/layout";
@@ -17,6 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <Layout>
         <Component {...pageProps} />
+        <Analytics />
       </Layout>
     </Chakra>
   );
