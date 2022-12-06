@@ -1,6 +1,8 @@
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Box, Center, Flex, useColorModeValue } from "@chakra-ui/react";
 import ShopButton from "lib/components/buttons/ShopButton";
+import WishlistButton from "lib/components/buttons/WishlistButton";
 import HeaderDrawer from "lib/components/HeaderDrawer";
+import Cart from "lib/components/user/Cart";
 import React from "react";
 
 export default function MobileBottomNavigation(props: any) {
@@ -13,10 +15,12 @@ export default function MobileBottomNavigation(props: any) {
       bgColor={useColorModeValue("background.light", "background.dark")}
       {...props}
     >
-      <Box mx="auto" gap={2} p="5px">
-        <HeaderDrawer />
-        <ShopButton />
-      </Box>
+      <Center mx="auto" p="5px" gap="1rem">
+        <HeaderDrawer h="50px" />
+        <ShopButton h="50px" />
+        <WishlistButton h="50px" />
+        <Cart rounded="md" ml="auto" />
+      </Center>
     </Flex>
   );
 }
