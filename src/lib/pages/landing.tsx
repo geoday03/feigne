@@ -23,6 +23,7 @@ const Landing = () => {
       mb={8}
       w={{ base: "95%", md: "90%" }}
       mx="auto"
+      px="5px"
     >
       <Box pb="5px">
         <ProductRow rowTitle="New Arrivals" amount={5} />
