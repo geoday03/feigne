@@ -137,7 +137,7 @@ const Header = () => {
         p="3px"
         boxShadow="base"
       >
-        <AddressModal w="85%" mx="auto" />
+        <AddressModal w="100%" mx="auto" />
       </Flex>
     </Flex>
   );
