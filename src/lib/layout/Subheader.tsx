@@ -18,6 +18,16 @@ export default function Subheader(props: any) {
     defaultValue: "Home",
   });
 
+  const navLinks = {
+    Home: "/",
+    Shop: "/shop",
+    "Men's Clothing": "/shop/clothing/men",
+    "Women's Clothing": "/shop/clothing/women",
+    Jewelery: "/shop/jewelery",
+    Electronics: "/shop/electronics",
+    "Among Us": "/shop/among-us",
+  };
+
   return (
     <Flex
       backgroundColor={useColorModeValue("background.light", "background.dark")}
@@ -38,37 +48,9 @@ export default function Subheader(props: any) {
     >
       <Spacer />
 
-      <SubheaderLink href="/" text="Home" />
-
-      <SubheaderLink href="/" text="Shop" />
-
-      <SubheaderLink
-        href="/store/categories/clothing/men"
-        text="Men's Clothing"
-      />
-
-      <SubheaderLink
-        href="/store/categories/clothing/women"
-        text="Women's Clothing"
-      />
-
-      <NextLink href="/store/categories/jewelery" passHref>
-        <Link>
-          <Text pb="15px">Jewelery</Text>
-        </Link>
-      </NextLink>
-
-      <NextLink href="/store/categories/electronics" passHref>
-        <Link>
-          <Text pb="15px">Electronics</Text>
-        </Link>
-      </NextLink>
-
-      <NextLink href="/categories/among-us" passHref>
-        <Link>
-          <Text pb="15px">Among Us</Text>
-        </Link>
-      </NextLink>
+      {Object.keys(navLinks).map((key, i) => (
+        <SubheaderLink key={i} text={key} href={navLinks[key]} />
+      ))}
 
       <Spacer />
     </Flex>

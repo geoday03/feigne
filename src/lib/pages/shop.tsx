@@ -1,35 +1,33 @@
-import { Box, Flex, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  Image,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import ProductRow from "lib/components/product/ProductRow";
 
 const Shop = () => {
   return (
-    <Box display={{ md: "flex" }} flexDirection="column" overflowX="clip">
-      <Image
-        src="/feigne-member-exclusive.png"
-        height="auto"
-        width="100%"
-        fit="cover"
-        margin="0 auto"
-      />
+    <Center
+      display={{ md: "flex" }}
+      flexDirection="column"
+      overflowX="clip"
+      w="90%"
+      mx="auto"
+    >
+      <Image src="/feigne-member-exclusive.png" />
+      <Box pb="10px" mt="-20%">
+        <ProductRow rowTitle="New Arrivals" amount={5} />
+      </Box>
 
-      <Box
-        pt="20px"
-        mt="-24%"
-        width="1500"
-        height="500px"
-        zIndex="1"
-        pb="15px"
-        bgGradient={`linear(to-b, #1998ff, ${useColorModeValue(
-          "background.light",
-          "background.dark"
-        )})`}
-        borderRadius="2rem"
-      >
-        <ProductRow
-          amount={5}
-          rowTitle="Recommended Items"
-          category="amongUs"
-        />
+      <Box pb="10px">
+        <ProductRow rowTitle="Shop Men's Clothing" amount={5} />
+      </Box>
+
+      <Box pb="10px">
+        <ProductRow rowTitle="Shop Women's Clothing" amount={5} />
       </Box>
 
       <ProductRow amount={5} rowTitle="Jewelry" category="jewelry" />
@@ -37,7 +35,7 @@ const Shop = () => {
       <Box>
         <ProductRow amount={5} rowTitle="Clothing" category="clothing" />
       </Box>
-    </Box>
+    </Center>
   );
 };
 
