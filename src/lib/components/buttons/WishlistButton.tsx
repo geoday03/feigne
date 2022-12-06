@@ -1,4 +1,4 @@
-import { IconButton } from "@chakra-ui/react";
+import { IconButton, useColorModeValue } from "@chakra-ui/react";
 import HeartIcon from "lib/Icons/HeartIcon";
 
 export default function WishlistButton(props: any) {
@@ -6,6 +6,8 @@ export default function WishlistButton(props: any) {
     <IconButton
       icon={<HeartIcon boxSize="20px" />}
       aria-label="Wishlist"
+      variant="ghost"
+      colorScheme={useColorModeValue("blackAlpha", "gray")}
       {...props}
     />
   );
