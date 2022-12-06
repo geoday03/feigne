@@ -33,10 +33,6 @@ const Header = () => {
         maxW="100%"
         padding="10px"
         gap="1rem"
-        bgColor={{
-          base: "brand.primary",
-          md: useColorModeValue("background.light", "background.dark"),
-        }}
       >
         <Center w="100%">
           <HeaderDrawer
@@ -79,7 +75,6 @@ const Header = () => {
           <SearchBar
             w={{ base: "100%", md: "35%" }}
             ml={{ base: "0", md: "3%" }}
-            bgColor={useColorModeValue("background.light", "background.dark")}
           />
 
           <Spacer
@@ -129,25 +124,18 @@ const Header = () => {
       </Flex>
 
       <Box
-        pt="15px"
+        pt="35px"
         borderTopColor={useColorModeValue("gray.200", "rgba(0,0,0,0)")}
-        borderTopWidth={{ base: "0", md: "1px" }}
-        bgColor={{
-          base: "brand.primary",
-          md: useColorModeValue("background.light", "background.dark"),
-        }}
+        borderTopWidth="1px"
+        bgColor={useColorModeValue("background.light", "background.dark")}
       >
-        <SubHeader
-          bgColor={{
-            base: "brand.primary",
-            md: useColorModeValue("background.light", "background.dark"),
-          }}
-        />
+        <SubHeader />
       </Box>
       <Flex
         bgColor={useColorModeValue("background.light", "background.dark")}
         display={{ base: "flex", md: "none" }}
         p="3px"
+        boxShadow="base"
       >
         <AddressModal w="85%" mx="auto" />
       </Flex>
