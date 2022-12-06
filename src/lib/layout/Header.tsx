@@ -129,7 +129,7 @@ const Header = () => {
       </Flex>
 
       <Box
-        pt="35px"
+        pt="25px"
         borderTopColor={useColorModeValue("gray.200", "rgba(0,0,0,0)")}
         borderTopWidth={{ base: "0", md: "1px" }}
         bgColor={{
