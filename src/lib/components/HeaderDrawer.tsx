@@ -21,7 +21,8 @@ export default function HeaderDrawer(props: any) {
   return (
     <>
       <Button
-        {...props}
+        variant="ghost"
+        colorScheme={useColorModeValue("blackAlpha", "gray")}
         ref={btnRef}
         p="0"
         ml="20px"
@@ -35,10 +36,7 @@ export default function HeaderDrawer(props: any) {
         }
         backgroundColor="rgba(0,0,0,0)"
         height="3.5rem"
-        _hover={{ backgroundColor: "rgba(0,0,0,0)" }}
-        onFocus={(e) =>
-          (e.currentTarget.style.backgroundColor = "rgba(0,0,0,0)")
-        }
+        {...props}
       />
       <Drawer
         isOpen={isOpen}
