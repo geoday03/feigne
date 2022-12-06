@@ -45,6 +45,7 @@ export default function SubheaderLink(props: {
             ? useColorModeValue("text.light", "text.dark")
             : useColorModeValue("gray.200", "gray.600"),
       }}
+      p="5px"
     >
       <NextLink href={props.href} passHref>
         <Link
