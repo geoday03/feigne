@@ -13,6 +13,7 @@ import {
   useColorModeValue,
   IconButton,
 } from "@chakra-ui/react";
+import ThemeToggle2 from "lib/layout/ThemeToggle2";
 import React from "react";
 
 export default function HeaderDrawer(props: any) {
@@ -46,20 +47,11 @@ export default function HeaderDrawer(props: any) {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader>Preferences</DrawerHeader>
 
           <DrawerBody>
-            <Input placeholder="Type here..." />
+            <ThemeToggle2 />
           </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button variant="solid" colorScheme="red" bgColor="brand.primary">
-              Save
-            </Button>
-          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>

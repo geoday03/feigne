@@ -15,6 +15,7 @@ const AmongUs = () => {
       flexDirection="column"
       overflowX="clip"
       w="90%"
+      h="100%"
       mx="auto"
     >
       soon to be
