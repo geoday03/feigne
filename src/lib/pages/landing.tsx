@@ -17,8 +17,15 @@ import ProductRow from "lib/components/product/ProductRow";
 
 const Landing = () => {
   return (
-    <Center pt="20px" flexDirection="column" mb={8} w="90%" mx="auto">
-      <ProductRow rowTitle="" amount={25} />
+    <Center
+      pt="20px"
+      flexDirection="column"
+      mb={8}
+      w={{ base: "95%", md: "90%" }}
+      mx="auto"
+    >
+      <ProductRow rowTitle="Shop Men's Clothing" amount={25} />
+      <ProductRow rowTitle="Shop Men's Clothing" amount={25} />
     </Center>
   );
 };

@@ -23,7 +23,7 @@ export default function ProductRow(props: {
         {props.rowTitle}
       </Text>
 
-      <Flex gap={6} overflow="auto">
+      <Flex gap={6} overflow="auto" px="5px">
         {Array.from(Array(props.amount).keys()).map((i) => (
           <Box w="100%">
             <ProductCard />
