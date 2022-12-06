@@ -24,7 +24,7 @@ import { LocationIcon } from "lib/Icons/LocationIconSet";
 import TruckIcon from "lib/Icons/TruckIcon";
 import { useState } from "react";
 
-export default function ShippingMethod() {
+export default function ShippingMethod(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [value, setValue] = useState("1");
@@ -54,6 +54,7 @@ export default function ShippingMethod() {
           />
         }
         color={useColorModeValue("text.light", "text.dark")}
+        {...props}
       >
         <Text maxW="100%" textOverflow="ellipsis">
           Default Shipping

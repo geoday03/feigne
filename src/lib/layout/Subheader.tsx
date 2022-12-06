@@ -11,7 +11,7 @@ import {
 import SubheaderLink from "lib/components/buttons/SubheaderLink";
 import NextLink from "next/link";
 
-export default function Subheader() {
+export default function Subheader(props: any) {
   const borderColor = useColorModeValue("text.light", "border.dark");
 
   const { value, getRadioProps, getRootProps } = useRadioGroup({
@@ -34,10 +34,7 @@ export default function Subheader() {
       mb="0"
       borderColor="rgba(0,0,0,0)"
       borderBottomWidth="1px"
-      onScroll={(e) => {
-        if (e.currentTarget.scrollTop > 0)
-          console.log(e.currentTarget.scrollTop);
-      }}
+      {...props}
     >
       <Spacer />
 
