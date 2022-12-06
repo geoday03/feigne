@@ -41,6 +41,7 @@ export default function Subheader(props: any) {
       m="auto"
       letterSpacing="wide"
       pb="0"
+      pr="7px"
       mb="0"
       borderColor="rgba(0,0,0,0)"
       borderBottomWidth="1px"
