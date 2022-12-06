@@ -24,15 +24,15 @@ const Landing = () => {
       w={{ base: "95%", md: "90%" }}
       mx="auto"
     >
-      <Box pb="10px">
+      <Box pb="5px">
         <ProductRow rowTitle="New Arrivals" amount={5} />
       </Box>
 
-      <Box pb="10px">
+      <Box pb="5px">
         <ProductRow rowTitle="Shop Men's Clothing" amount={5} />
       </Box>
 
-      <Box pb="10px">
+      <Box pb="5px">
         <ProductRow rowTitle="Shop Women's Clothing" amount={5} />
       </Box>
     </Center>
