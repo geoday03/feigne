@@ -17,7 +17,7 @@ import React, { useEffect } from "react";
 import CartItem from "./CartItem";
 import HR from "../HR";
 
-export default function Cart() {
+export default function Cart(props: any) {
   const ShoppingCartIcon = createIcon({
     displayName: "ShoppingCartIcon",
     viewBox: "0 0 48 48",
@@ -42,6 +42,7 @@ export default function Cart() {
         leftIcon={<ShoppingCartIcon boxSize="24px" fill="text.dark" />}
         onClick={onOpen}
         p="1rem"
+        {...props}
       >
         <Text fontSize="15px" fontWeight="600">
           0

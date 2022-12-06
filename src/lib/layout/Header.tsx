@@ -35,7 +35,12 @@ const Header = () => {
         gap="1rem"
       >
         <Center w="100%">
-          <HeaderDrawer />
+          <HeaderDrawer
+            display={{
+              base: "none",
+              md: "flex",
+            }}
+          />
 
           <NextLink href="/">
             <Link
@@ -60,13 +65,24 @@ const Header = () => {
             </Link>
           </NextLink>
 
-          <Spacer />
+          <Spacer
+            display={{
+              base: "none",
+              md: "flex",
+            }}
+          />
 
-          <Center w="35%" ml="3%">
-            <SearchBar />
-          </Center>
+          <SearchBar
+            w={{ base: "100%", md: "35%" }}
+            ml={{ base: "0", md: "3%" }}
+          />
 
-          <Spacer />
+          <Spacer
+            display={{
+              base: "none",
+              md: "flex",
+            }}
+          />
 
           <Box
             ml="3%"
@@ -89,9 +105,12 @@ const Header = () => {
             <AddressModal />
           </Center>
 
-          <Box>
-            <Cart />
-          </Box>
+          <Cart
+            display={{
+              base: "none",
+              md: "flex",
+            }}
+          />
 
           <Box
             display={{

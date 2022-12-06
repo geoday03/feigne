@@ -6,12 +6,17 @@ import {
   Spacer,
   Text,
   useColorModeValue,
+  useRadioGroup,
 } from "@chakra-ui/react";
 import SubheaderLink from "lib/components/buttons/SubheaderLink";
 import NextLink from "next/link";
 
 export default function Subheader() {
   const borderColor = useColorModeValue("text.light", "border.dark");
+
+  const { value, getRadioProps, getRootProps } = useRadioGroup({
+    defaultValue: "Home",
+  });
 
   return (
     <Flex

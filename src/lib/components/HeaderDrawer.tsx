@@ -14,13 +14,14 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-export default function HeaderDrawer() {
+export default function HeaderDrawer(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef(null);
 
   return (
     <>
       <Button
+        {...props}
         ref={btnRef}
         p="0"
         ml="20px"

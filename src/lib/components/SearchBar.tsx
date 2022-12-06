@@ -1,5 +1,4 @@
 import {
-  Box,
   Center,
   Fade,
   Icon,
@@ -12,7 +11,7 @@ import {
 
 import { Search2Icon } from "@chakra-ui/icons";
 
-export default function SearchBar() {
+export default function SearchBar(props: any) {
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
 
   return (
@@ -24,6 +23,7 @@ export default function SearchBar() {
       boxShadow={useColorModeValue("md", "dark-lg")}
       w="100%"
       size="lg"
+      {...props}
     >
       <InputLeftAddon pl="10px" w="100%">
         <Fade in={isOpen} unmountOnExit={true}>

@@ -4,15 +4,15 @@ import { Link, Text, useColorModeValue, useRadio } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 export default function SubheaderLink(
-  props: { href: string; text: string; radioProps: [] },
+  props: { href: string; text: string },
   ...rest: any
 ) {
   const borderColor = useColorModeValue("text.light", "border.dark");
 
-  const { ...radioProps } = props;
+  // const { ...radioProps } = props;
 
-  const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
-    useRadio(radioProps);
+  // const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
+  //   useRadio(radioProps);
 
   return (
     <NextLink href={props.href} passHref>
