@@ -52,12 +52,7 @@ export default function Cart(props: any) {
         <DrawerContent>
           <DrawerHeader>
             <Flex direction="column">
-              <DrawerCloseButton
-                mr="87%"
-                mt="5px"
-                alignSelf="center"
-                size="lg"
-              />
+              <DrawerCloseButton mt="5px" alignSelf="center" size="lg" />
               <Text mt="4rem">Cart</Text>
             </Flex>
           </DrawerHeader>
