@@ -16,13 +16,9 @@ const ThemeToggle = () => {
       ml="1rem"
       aria-label="theme toggle"
       color="brand.100"
+      colorScheme={useColorModeValue("blackAlpha", "gray")}
+      variant="ghost"
       backgroundColor={backgroundColor}
-      _hover={{
-        backgroundColor: useColorModeValue(
-          "background.light",
-          "background.dark"
-        ),
-      }}
       icon={
         colorMode === "light" ? (
           <RiMoonFill size="20px" />
