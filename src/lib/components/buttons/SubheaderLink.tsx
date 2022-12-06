@@ -45,7 +45,7 @@ export default function SubheaderLink(props: {
             ? useColorModeValue("text.light", "text.dark")
             : useColorModeValue("gray.200", "gray.600"),
       }}
-      px="5px"
+      px="8px"
     >
       <NextLink href={props.href} passHref>
         <Link
@@ -66,7 +66,7 @@ export default function SubheaderLink(props: {
               fill: useColorModeValue("text.light", "text.dark"),
             }}
           >
-            <Icon w="100%" h="30px" mb="13px" as={props.icon} />
+            <Icon w="100%" h="30px" mb="10px" as={props.icon} />
 
             <Text
               borderColor={borderColor}

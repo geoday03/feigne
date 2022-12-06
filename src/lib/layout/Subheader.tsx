@@ -55,9 +55,7 @@ export default function Subheader(props: any) {
       color={useColorModeValue("text.light", "text.dark")}
       lineHeight="1"
       overflow="auto"
-      m="auto"
       pb="0"
-      pr="20px"
       mb="0"
       {...props}
     >
