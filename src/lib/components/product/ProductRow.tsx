@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import ProductCard from "./ProductCard";
-
+// make it a scrollable flex
 export default function ProductRow(props: {
   amount: number;
   rowTitle: string;
