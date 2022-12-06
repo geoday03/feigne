@@ -18,7 +18,7 @@ export default function ProductRow(props: {
   useEffect(() => {});
 
   return (
-    <Box>
+    <Box w="100%">
       <Text fontWeight="500" fontSize="20px" mb="10px">
         {props.rowTitle}
       </Text>
