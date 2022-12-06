@@ -10,7 +10,8 @@ export default function MobileBottomNavigation(props: any) {
     <Flex
       bottom="0"
       w="100%"
-      position="fixed"
+      position="sticky"
+      overflow="hidden"
       zIndex={100}
       bgColor={useColorModeValue("background.light", "background.dark")}
       boxShadow="xs"
