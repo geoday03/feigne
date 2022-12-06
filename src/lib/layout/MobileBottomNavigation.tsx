@@ -13,7 +13,7 @@ export default function MobileBottomNavigation(props: any) {
       position="fixed"
       zIndex={100}
       bgColor={useColorModeValue("background.light", "background.dark")}
-      boxShadow="base"
+      boxShadow="xs"
       {...props}
     >
       <Center mx="auto" p="5px" gap="1rem">
