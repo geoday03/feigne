@@ -13,13 +13,14 @@ export default function MobileBottomNavigation(props: any) {
       position="fixed"
       zIndex={100}
       bgColor={useColorModeValue("background.light", "background.dark")}
+      boxShadow="base"
       {...props}
     >
       <Center mx="auto" p="5px" gap="1rem">
         <HeaderDrawer h="50px" />
         <ShopButton h="50px" />
         <WishlistButton h="50px" />
-        <Cart rounded="md" ml="auto" />
+        <Cart rounded="md" ml="auto" h="50px" />
       </Center>
     </Flex>
   );
