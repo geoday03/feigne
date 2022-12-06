@@ -23,7 +23,7 @@ import ShippingMethod from "lib/components/user/ShippingMethod";
 const Header = () => {
   return (
     <Flex flexDirection="column" top="0" position="sticky" zIndex={100}>
-      <Wrap
+      <Flex
         as="header"
         alignItems="center"
         backgroundColor={useColorModeValue(
@@ -35,33 +35,30 @@ const Header = () => {
         gap="1rem"
       >
         <Center w="100%">
-          <WrapItem mr="2rem">
-            <HeaderDrawer />
-          </WrapItem>
+          <HeaderDrawer />
 
-          <WrapItem>
-            <NextLink href="/">
-              <Link
-                textDecor="none"
-                _hover={{ textDecoration: "none" }}
-                mr="6%"
-              >
-                <Center height="3.5rem">
-                  <ShoppingBagFilledIcon
-                    boxSize="1.65rem"
-                    fill="brand.primary"
-                  />
-                  <Heading
-                    color="brand.primary"
-                    fontSize="1.6rem"
-                    letterSpacing="0"
-                  >
-                    feigne
-                  </Heading>
-                </Center>
-              </Link>
-            </NextLink>
-          </WrapItem>
+          <NextLink href="/">
+            <Link
+              textDecor="none"
+              _hover={{ textDecoration: "none" }}
+              mr="6%"
+              display={{
+                base: "none",
+                md: "flex",
+              }}
+            >
+              <Center height="3.5rem">
+                <ShoppingBagFilledIcon boxSize="1.65rem" fill="brand.primary" />
+                <Heading
+                  color="brand.primary"
+                  fontSize="1.6rem"
+                  letterSpacing="0"
+                >
+                  feigne
+                </Heading>
+              </Center>
+            </Link>
+          </NextLink>
 
           <Spacer />
 
@@ -71,34 +68,41 @@ const Header = () => {
 
           <Spacer />
 
-          <WrapItem ml="3%">
+          <Box
+            ml="3%"
+            display={{
+              base: "none",
+              md: "flex",
+            }}
+          >
             <ShippingMethod />
-          </WrapItem>
+          </Box>
 
-          <WrapItem>
-            <Center
-              ml="1rem"
-              mr="1rem"
-              display={{
-                sm: "none",
-                md: "flex",
-                lg: "flex",
-                xl: "flex",
-              }}
-            >
-              <AddressModal />
-            </Center>
-          </WrapItem>
+          <Center
+            ml="1rem"
+            mr="1rem"
+            display={{
+              base: "none",
+              md: "flex",
+            }}
+          >
+            <AddressModal />
+          </Center>
 
-          <WrapItem>
+          <Box>
             <Cart />
-          </WrapItem>
+          </Box>
 
-          <WrapItem>
+          <Box
+            display={{
+              base: "none",
+              md: "flex",
+            }}
+          >
             <ThemeToggle />
-          </WrapItem>
+          </Box>
         </Center>
-      </Wrap>
+      </Flex>
 
       <Box
         pt="35px"
