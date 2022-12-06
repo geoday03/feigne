@@ -48,9 +48,11 @@ export default function Subheader(props: any) {
     >
       <Spacer />
 
-      {Object.keys(navLinks).map((key, i) => (
-        <SubheaderLink key={i} text={key} href={navLinks[key]} />
-      ))}
+      {Object.keys(navLinks).map((key, i) => {
+        return (
+          <SubheaderLink key={i} text={key} href={navLinks[key as keyof {}]} />
+        );
+      })}
 
       <Spacer />
     </Flex>
