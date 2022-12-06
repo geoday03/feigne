@@ -27,9 +27,11 @@ export default function HeaderDrawer(props: any) {
         ref={btnRef}
         size="lg"
         onClick={onOpen}
+        h="100%"
         icon={
           <HamburgerIcon
-            boxSize="25px"
+            mt="3px"
+            boxSize="22px"
             color={useColorModeValue("text.light", "text.dark")}
           />
         }

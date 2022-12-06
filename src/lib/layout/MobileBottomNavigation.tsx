@@ -12,7 +12,7 @@ export default function MobileBottomNavigation(props: any) {
       bgColor={useColorModeValue("background.light", "background.dark")}
       {...props}
     >
-      <Box mx="auto" gap={2}>
+      <Box mx="auto" gap={2} p="5px">
         <HeaderDrawer />
         <ShopLink />
       </Box>
