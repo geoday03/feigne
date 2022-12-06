@@ -1,23 +1,28 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Image,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { MoonIcon } from "@chakra-ui/icons";
+import { Box, Center } from "@chakra-ui/react";
 import ProductRow from "lib/components/product/ProductRow";
 
 const Shop = () => {
   return (
     <Center
-      display={{ md: "flex" }}
+      pt="20px"
       flexDirection="column"
-      overflowX="clip"
-      w="90%"
+      mb={8}
+      w={{ base: "95%", md: "90%" }}
       mx="auto"
+      px="5px"
     >
-      soon to be
+      <Box pb="5px">
+        <ProductRow rowTitle="Recommended" amount={4} />
+      </Box>
+
+      <Box pb="5px">
+        <ProductRow rowTitle="Trending" amount={6} />
+      </Box>
+
+      <Box pb="5px">
+        <ProductRow rowTitle="Bestsellers" amount={3} />
+      </Box>
     </Center>
   );
 };
