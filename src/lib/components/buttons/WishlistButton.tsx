@@ -8,6 +8,7 @@ export default function WishlistButton(props: any) {
       aria-label="Wishlist"
       variant="ghost"
       colorScheme={useColorModeValue("blackAlpha", "gray")}
+      fill={useColorModeValue("text.light", "text.dark")}
       {...props}
     />
   );
