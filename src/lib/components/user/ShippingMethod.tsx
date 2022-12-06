@@ -56,7 +56,7 @@ export default function ShippingMethod() {
         color={useColorModeValue("text.light", "text.dark")}
       >
         <Text maxW="100%" textOverflow="ellipsis">
-          Shipping - Default
+          Default Shipping
         </Text>
       </Button>
 
