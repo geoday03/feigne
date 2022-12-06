@@ -7,6 +7,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import SubheaderLink from "lib/components/buttons/SubheaderLink";
 import NextLink from "next/link";
 
 export default function Subheader() {
@@ -27,33 +28,19 @@ export default function Subheader() {
     >
       <Spacer />
 
-      <Center></Center>
+      <SubheaderLink href="/" text="Home" />
 
-      <NextLink href="/" passHref>
-        <Link>
-          <Text borderBottomWidth="3px" borderColor={borderColor} pb="20px">
-            Home
-          </Text>
-        </Link>
-      </NextLink>
+      <SubheaderLink href="/" text="Shop" />
 
-      <NextLink href="/" passHref>
-        <Link>
-          <Text pb="15px">Shop</Text>
-        </Link>
-      </NextLink>
+      <SubheaderLink
+        href="/store/categories/clothing/men"
+        text="Men's Clothing"
+      />
 
-      <NextLink href="/store/categories/clothing/men" passHref>
-        <Link>
-          <Text pb="15px">Men's Clothing</Text>
-        </Link>
-      </NextLink>
-
-      <NextLink href="/store/categories/clothing/women" passHref>
-        <Link>
-          <Text pb="15px">Women's Clothing</Text>
-        </Link>
-      </NextLink>
+      <SubheaderLink
+        href="/store/categories/clothing/women"
+        text="Women's Clothing"
+      />
 
       <NextLink href="/store/categories/jewelery" passHref>
         <Link>
