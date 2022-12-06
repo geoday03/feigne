@@ -125,7 +125,7 @@ const Header = () => {
       </Flex>
 
       <Box
-        pt="35px"
+        pt="20px"
         borderTopColor={useColorModeValue("gray.200", "rgba(0,0,0,0)")}
         borderTopWidth="1px"
         bgColor={useColorModeValue("background.light", "background.dark")}
