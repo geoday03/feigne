@@ -11,6 +11,7 @@ import {
   Input,
   DrawerFooter,
   useColorModeValue,
+  IconButton,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -20,22 +21,18 @@ export default function HeaderDrawer(props: any) {
 
   return (
     <>
-      <Button
+      <IconButton
         variant="ghost"
         colorScheme={useColorModeValue("blackAlpha", "gray")}
         ref={btnRef}
-        p="0"
-        ml="20px"
-        leftIcon={
+        size="lg"
+        onClick={onOpen}
+        icon={
           <HamburgerIcon
-            width="2rem"
-            height="3.5rem"
-            pl="6px"
+            boxSize="25px"
             color={useColorModeValue("text.light", "text.dark")}
           />
         }
-        backgroundColor="rgba(0,0,0,0)"
-        height="3.5rem"
         {...props}
       />
       <Drawer
@@ -58,7 +55,9 @@ export default function HeaderDrawer(props: any) {
             <Button variant="outline" mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button colorScheme="blue">Save</Button>
+            <Button variant="solid" colorScheme="red" bgColor="brand.primary">
+              Save
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

@@ -8,12 +8,13 @@ export default function ShopLink(props: any) {
     <NextLink href="/shop" passHref>
       <Link>
         <IconButton
-          icon={<ShoppingBagFilledIcon />}
+          icon={<ShoppingBagFilledIcon boxSize="25px" />}
           variant="ghost"
+          size="lg"
           aria-label="Shop"
           colorScheme="blackAlpha"
           {...props}
-        ></IconButton>
+        />
       </Link>
     </NextLink>
   );
