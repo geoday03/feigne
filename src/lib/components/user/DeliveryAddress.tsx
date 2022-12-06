@@ -31,6 +31,7 @@ export default function DeliveryLocation(props: any) {
   return (
     <>
       <Button
+        p="0"
         size="md"
         backgroundColor="rgba(0,0,0,0)"
         onClick={onOpen}

@@ -47,8 +47,7 @@ export default function ShippingMethod(props: any) {
         leftIcon={
           <TruckIcon
             backgroundColor="rgba(0,0,0,0)"
-            height="24px"
-            width="24px"
+            boxSize="24px"
             fill={useColorModeValue("text.light", "text.dark")}
             mr="2.5px"
           />

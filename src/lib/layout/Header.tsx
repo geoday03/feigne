@@ -19,6 +19,7 @@ import AddressModal from "lib/components/user/DeliveryAddress";
 import Cart from "lib/components/user/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
 import ShippingMethod from "lib/components/user/ShippingMethod";
+import DeliveryLocation from "lib/components/user/DeliveryAddress";
 
 const Header = () => {
   return (
@@ -134,10 +135,10 @@ const Header = () => {
       <Flex
         bgColor={useColorModeValue("background.light", "background.dark")}
         display={{ base: "flex", md: "none" }}
-        p="3px"
+        px="3px"
         boxShadow="base"
       >
-        <AddressModal w="100%" mx="auto" />
+        <DeliveryLocation w="100%" mx="auto" />
       </Flex>
     </Flex>
   );
