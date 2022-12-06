@@ -25,7 +25,7 @@ const Landing = () => {
       mx="auto"
     >
       <Box pb="10px">
-        <ProductRow rowTitle="Shop Among Us" amount={5} />
+        <ProductRow rowTitle="New Arrivals" amount={5} />
       </Box>
 
       <Box pb="10px">
