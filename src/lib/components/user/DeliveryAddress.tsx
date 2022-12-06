@@ -23,7 +23,7 @@ import {
 import { LocationIcon } from "lib/Icons/LocationIconSet";
 import { useState } from "react";
 
-export default function DeliveryLocation() {
+export default function DeliveryLocation(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [value, setValue] = useState("1");
@@ -32,7 +32,6 @@ export default function DeliveryLocation() {
     <>
       <Button
         size="md"
-        p="0"
         backgroundColor="rgba(0,0,0,0)"
         onClick={onOpen}
         variant="ghost"
@@ -46,6 +45,7 @@ export default function DeliveryLocation() {
           />
         }
         color={useColorModeValue("text.light", "text.dark")}
+        {...props}
       >
         <Text maxW="100%" textOverflow="ellipsis">
           1337 Got Root Ave

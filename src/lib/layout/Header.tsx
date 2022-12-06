@@ -33,6 +33,7 @@ const Header = () => {
         maxW="100%"
         padding="10px"
         gap="1rem"
+        pb="20px"
       >
         <Center w="100%">
           <HeaderDrawer
@@ -122,6 +123,15 @@ const Header = () => {
           </Box>
         </Center>
       </Flex>
+
+      <Box
+        display={{ base: "unset", md: "none" }}
+        w="100%"
+        bgColor="brand.primary"
+        p="3.5px"
+      >
+        <AddressModal ml="7rem" />
+      </Box>
 
       <Box
         pt="35px"
