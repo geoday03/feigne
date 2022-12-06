@@ -46,7 +46,11 @@ export default function HeaderDrawer(props: any) {
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
+          <DrawerCloseButton
+            variant="ghost"
+            colorScheme={useColorModeValue("blackAlpha", "gray")}
+            onClick={onOpen}
+          />
           <DrawerHeader>Preferences</DrawerHeader>
 
           <DrawerBody>
