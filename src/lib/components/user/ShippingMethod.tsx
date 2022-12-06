@@ -49,7 +49,6 @@ export default function ShippingMethod(props: any) {
             backgroundColor="rgba(0,0,0,0)"
             boxSize="24px"
             fill={useColorModeValue("text.light", "text.dark")}
-            mr="2.5px"
           />
         }
         color={useColorModeValue("text.light", "text.dark")}
