@@ -30,7 +30,6 @@ export default function HeaderDrawer(props: any) {
         h="100%"
         icon={
           <HamburgerIcon
-            mt="3px"
             boxSize="22px"
             color={useColorModeValue("text.light", "text.dark")}
           />
