@@ -128,9 +128,8 @@ const Header = () => {
         display={{ base: "flex", md: "none" }}
         p="3px"
         alignItems="center"
-        direction="row"
       >
-        <AddressModal mx="auto" />
+        <AddressModal w="90%" mx="auto" />
       </Flex>
 
       <Box

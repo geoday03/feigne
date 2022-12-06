@@ -32,6 +32,12 @@ export default function Subheader() {
       letterSpacing="wide"
       pb="0"
       mb="0"
+      borderColor="rgba(0,0,0,0)"
+      borderBottomWidth="1px"
+      onScroll={(e) => {
+        if (e.currentTarget.scrollTop > 0)
+          console.log(e.currentTarget.scrollTop);
+      }}
     >
       <Spacer />
 
