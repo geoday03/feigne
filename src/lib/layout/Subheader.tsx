@@ -9,6 +9,13 @@ import {
   useRadioGroup,
 } from "@chakra-ui/react";
 import SubheaderLink from "lib/components/buttons/SubheaderLink";
+import BlouseIcon from "lib/Icons/BlouseIcon";
+import CrewmateIcon from "lib/Icons/CrewmateIcon";
+import HomeIcon from "lib/Icons/HomeIcon";
+import MonitorIcon from "lib/Icons/MonitorIcon";
+import NecklaceIcon from "lib/Icons/NecklaceIcon";
+import ShirtIcon from "lib/Icons/ShirtIcon";
+import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
 import NextLink from "next/link";
 
 export default function Subheader(props: any) {
@@ -28,6 +35,16 @@ export default function Subheader(props: any) {
     "Among Us": "/shop/among-us",
   };
 
+  const icons = [
+    HomeIcon,
+    ShoppingBagFilledIcon,
+    ShirtIcon,
+    BlouseIcon,
+    NecklaceIcon,
+    MonitorIcon,
+    CrewmateIcon,
+  ];
+
   return (
     <Flex
       backgroundColor={useColorModeValue("background.light", "background.dark")}
@@ -39,19 +56,21 @@ export default function Subheader(props: any) {
       lineHeight="1"
       overflow="auto"
       m="auto"
-      letterSpacing="wide"
       pb="0"
       pr="20px"
       mb="0"
-      borderColor="rgba(0,0,0,0)"
-      borderBottomWidth="1px"
       {...props}
     >
       <Spacer />
 
       {Object.keys(navLinks).map((key, i) => {
         return (
-          <SubheaderLink key={i} text={key} href={navLinks[key as keyof {}]} />
+          <SubheaderLink
+            key={i}
+            text={key}
+            href={navLinks[key as keyof {}]}
+            icon={icons[i]}
+          />
         );
       })}
 

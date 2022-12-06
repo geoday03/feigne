@@ -3,7 +3,7 @@ import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
 import React from "react";
 import NextLink from "next/link";
 
-export default function ShopLink(props: any) {
+export default function ShopButton(props: any) {
   return (
     <NextLink href="/shop" passHref>
       <Link>

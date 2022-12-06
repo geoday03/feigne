@@ -1,8 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { Component, ReactNode } from "react";
 import { useRouter } from "next/router";
 
 import {
   Box,
+  Icon,
   Link,
   RadioProps,
   Text,
@@ -11,7 +12,11 @@ import {
 } from "@chakra-ui/react";
 import NextLink, { LinkProps } from "next/link";
 
-export default function SubheaderLink(props: { href: string; text: string }) {
+export default function SubheaderLink(props: {
+  href: string;
+  text: string;
+  icon: any;
+}) {
   const router = useRouter();
   const borderColor = useColorModeValue("text.light", "border.dark");
 
@@ -20,37 +25,59 @@ export default function SubheaderLink(props: { href: string; text: string }) {
   };
 
   return (
-    <NextLink href={props.href} passHref>
-      <Link
-        colorScheme="gray"
-        variant="ghost"
-        onClick={handleClick}
-        borderBottomWidth={router.pathname == props.href ? "2px" : "0"}
-        borderBottomColor={
+    <Box
+      borderBottomWidth="2.5px"
+      borderBottomColor={
+        router.pathname == props.href
+          ? useColorModeValue("text.light", "text.dark")
+          : "rgba(0,0,0,0)"
+      }
+      color={
+        router.pathname == props.href
+          ? useColorModeValue("text.light", "text.dark")
+          : "#717171"
+      }
+      _hover={{
+        textDecoration: "none",
+        color: useColorModeValue("text.light", "text.dark"),
+        borderBottomColor:
           router.pathname == props.href
             ? useColorModeValue("text.light", "text.dark")
-            : "gray.200"
-        }
-        color={
-          router.pathname == props.href
-            ? useColorModeValue("text.light", "text.dark")
-            : "#717171"
-        }
-        _hover={{
-          textDecoration: "none",
-          borderBottomWidth: "2px",
-          color: useColorModeValue("text.light", "text.dark"),
-        }}
-      >
-        <Text
-          borderColor={borderColor}
-          pb="20px"
-          whiteSpace="nowrap"
-          fontSize={{ base: "14px", md: "15px" }}
+            : "gray.200",
+      }}
+    >
+      <NextLink href={props.href} passHref>
+        <Link
+          colorScheme="gray"
+          variant="ghost"
+          onClick={handleClick}
+          _hover={{
+            textDecoration: "none",
+          }}
         >
-          {props.text}
-        </Text>
-      </Link>
-    </NextLink>
+          <Box
+            fill={
+              router.pathname == props.href
+                ? useColorModeValue("text.light", "text.dark")
+                : "#717171"
+            }
+            _hover={{
+              fill: useColorModeValue("text.light", "text.dark"),
+            }}
+          >
+            <Icon w="100%" h="30px" mb="13px" as={props.icon} />
+
+            <Text
+              borderColor={borderColor}
+              pb="20px"
+              whiteSpace="nowrap"
+              fontSize={{ base: "14px", md: "15px" }}
+            >
+              {props.text}
+            </Text>
+          </Box>
+        </Link>
+      </NextLink>
+    </Box>
   );
 }

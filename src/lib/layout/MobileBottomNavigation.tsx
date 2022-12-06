@@ -1,5 +1,5 @@
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
-import ShopLink from "lib/components/buttons/ShopLink";
+import ShopButton from "lib/components/buttons/ShopButton";
 import HeaderDrawer from "lib/components/HeaderDrawer";
 import React from "react";
 
@@ -15,7 +15,7 @@ export default function MobileBottomNavigation(props: any) {
     >
       <Box mx="auto" gap={2} p="5px">
         <HeaderDrawer />
-        <ShopLink />
+        <ShopButton />
       </Box>
     </Flex>
   );
