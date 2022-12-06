@@ -45,7 +45,7 @@ export default function ProductCard(product: ProductCardConfig) {
 
             <Stack>
               <Box mb="5px">
-                <Heading noOfLines={2} fontSize="20px" fontWeight="semibold">
+                <Heading noOfLines={2} fontSize="20px" fontWeight="400">
                   {product.title || "Product Title"}
                 </Heading>
                 <Text as="h4" fontSize="17px" noOfLines={1}>

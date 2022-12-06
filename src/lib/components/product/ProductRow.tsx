@@ -17,7 +17,7 @@ export default function ProductRow(props: {
 }) {
   return (
     <Box pb="15px">
-      <Text fontWeight="500" fontSize="20px" mb="10px">
+      <Text fontWeight="500" fontSize="22px" mb="10px">
         {props.rowTitle}
       </Text>
 
