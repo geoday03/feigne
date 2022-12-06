@@ -16,7 +16,7 @@ export default function ProductRow(props: {
   category?: string;
 }) {
   return (
-    <Box>
+    <Box pb="15px">
       <Text fontWeight="500" fontSize="20px" mb="10px">
         {props.rowTitle}
       </Text>
@@ -28,32 +28,12 @@ export default function ProductRow(props: {
           lg: "repeat(4, 1fr)",
           xl: "repeat(5, 1fr)",
         }}
-        display={{ base: "none", sm: "unset" }}
         gap={6}
       >
-        <ProductCard key="0" />
-
-        <Box display={{ base: "flex", md: "flex", lg: "flex" }}>
-          <ProductCard key="2" />
-        </Box>
-
-        <Box display={{ base: "none", md: "flex", lg: "flex" }}>
-          <ProductCard key="2" />
-        </Box>
-
-        <Box display={{ base: "none", md: "none", lg: "flex" }}>
-          <ProductCard key="3" />
-        </Box>
-
-        <Box display={{ base: "none", md: "none", lg: "none", xl: "flex" }}>
-          <ProductCard key="3" />
-        </Box>
+        {Array.from(Array(props.amount).keys()).map(() => (
+          <ProductCard />
+        ))}
       </Grid>
-
-      <Flex gap="1rem" p="5px">
-        <ProductCard />
-        <ProductCard />
-      </Flex>
     </Box>
   );
 }
