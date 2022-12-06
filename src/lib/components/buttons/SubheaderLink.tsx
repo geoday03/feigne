@@ -35,7 +35,7 @@ export default function SubheaderLink(props: {
       color={
         router.pathname == props.href
           ? useColorModeValue("text.light", "text.dark")
-          : "#717171"
+          : useColorModeValue("#717171", "#a3998d")
       }
       _hover={{
         textDecoration: "none",
@@ -43,7 +43,7 @@ export default function SubheaderLink(props: {
         borderBottomColor:
           router.pathname == props.href
             ? useColorModeValue("text.light", "text.dark")
-            : "gray.200",
+            : useColorModeValue("gray.200", "gray.600"),
       }}
     >
       <NextLink href={props.href} passHref>
@@ -59,7 +59,7 @@ export default function SubheaderLink(props: {
             fill={
               router.pathname == props.href
                 ? useColorModeValue("text.light", "text.dark")
-                : "#717171"
+                : useColorModeValue("#717171", "#a3998d")
             }
             _hover={{
               fill: useColorModeValue("text.light", "text.dark"),
