@@ -25,15 +25,15 @@ const Landing = () => {
       mx="auto"
     >
       <Box pb="10px">
-        <ProductRow rowTitle="Shop Among Us" amount={25} />
+        <ProductRow rowTitle="Shop Among Us" amount={5} />
       </Box>
 
       <Box pb="10px">
-        <ProductRow rowTitle="Shop Men's Clothing" amount={25} />
+        <ProductRow rowTitle="Shop Men's Clothing" amount={5} />
       </Box>
 
       <Box pb="10px">
-        <ProductRow rowTitle="Shop Women's Clothing" amount={25} />
+        <ProductRow rowTitle="Shop Women's Clothing" amount={5} />
       </Box>
     </Center>
   );
