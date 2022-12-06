@@ -30,6 +30,8 @@ export default function Subheader() {
       overflow="auto"
       m="auto"
       letterSpacing="wide"
+      pb="0"
+      mb="0"
     >
       <Spacer />
 
