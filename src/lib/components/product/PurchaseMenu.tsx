@@ -56,8 +56,8 @@ export default function PurchaseMenu(props: { price: string }) {
         </Text>
 
         <VStack>
-          <DeliveryLocation />
-          <ShippingMethod />
+          <DeliveryLocation w="100%" />
+          <ShippingMethod w="100%" />
         </VStack>
       </Box>
 
