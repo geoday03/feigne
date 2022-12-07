@@ -5,6 +5,7 @@ import {
   Select,
   Text,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import LockIcon from "lib/Icons/LockIcon";
 import React from "react";
@@ -54,8 +55,10 @@ export default function PurchaseMenu(props: { price: string }) {
           Deliver to John Doe
         </Text>
 
-        <DeliveryLocation />
-        <ShippingMethod />
+        <VStack>
+          <DeliveryLocation />
+          <ShippingMethod />
+        </VStack>
       </Box>
 
       <BrandedButton>Add to cart</BrandedButton>

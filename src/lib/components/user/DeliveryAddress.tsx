@@ -19,11 +19,12 @@ import {
   Text,
   Center,
   Box,
+  HStack,
 } from "@chakra-ui/react";
 import { LocationIcon } from "lib/Icons/LocationIconSet";
 import { useState } from "react";
 
-export default function DeliveryLocation(props: any) {
+export default function DeliveryAddress(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [value, setValue] = useState("1");
@@ -33,24 +34,23 @@ export default function DeliveryLocation(props: any) {
       <Button
         p="0"
         size="md"
-        backgroundColor="rgba(0,0,0,0)"
         onClick={onOpen}
         variant="ghost"
         colorScheme={useColorModeValue("blackAlpha", "gray")}
-        leftIcon={
+        color={useColorModeValue("text.light", "text.dark")}
+        {...props}
+      >
+        <HStack>
           <LocationIcon
             backgroundColor="rgba(0,0,0,0)"
             height="24px"
             width="24px"
             fill={useColorModeValue("text.light", "text.dark")}
           />
-        }
-        color={useColorModeValue("text.light", "text.dark")}
-        {...props}
-      >
-        <Text maxW="100%" textOverflow="ellipsis">
-          1337 Got Root Ave
-        </Text>
+          <Text maxW="100%" textOverflow="ellipsis">
+            1337 Got Root Ave
+          </Text>
+        </HStack>
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered={true} size="xl">

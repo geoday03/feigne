@@ -33,12 +33,6 @@ export default function ShippingMethod(props: any) {
     <>
       <Button
         size="md"
-        display={{
-          sm: "none",
-          md: "none",
-          lg: "flex",
-          xl: "flex",
-        }}
         p="0"
         backgroundColor="rgba(0,0,0,0)"
         variant="ghost"
