@@ -90,6 +90,7 @@ const Header = () => {
             display={{
               base: "none",
               md: "none",
+              lg: "flex",
             }}
           >
             <ShippingMethod />
