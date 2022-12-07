@@ -19,10 +19,10 @@ export default function MobileBottomNavigation(props: any) {
     >
       <Spacer />
       <Center mx="auto" px="5px" gap="1rem">
-        <HeaderDrawer h="50px" boxSize="25px" h="100%" />
-        <ShopButton h="50px" />
-        <WishlistButton h="50px" />
-        <Cart rounded="md" h="50px" />
+        <HeaderDrawer px="10px" />
+        <ShopButton px="10px" />
+        <WishlistButton h="100%" px="10px" />
+        <Cart rounded="md" />
       </Center>
       <Spacer />
     </Flex>
