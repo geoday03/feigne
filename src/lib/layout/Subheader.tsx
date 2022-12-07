@@ -1,5 +1,6 @@
 import {
   border,
+  Box,
   Center,
   Flex,
   Link,
@@ -47,8 +48,8 @@ export default function Subheader(props: any) {
 
   return (
     <Flex
+      w="100%"
       backgroundColor={useColorModeValue("background.light", "background.dark")}
-      gap="7%"
       fontFamily="body"
       fontWeight="500"
       fontSize="15px"
@@ -59,20 +60,18 @@ export default function Subheader(props: any) {
       mb="0"
       {...props}
     >
-      <Spacer />
-
-      {Object.keys(navLinks).map((key, i) => {
-        return (
-          <SubheaderLink
-            key={i}
-            text={key}
-            href={navLinks[key as keyof {}]}
-            icon={icons[i]}
-          />
-        );
-      })}
-
-      <Spacer />
+      <Flex mx="auto" gap="20px" px="20px">
+        {Object.keys(navLinks).map((key, i) => {
+          return (
+            <SubheaderLink
+              key={i}
+              text={key}
+              href={navLinks[key as keyof {}]}
+              icon={icons[i]}
+            />
+          );
+        })}
+      </Flex>
     </Flex>
   );
 }
