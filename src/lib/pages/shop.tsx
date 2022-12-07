@@ -13,7 +13,7 @@ const Shop = () => {
       px="5px"
     >
       <Box pb="5px">
-        <ProductRow rowTitle="Recommended" amount={4} />
+        <ProductRow rowTitle="Recommended" amount={5} />
       </Box>
 
       <Box pb="5px">
@@ -21,7 +21,7 @@ const Shop = () => {
       </Box>
 
       <Box pb="5px">
-        <ProductRow rowTitle="Bestsellers" amount={3} />
+        <ProductRow rowTitle="Bestsellers" amount={6} />
       </Box>
     </Center>
   );
