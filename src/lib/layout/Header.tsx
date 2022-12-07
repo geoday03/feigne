@@ -89,7 +89,7 @@ const Header = () => {
             ml="3%"
             display={{
               base: "none",
-              md: "flex",
+              md: "none",
             }}
           >
             <ShippingMethod />
