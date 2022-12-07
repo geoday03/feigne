@@ -13,11 +13,11 @@ import SubheaderLink from "lib/components/buttons/SubheaderLink";
 import BlouseIcon from "lib/Icons/BlouseIcon";
 import CrewmateIcon from "lib/Icons/CrewmateIcon";
 import HomeIcon from "lib/Icons/HomeIcon";
-import MonitorIcon from "lib/Icons/MonitorIcon";
 import NecklaceIcon from "lib/Icons/NecklaceIcon";
 import ShirtIcon from "lib/Icons/ShirtIcon";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
 import NextLink from "next/link";
+import PhoneIcon from "lib/Icons/PhoneIcon";
 
 export default function Subheader(props: any) {
   const borderColor = useColorModeValue("text.light", "border.dark");
@@ -42,7 +42,7 @@ export default function Subheader(props: any) {
     ShirtIcon,
     BlouseIcon,
     NecklaceIcon,
-    MonitorIcon,
+    PhoneIcon,
     CrewmateIcon,
   ];
 
