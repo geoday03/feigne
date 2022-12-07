@@ -31,6 +31,7 @@ export default function SubheaderLink(props: {
         variant="ghost"
         onClick={handleClick}
         _hover={{ textDecoration: "none" }}
+        mx="10px"
       >
         <Box
           fill={
