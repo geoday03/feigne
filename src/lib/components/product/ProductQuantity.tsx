@@ -1,11 +1,15 @@
+import { DeleteIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
   Flex,
   HStack,
+  Icon,
   Input,
   NumberInput,
+  NumberInputField,
   SlideFade,
+  useColorModeValue,
   useDisclosure,
   useNumberInput,
 } from "@chakra-ui/react";
@@ -13,34 +17,38 @@ import { useEffect, useState } from "react";
 
 export default function ProductQuantity(props: {
   quantity: number;
-  setQuantity: any;
+  setQuantity: Function;
 }) {
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
       step: 1,
-      defaultValue: props.quantity,
+      defaultValue: 1,
       min: 0,
       max: 100,
       precision: 0,
+      onChange: (q: any) => {
+        props.setQuantity(q);
+      },
     });
 
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
   const input = getInputProps();
 
-  const [quantity, setQuantity] = useState(props.quantity);
-
-  useEffect(() => console.log(quantity), [quantity]);
-
   return (
     <HStack>
       <Button size="sm" {...dec}>
-        -
+        {props.quantity == 1 || props.quantity == 0 ? (
+          <Icon
+            as={DeleteIcon}
+            fill={useColorModeValue("text.light", "text.dark")}
+          />
+        ) : (
+          "-"
+        )}
       </Button>
 
-      <Input {...input} value={quantity} maxW="4.5rem">
-        {quantity}
-      </Input>
+      <Input {...input} w="3.5rem" />
 
       <Button size="sm" {...inc}>
         +

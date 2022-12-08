@@ -32,6 +32,11 @@ export default function PurchaseMenu(props: CartItemConfig) {
 
   const dispatch = useAppDispatch();
 
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   return (
     <Box
       rounded="2xl"
@@ -42,7 +47,7 @@ export default function PurchaseMenu(props: CartItemConfig) {
       position="sticky"
     >
       <Text fontSize="1.5rem" mb="30px">
-        ${props.price}
+        {formatter.format(props.price)}
       </Text>
 
       <Flex fontSize="16px" fontWeight="500" gap="5px" mb="3px">
@@ -71,14 +76,12 @@ export default function PurchaseMenu(props: CartItemConfig) {
           dispatch({
             type: "cart/append",
             payload: {
-              id: props.id || "1",
-              title: props.title || "Product Title",
-              price: props.price || 3523,
-              image:
-                props.image ||
-                "https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg",
+              id: props.id,
+              title: props.title,
+              price: props.price,
+              image: props.image,
+              quantity: props.quantity,
             },
-            quantity: props.quantity || 1,
           })
         }
       >

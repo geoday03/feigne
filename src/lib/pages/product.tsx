@@ -19,6 +19,7 @@ import { LocationIcon } from "lib/Icons/LocationIconSet";
 import LockIcon from "lib/Icons/LockIcon";
 import TruckIcon from "lib/Icons/TruckIcon";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
+import { nanoid } from "@reduxjs/toolkit";
 
 export default function Product() {
   const backgroundColor = useColorModeValue(
@@ -85,7 +86,7 @@ export default function Product() {
 
         <Box>
           <PurchaseMenu
-            id={"1"}
+            id={nanoid(6)}
             title="Product Title"
             price={3522}
             image="https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
