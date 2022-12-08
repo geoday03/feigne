@@ -17,10 +17,15 @@ import React, { useEffect } from "react";
 import CartItem from "./CartItem";
 import HR from "../HR";
 import CartIcon from "lib/Icons/CartIcon";
+import { useAppDispatch, useAppSelector } from "lib/app/hooks";
+import { CartItemConfig } from "lib/types/cart-item-config";
 
 export default function Cart(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const btnRef = React.useRef(null);
+
+  const cart = useAppSelector((state) => state);
 
   return (
     <>
@@ -46,7 +51,7 @@ export default function Cart(props: any) {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        size="md"
+        size="xl"
       >
         <DrawerOverlay />
         <DrawerContent>
@@ -57,10 +62,21 @@ export default function Cart(props: any) {
             </Flex>
           </DrawerHeader>
 
-          <DrawerBody>
-            <hr />
-
-            <Box></Box>
+          <DrawerBody w="100%">
+            {cart.items.length > 0 ? (
+              cart.items.map((item: CartItemConfig, i: number) => (
+                <CartItem
+                  key={i}
+                  id={item.id}
+                  title={item.title}
+                  price={item.price}
+                  image={item.image}
+                  quantity={item.quantity}
+                />
+              ))
+            ) : (
+              <Box />
+            )}
           </DrawerBody>
 
           <DrawerFooter>

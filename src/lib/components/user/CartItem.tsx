@@ -1,42 +1,38 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  HStack,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { CartItemConfig } from "lib/types/cart-item-config";
 import { Product } from "lib/types/product";
 import { useState } from "react";
 import ProductQuantity from "../product/ProductQuantity";
 
-export default function CartItem(props: {
-  title: string;
-  price: number;
-  quantity: number;
-  image: string;
-}) {
+export default function CartItem(props: CartItemConfig) {
   const [quantity, setQuantity] = useState(props.quantity);
 
   return (
-    <Flex
-      flexDirection="row"
-      gap=".8rem"
-      justifyContent="end"
-      fontSize="14px"
-      fontFamily="body"
-    >
-      <Box boxSize="4rem">
-        <Image
-          height="4rem"
-          src={props.image}
-          alt={props.title}
-          objectFit="cover"
-        />
-      </Box>
+    <Flex gap="1rem" align="center" w="100%">
+      <Image
+        src={props.image}
+        alt={props.title}
+        objectFit="cover"
+        w="5rem"
+        rounded="xl"
+      />
 
-      <Text boxSize="3rem" fontSize="12px" fontWeight="500" width="55%">
-        {props.title}
-      </Text>
+      <VStack>
+        <Text fontSize="20px" fontWeight="500">
+          {props.title}
+        </Text>
+        <ProductQuantity quantity={quantity} setQuantity={setQuantity} />
+      </VStack>
 
-      <ProductQuantity quantity={quantity} setQuantity={setQuantity} />
-
-      <Box boxSize="4rem" ml="auto">
-        ${(props.price * quantity).toFixed(2)}
-      </Box>
+      <Box>${(props.price * quantity).toFixed(2)}</Box>
     </Flex>
   );
 }

@@ -7,13 +7,16 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
+import { useAppDispatch } from "lib/app/hooks";
 import LockIcon from "lib/Icons/LockIcon";
+import { CartItemConfig } from "lib/types/cart-item-config";
 import React from "react";
 import BrandedButton from "../buttons/BrandedButton";
 import DeliveryLocation from "../user/DeliveryAddress";
 import ShippingMethod from "../user/ShippingMethod";
 
-export default function PurchaseMenu(props: { price: string }) {
+// CartItemConfig to pass state here for the add to cart state functionality
+export default function PurchaseMenu(props: CartItemConfig) {
   let quantity = [];
 
   for (let i = 2; i < 101; i++) {
@@ -26,6 +29,8 @@ export default function PurchaseMenu(props: { price: string }) {
   );
   const borderColor = useColorModeValue("border.light", "border.dark");
   const textColor = useColorModeValue("text.light", "text.dark");
+
+  const dispatch = useAppDispatch();
 
   return (
     <Box
@@ -61,7 +66,24 @@ export default function PurchaseMenu(props: { price: string }) {
         </VStack>
       </Box>
 
-      <BrandedButton>Add to cart</BrandedButton>
+      <BrandedButton
+        onClick={() =>
+          dispatch({
+            type: "cart/append",
+            payload: {
+              id: props.id || "1",
+              title: props.title || "Product Title",
+              price: props.price || 3523,
+              image:
+                props.image ||
+                "https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg",
+            },
+            quantity: props.quantity || 1,
+          })
+        }
+      >
+        Add to cart
+      </BrandedButton>
 
       <BrandedButton>Buy now</BrandedButton>
 

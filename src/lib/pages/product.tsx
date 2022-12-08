@@ -12,14 +12,12 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import BrandedButton from "lib/components/buttons/BrandedButton";
-import DeliveryLocation from "lib/components/user/DeliveryAddress";
+import DeliveryAddress from "lib/components/user/DeliveryAddress";
 import ShippingMethod from "lib/components/user/ShippingMethod";
 import ProductRow from "lib/components/product/ProductRow";
 import { LocationIcon } from "lib/Icons/LocationIconSet";
 import LockIcon from "lib/Icons/LockIcon";
 import TruckIcon from "lib/Icons/TruckIcon";
-import { useRouter } from "next/router";
-import React from "react";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
 
 export default function Product() {
@@ -86,7 +84,13 @@ export default function Product() {
         </Box>
 
         <Box>
-          <PurchaseMenu price="3,523" />
+          <PurchaseMenu
+            id={"1"}
+            title="Product Title"
+            price={3522}
+            image="https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
+            quantity={1}
+          />
         </Box>
       </Flex>
 

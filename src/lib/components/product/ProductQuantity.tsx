@@ -1,42 +1,50 @@
-import { Button, Flex, SlideFade, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Input,
+  NumberInput,
+  SlideFade,
+  useDisclosure,
+  useNumberInput,
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 export default function ProductQuantity(props: {
   quantity: number;
   setQuantity: any;
 }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      step: 1,
+      defaultValue: props.quantity,
+      min: 0,
+      max: 100,
+      precision: 0,
+    });
+
+  const inc = getIncrementButtonProps();
+  const dec = getDecrementButtonProps();
+  const input = getInputProps();
+
+  const [quantity, setQuantity] = useState(props.quantity);
+
+  useEffect(() => console.log(quantity), [quantity]);
 
   return (
-    <Flex
-      direction="row"
-      width="30%"
-      display="inline-flex"
-      justifyContent="center"
-      pr="1px"
-    >
-      <SlideFade in={isOpen} unmountOnExit={true} offsetY="0" offsetX="-20px">
-        <Button
-          size="sm"
-          onClick={() =>
-            props.quantity != 1 && props.setQuantity(props.quantity - 1)
-          }
-        >
-          -
-        </Button>
-      </SlideFade>
-
-      <Button
-        size="sm"
-        onClick={(e) => (!isOpen && onOpen()) || (isOpen && onClose())}
-      >
-        {props.quantity}
+    <HStack>
+      <Button size="sm" {...dec}>
+        -
       </Button>
 
-      <SlideFade in={isOpen} unmountOnExit={true} offsetY="0" offsetX="20px">
-        <Button size="sm" onClick={() => props.setQuantity(props.quantity + 1)}>
-          +
-        </Button>
-      </SlideFade>
-    </Flex>
+      <Input {...input} value={quantity} maxW="4.5rem">
+        {quantity}
+      </Input>
+
+      <Button size="sm" {...inc}>
+        +
+      </Button>
+    </HStack>
   );
 }

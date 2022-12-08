@@ -1,11 +1,7 @@
 import { Button, useColorModeValue } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 
-type LayoutProps = {
-  children: ReactNode;
-};
-
-export default function BrandedButton({ children }: LayoutProps) {
+export default function BrandedButton(props: any) {
   const backgroundColor = useColorModeValue(
     "background.light",
     "background.dark"
@@ -24,8 +20,7 @@ export default function BrandedButton({ children }: LayoutProps) {
       _active={{
         bgGradient: "linear(to-l, brand.primary, brand.primary)",
       }}
-    >
-      {children}
-    </Button>
+      {...props}
+    />
   );
 }
