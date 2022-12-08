@@ -1,42 +1,67 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Divider,
+  Flex,
+  HStack,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { useAppDispatch } from "lib/app/hooks";
+import { CartItemConfig } from "lib/types/cart-item-config";
 import { Product } from "lib/types/product";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import HR from "../HR";
 import ProductQuantity from "../product/ProductQuantity";
 
-export default function CartItem(props: {
-  title: string;
-  price: number;
-  quantity: number;
-  image: string;
-}) {
+export default function CartItem(props: CartItemConfig) {
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   const [quantity, setQuantity] = useState(props.quantity);
 
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (quantity == 0) {
+      const { id } = props;
+      dispatch({ type: "cart/remove", payload: props.id });
+    }
+  }, [quantity]);
+
   return (
-    <Flex
-      flexDirection="row"
-      gap=".8rem"
-      justifyContent="end"
-      fontSize="14px"
-      fontFamily="body"
-    >
-      <Box boxSize="4rem">
+    <VStack display={quantity == 0 ? "none" : "flex"}>
+      <Flex gap="1rem" align="center" w="100%" mb="15px">
         <Image
-          height="4rem"
           src={props.image}
           alt={props.title}
           objectFit="cover"
+          w={{ base: "25%", md: "30%" }}
+          rounded="xl"
         />
-      </Box>
 
-      <Text boxSize="3rem" fontSize="12px" fontWeight="500" width="55%">
-        {props.title}
-      </Text>
+        <VStack mb="auto" mr="10px">
+          <Text
+            fontSize={{ base: "15px", md: "1rem" }}
+            lineHeight="1"
+            fontWeight="bold"
+          >
+            {props.title}
+            <br />
+            <Text mt="15%" fontWeight={{ base: "semibold", md: "400" }}>
+              {formatter.format(props.price * quantity)}
+            </Text>
+          </Text>
+        </VStack>
 
-      <ProductQuantity quantity={quantity} setQuantity={setQuantity} />
-
-      <Box boxSize="4rem" ml="auto">
-        ${(props.price * quantity).toFixed(2)}
-      </Box>
-    </Flex>
+        <Box ml="auto">
+          <ProductQuantity quantity={quantity} setQuantity={setQuantity} />
+        </Box>
+      </Flex>
+      <HR />
+    </VStack>
   );
 }

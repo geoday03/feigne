@@ -12,15 +12,27 @@ import {
   Text,
   Flex,
   Box,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CartItem from "./CartItem";
 import HR from "../HR";
 import CartIcon from "lib/Icons/CartIcon";
+import { useAppDispatch, useAppSelector } from "lib/app/hooks";
+import { CartItemConfig } from "lib/types/cart-item-config";
 
 export default function Cart(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const btnRef = React.useRef(null);
+
+  const cart = useAppSelector((state) => state);
+
+  const [itemCount, setItemCount] = React.useState(0);
+
+  useEffect(() => {
+    setItemCount(cart.items.length);
+  }, [cart.items.length]);
 
   return (
     <>
@@ -31,14 +43,14 @@ export default function Cart(props: any) {
         rounded="full"
         color="text.dark"
         colorScheme="green"
-        backgroundColor="cart.green"
+        backgroundColor={cart.items.length > 0 ? "cart.green" : "gray.900"}
         leftIcon={<CartIcon boxSize="24px" fill="text.dark" />}
         onClick={onOpen}
         p="1rem"
         {...props}
       >
         <Text fontSize="15px" fontWeight="600">
-          0
+          {itemCount}
         </Text>
       </Button>
       <Drawer
@@ -46,7 +58,7 @@ export default function Cart(props: any) {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        size="md"
+        size={{ base: "xl", md: "md" }}
       >
         <DrawerOverlay />
         <DrawerContent>
@@ -58,9 +70,23 @@ export default function Cart(props: any) {
           </DrawerHeader>
 
           <DrawerBody>
-            <hr />
-
-            <Box></Box>
+            <HR />
+            {cart.items.length > 0 ? (
+              cart.items.map((item: CartItemConfig, i: number) => (
+                <Box>
+                  <CartItem
+                    key={i}
+                    id={item.id}
+                    title={item.title}
+                    price={item.price}
+                    image={item.image}
+                    quantity={item.quantity}
+                  />
+                </Box>
+              ))
+            ) : (
+              <Box />
+            )}
           </DrawerBody>
 
           <DrawerFooter>

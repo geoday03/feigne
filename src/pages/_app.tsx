@@ -6,6 +6,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { Chakra } from "lib/components/Chakra";
 import Layout from "lib/layout";
 import "lib/styles/globals.css";
+import { Provider } from "react-redux";
+import { store } from "lib/app/store";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -16,10 +18,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-        <Analytics />
-      </Layout>
+      <Provider store={store}>
+        <Layout>
+          <Component {...pageProps} />
+
+          <Analytics />
+        </Layout>
+      </Provider>
     </Chakra>
   );
 };

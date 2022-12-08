@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "lib/app/store";
+import { RootState, store } from "lib/app/store";
+import { CartItemConfig } from "lib/types/cart-item-config";
 import CartState from "lib/types/cart-state";
 
 const initialState: CartState = {
@@ -7,14 +8,21 @@ const initialState: CartState = {
   total: 0,
 };
 
-export const UISlice = createSlice({
-  name: "ui",
+export const CartSlice = createSlice({
+  name: "cart",
   initialState,
   reducers: {
-    append: (state, action: PayloadAction<number>) => {
+    append: (state, action: PayloadAction<CartItemConfig>) => {
       state.items.push(action.payload);
+    },
+    remove: (state, action: PayloadAction<string>) => {
+      state.items.filter((item, index) => {
+        if (item.id == action.payload) {
+          state.items.splice(index, 1);
+        }
+      });
     },
   },
 });
 
-export default UISlice.reducer;
+export default CartSlice.reducer;

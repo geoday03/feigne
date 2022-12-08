@@ -1,42 +1,58 @@
-import { Button, Flex, SlideFade, useDisclosure } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Icon,
+  Input,
+  NumberInput,
+  NumberInputField,
+  SlideFade,
+  useColorModeValue,
+  useDisclosure,
+  useNumberInput,
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 export default function ProductQuantity(props: {
   quantity: number;
-  setQuantity: any;
+  setQuantity: Function;
 }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      step: 1,
+      defaultValue: 1,
+      min: 0,
+      max: 100,
+      precision: 0,
+      onChange: (q: any) => {
+        props.setQuantity(q);
+      },
+    });
+
+  const inc = getIncrementButtonProps();
+  const dec = getDecrementButtonProps();
+  const input = getInputProps();
 
   return (
-    <Flex
-      direction="row"
-      width="30%"
-      display="inline-flex"
-      justifyContent="center"
-      pr="1px"
-    >
-      <SlideFade in={isOpen} unmountOnExit={true} offsetY="0" offsetX="-20px">
-        <Button
-          size="sm"
-          onClick={() =>
-            props.quantity != 1 && props.setQuantity(props.quantity - 1)
-          }
-        >
-          -
-        </Button>
-      </SlideFade>
-
-      <Button
-        size="sm"
-        onClick={(e) => (!isOpen && onOpen()) || (isOpen && onClose())}
-      >
-        {props.quantity}
+    <HStack>
+      <Button size="sm" {...dec}>
+        {props.quantity == 1 || props.quantity == 0 ? (
+          <Icon
+            as={DeleteIcon}
+            fill={useColorModeValue("text.light", "text.dark")}
+          />
+        ) : (
+          "-"
+        )}
       </Button>
 
-      <SlideFade in={isOpen} unmountOnExit={true} offsetY="0" offsetX="20px">
-        <Button size="sm" onClick={() => props.setQuantity(props.quantity + 1)}>
-          +
-        </Button>
-      </SlideFade>
-    </Flex>
+      <Input {...input} w="3.5rem" />
+
+      <Button size="sm" {...inc}>
+        +
+      </Button>
+    </HStack>
   );
 }

@@ -7,13 +7,16 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
+import { useAppDispatch } from "lib/app/hooks";
 import LockIcon from "lib/Icons/LockIcon";
+import { CartItemConfig } from "lib/types/cart-item-config";
 import React from "react";
 import BrandedButton from "../buttons/BrandedButton";
 import DeliveryLocation from "../user/DeliveryAddress";
 import ShippingMethod from "../user/ShippingMethod";
 
-export default function PurchaseMenu(props: { price: string }) {
+// CartItemConfig to pass state here for the add to cart state functionality
+export default function PurchaseMenu(props: CartItemConfig) {
   let quantity = [];
 
   for (let i = 2; i < 101; i++) {
@@ -27,6 +30,13 @@ export default function PurchaseMenu(props: { price: string }) {
   const borderColor = useColorModeValue("border.light", "border.dark");
   const textColor = useColorModeValue("text.light", "text.dark");
 
+  const dispatch = useAppDispatch();
+
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   return (
     <Box
       rounded="2xl"
@@ -37,7 +47,7 @@ export default function PurchaseMenu(props: { price: string }) {
       position="sticky"
     >
       <Text fontSize="1.5rem" mb="30px">
-        ${props.price}
+        {formatter.format(props.price)}
       </Text>
 
       <Flex fontSize="16px" fontWeight="500" gap="5px" mb="3px">
@@ -61,7 +71,22 @@ export default function PurchaseMenu(props: { price: string }) {
         </VStack>
       </Box>
 
-      <BrandedButton>Add to cart</BrandedButton>
+      <BrandedButton
+        onClick={() =>
+          dispatch({
+            type: "cart/append",
+            payload: {
+              id: props.id,
+              title: props.title,
+              price: props.price,
+              image: props.image,
+              quantity: props.quantity,
+            },
+          })
+        }
+      >
+        Add to cart
+      </BrandedButton>
 
       <BrandedButton>Buy now</BrandedButton>
 

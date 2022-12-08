@@ -1,7 +1,7 @@
-import { CartItem } from "./cart-item";
+import { CartItemConfig } from "./cart-item-config";
 
 interface CartState {
-  items: CartItem[];
+  items: CartItemConfig[];
   total: number;
 }
 
