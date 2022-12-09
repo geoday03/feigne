@@ -19,7 +19,8 @@ import { LocationIcon } from "lib/Icons/LocationIconSet";
 import LockIcon from "lib/Icons/LockIcon";
 import TruckIcon from "lib/Icons/TruckIcon";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
-import { nanoid } from "@reduxjs/toolkit";
+import { nanoid } from "nanoid";
+import { useId, useRef } from "react";
 
 export default function Product() {
   const backgroundColor = useColorModeValue(
@@ -28,6 +29,8 @@ export default function Product() {
   );
   const borderColor = useColorModeValue("border.light", "border.dark");
   const textColor = useColorModeValue("text.light", "text.dark");
+
+  const uid = useId();
 
   return (
     <Box
@@ -86,7 +89,6 @@ export default function Product() {
 
         <Box>
           <PurchaseMenu
-            id={nanoid(6)}
             title="Product Title"
             price={3522}
             image="https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
@@ -99,7 +101,6 @@ export default function Product() {
         <Box pb="1rem">
           <ProductRow
             amount={5}
-            key={0}
             rowTitle="Recommended Items"
             category="amongUs"
           />

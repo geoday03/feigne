@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
 import { RootState, store } from "lib/app/store";
 import { CartItemConfig } from "lib/types/cart-item-config";
 import CartState from "lib/types/cart-state";
@@ -13,14 +13,11 @@ export const CartSlice = createSlice({
   initialState,
   reducers: {
     append: (state, action: PayloadAction<CartItemConfig>) => {
-      state.items.push(action.payload);
+      const a = Object.assign({ id: nanoid() }, action.payload);
+      state.items.push(a);
     },
     remove: (state, action: PayloadAction<string>) => {
-      state.items.filter((item, index) => {
-        if (item.id == action.payload) {
-          state.items.splice(index, 1);
-        }
-      });
+      state.items = state.items.filter((item) => item.id !== action.payload);
     },
   },
 });

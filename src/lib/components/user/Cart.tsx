@@ -14,25 +14,26 @@ import {
   Box,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CartItem from "./CartItem";
 import HR from "../HR";
 import CartIcon from "lib/Icons/CartIcon";
 import { useAppDispatch, useAppSelector } from "lib/app/hooks";
 import { CartItemConfig } from "lib/types/cart-item-config";
+import { nanoid } from "@reduxjs/toolkit";
 
 export default function Cart(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const btnRef = React.useRef(null);
+  const btnRef = useRef(null);
 
   const cart = useAppSelector((state) => state);
 
-  const [itemCount, setItemCount] = React.useState(0);
+  const [itemCount, setItemCount] = useState(0);
 
   useEffect(() => {
     setItemCount(cart.items.length);
-  }, [cart.items.length]);
+  }, [cart.items]);
 
   return (
     <>
@@ -42,7 +43,11 @@ export default function Cart(props: any) {
         ref={btnRef}
         rounded="full"
         color="text.dark"
-        colorScheme="green"
+        colorScheme={
+          cart.items.length > 0
+            ? "green"
+            : useColorModeValue("blackAlpha", "gray")
+        }
         backgroundColor={cart.items.length > 0 ? "cart.green" : "gray.900"}
         leftIcon={<CartIcon boxSize="24px" fill="text.dark" />}
         onClick={onOpen}
@@ -50,7 +55,7 @@ export default function Cart(props: any) {
         {...props}
       >
         <Text fontSize="15px" fontWeight="600">
-          {itemCount}
+          {cart.items.length}
         </Text>
       </Button>
       <Drawer
@@ -69,19 +74,23 @@ export default function Cart(props: any) {
             </Flex>
           </DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody w="100%">
             <HR />
             {cart.items.length > 0 ? (
               cart.items.map((item: CartItemConfig, i: number) => (
                 <Box>
-                  <CartItem
-                    key={i}
-                    id={item.id}
-                    title={item.title}
-                    price={item.price}
-                    image={item.image}
-                    quantity={item.quantity}
-                  />
+                  {
+                    <CartItem
+                      key={i}
+                      id={item.id}
+                      title={item.title}
+                      price={item.price}
+                      image={item.image}
+                      quantity={item.quantity}
+                    />
+                  }
+
+                  <HR mb="15px" />
                 </Box>
               ))
             ) : (
