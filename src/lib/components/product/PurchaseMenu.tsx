@@ -19,7 +19,7 @@ import ShippingMethod from "../user/ShippingMethod";
 export default function PurchaseMenu(props: any) {
   let quantity = [];
 
-  for (let i = 2; i < 101; i++) {
+  for (let i = 1; i < 101; i++) {
     quantity.push(i);
   }
 

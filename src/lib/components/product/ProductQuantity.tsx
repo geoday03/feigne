@@ -15,7 +15,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useAppDispatch } from "lib/app/hooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ProductQuantity(props: {
   quantity: number;
@@ -28,7 +28,7 @@ export default function ProductQuantity(props: {
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
       step: 1,
-      defaultValue: 1,
+      defaultValue: quantity,
       min: 0,
       max: 100,
       precision: 0,
