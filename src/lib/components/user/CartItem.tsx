@@ -25,6 +25,7 @@ export default function CartItem(props: CartItemConfig) {
             fontSize={{ base: "15px", md: "1rem" }}
             lineHeight="1"
             fontWeight="bold"
+            maxW="8.75rem"
           >
             {props.title}
             <br />
