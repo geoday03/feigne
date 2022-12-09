@@ -17,7 +17,7 @@ const Electronics = () => {
       w="90%"
       mx="auto"
     >
-      soon to be
+      <ProductRow rowTitle="Newest Electronics" amount={36} />
     </Center>
   );
 };
