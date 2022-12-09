@@ -31,10 +31,6 @@ export default function Cart(props: any) {
 
   const [itemCount, setItemCount] = useState(0);
 
-  useEffect(() => {
-    setItemCount(cart.items.length);
-  }, [cart.items]);
-
   return (
     <>
       <Button
@@ -83,7 +79,7 @@ export default function Cart(props: any) {
                     <CartItem
                       key={i}
                       id={item.id}
-                      title={item.title}
+                      title={item.id}
                       price={item.price}
                       image={item.image}
                       quantity={item.quantity}
