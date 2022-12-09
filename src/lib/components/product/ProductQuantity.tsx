@@ -14,31 +14,41 @@ import {
   useNumberInput,
 } from "@chakra-ui/react";
 import { useAppDispatch } from "lib/app/hooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function ProductQuantity(props: {
   quantity: number;
   id: string;
 }) {
   const [quantity, setQuantity] = useState(props.quantity);
+
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (quantity == 0) {
-      dispatch({ type: "cart/remove", payload: props.id });
-      setQuantity(props.quantity);
-    }
-  }, [dispatch, props.id, props.quantity, quantity]);
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      step: 1,
+      defaultValue: 1,
+      min: 0,
+      max: 100,
+      precision: 0,
+      onChange: (q: any) => {
+        setQuantity(q);
+
+        if (q == 0) {
+          dispatch({ type: "cart/remove", payload: props.id });
+          setQuantity(1);
+        }
+      },
+    });
+
+  const inc = getIncrementButtonProps();
+  const dec = getDecrementButtonProps();
+  const input = getInputProps();
 
   return (
     <HStack>
-      <Button
-        size="sm"
-        onClick={() => {
-          return setQuantity(quantity - 1);
-        }}
-      >
-        {props.quantity == 1 || props.quantity == 0 ? (
+      <Button size="sm" {...dec}>
+        {quantity == 1 ? (
           <Icon
             as={DeleteIcon}
             fill={useColorModeValue("text.light", "text.dark")}
@@ -48,9 +58,9 @@ export default function ProductQuantity(props: {
         )}
       </Button>
 
-      <Input w="3.5rem" defaultValue={quantity} />
+      <Input {...input} w="3.5rem" />
 
-      <Button size="sm" onClick={() => setQuantity(quantity + 1)}>
+      <Button size="sm" {...inc}>
         +
       </Button>
     </HStack>

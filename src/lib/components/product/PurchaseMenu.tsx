@@ -49,7 +49,7 @@ export default function PurchaseMenu(props: any) {
       position="sticky"
     >
       <Text fontSize="1.5rem" mb="30px">
-        {formatter.format(props.price)}
+        {formatter.format(3523)}
       </Text>
 
       <Flex fontSize="16px" fontWeight="500" gap="5px" mb="3px">
@@ -64,7 +64,7 @@ export default function PurchaseMenu(props: any) {
         onChange={(e: any) => setPquantity(e.currentTarget.value)}
       >
         {quantity.map((i) => (
-          <option>{i}</option>
+          <option key={i}>{i}</option>
         ))}
       </Select>
 

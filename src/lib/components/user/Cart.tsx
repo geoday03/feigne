@@ -77,7 +77,7 @@ export default function Cart(props: any) {
                 <Box>
                   {
                     <CartItem
-                      key={i}
+                      key={nanoid()}
                       id={item.id}
                       title={item.id}
                       price={item.price}
