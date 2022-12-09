@@ -36,7 +36,6 @@ export default function ProductQuantity(props: {
 
         if (q == 0) {
           dispatch({ type: "cart/remove", payload: props.id });
-          setQuantity(1);
         }
       },
     });
