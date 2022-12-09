@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 
-export default function HR() {
+export default function HR(props: any) {
   return (
     <Box
       height="1px"
@@ -9,6 +9,7 @@ export default function HR() {
       alignSelf="center"
       mb=".5rem"
       my="20px"
+      {...props}
     />
   );
 }

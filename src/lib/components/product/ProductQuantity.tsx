@@ -13,12 +13,17 @@ import {
   useDisclosure,
   useNumberInput,
 } from "@chakra-ui/react";
+import { useAppDispatch } from "lib/app/hooks";
 import { useEffect, useState } from "react";
 
 export default function ProductQuantity(props: {
   quantity: number;
-  setQuantity: Function;
+  id: string;
 }) {
+  const [quantity, setQuantity] = useState(props.quantity);
+
+  const dispatch = useAppDispatch();
+
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
       step: 1,
@@ -27,7 +32,12 @@ export default function ProductQuantity(props: {
       max: 100,
       precision: 0,
       onChange: (q: any) => {
-        props.setQuantity(q);
+        setQuantity(q);
+
+        if (q == 0) {
+          dispatch({ type: "cart/remove", payload: props.id });
+          setQuantity(1);
+        }
       },
     });
 

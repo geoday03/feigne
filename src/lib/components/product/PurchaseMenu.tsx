@@ -10,13 +10,18 @@ import {
 import { useAppDispatch } from "lib/app/hooks";
 import LockIcon from "lib/Icons/LockIcon";
 import { CartItemConfig } from "lib/types/cart-item-config";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BrandedButton from "../buttons/BrandedButton";
 import DeliveryLocation from "../user/DeliveryAddress";
 import ShippingMethod from "../user/ShippingMethod";
 
 // CartItemConfig to pass state here for the add to cart state functionality
-export default function PurchaseMenu(props: CartItemConfig) {
+export default function PurchaseMenu(props: {
+  title: string;
+  price: number;
+  image: string;
+  quantity: number;
+}) {
   let quantity = [];
 
   for (let i = 2; i < 101; i++) {
@@ -37,6 +42,8 @@ export default function PurchaseMenu(props: CartItemConfig) {
     currency: "USD",
   });
 
+  const [pQuantity, setPquantity] = useState(props.quantity);
+
   return (
     <Box
       rounded="2xl"
@@ -54,7 +61,13 @@ export default function PurchaseMenu(props: CartItemConfig) {
         Quantity
         <Text color={useColorModeValue("green", "#4af179")}> IN STOCK</Text>
       </Flex>
-      <Select placeholder="1" w="5rem" mb="30px" borderColor={borderColor}>
+      <Select
+        placeholder="1"
+        w="5rem"
+        mb="30px"
+        borderColor={borderColor}
+        onChange={(e: any) => setPquantity(e.currentTarget.value)}
+      >
         {quantity.map((i) => (
           <option>{i}</option>
         ))}
@@ -76,11 +89,10 @@ export default function PurchaseMenu(props: CartItemConfig) {
           dispatch({
             type: "cart/append",
             payload: {
-              id: props.id,
               title: props.title,
               price: props.price,
               image: props.image,
-              quantity: props.quantity,
+              quantity: pQuantity,
             },
           })
         }
