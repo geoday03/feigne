@@ -10,7 +10,7 @@ export default function CartItem(props: CartItemConfig) {
   });
 
   return (
-    <VStack w="100%">
+    <VStack>
       <Flex gap="1rem" align="center" w="100%" mb="15px">
         <Image
           src={props.image}

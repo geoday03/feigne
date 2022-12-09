@@ -12,6 +12,7 @@ import {
   useColorModeValue,
   useDisclosure,
   useNumberInput,
+  Text,
 } from "@chakra-ui/react";
 import { useAppDispatch } from "lib/app/hooks";
 import { useState } from "react";
@@ -36,7 +37,6 @@ export default function ProductQuantity(props: {
 
         if (q == 0) {
           dispatch({ type: "cart/remove", payload: props.id });
-          setQuantity(1);
         }
       },
     });
@@ -44,6 +44,9 @@ export default function ProductQuantity(props: {
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
   const input = getInputProps();
+
+  const borderColor = useColorModeValue("border.light", "border.dark");
+  const textColor = useColorModeValue("text.light", "text.dark");
 
   return (
     <HStack>
@@ -58,7 +61,9 @@ export default function ProductQuantity(props: {
         )}
       </Button>
 
-      <Input {...input} w="3.5rem" />
+      <Text p="6px" rounded="full" color={textColor}>
+        {quantity}
+      </Text>
 
       <Button size="sm" {...inc}>
         +
