@@ -17,7 +17,7 @@ const WomensClothing = () => {
       w="90%"
       mx="auto"
     >
-      <ProductRow rowTitle="Men's Clothing" amount={36} />
+      <ProductRow rowTitle="Women's Clothing" amount={36} />
     </Center>
   );
 };
