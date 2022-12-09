@@ -79,7 +79,7 @@ export default function Cart(props: any) {
                     <CartItem
                       key={nanoid()}
                       id={item.id}
-                      title={item.id}
+                      title={item.title}
                       price={item.price}
                       image={item.image}
                       quantity={item.quantity}
