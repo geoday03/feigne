@@ -1,6 +1,7 @@
 import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
+import { useAppDispatch } from "lib/app/hooks";
 import { CartItemConfig } from "lib/types/cart-item-config";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HR from "../HR";
 import ProductQuantity from "../product/ProductQuantity";
 
@@ -11,6 +12,15 @@ export default function CartItem(props: CartItemConfig) {
   });
 
   const [quantity, setQuantity] = useState(props.quantity);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: "cart/updateQuantity",
+      payload: { id: props.id, quantity: quantity },
+    });
+  }, [quantity, dispatch, props.id]);
 
   return (
     <VStack>
