@@ -1,5 +1,6 @@
 import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
 import { CartItemConfig } from "lib/types/cart-item-config";
+import { useState } from "react";
 import HR from "../HR";
 import ProductQuantity from "../product/ProductQuantity";
 
@@ -8,6 +9,8 @@ export default function CartItem(props: CartItemConfig) {
     style: "currency",
     currency: "USD",
   });
+
+  const [quantity, setQuantity] = useState(props.quantity);
 
   return (
     <VStack>
@@ -30,13 +33,17 @@ export default function CartItem(props: CartItemConfig) {
             {props.title}
             <br />
             <Text mt="15%" fontWeight={{ base: "semibold", md: "400" }}>
-              {formatter.format(props.price * props.quantity)}
+              {formatter.format(props.price * quantity)}
             </Text>
           </Text>
         </VStack>
 
         <Box ml="auto">
-          <ProductQuantity quantity={props.quantity} id={props.id} />
+          <ProductQuantity
+            quantity={quantity}
+            setQuantity={setQuantity}
+            id={props.id}
+          />
         </Box>
       </Flex>
     </VStack>
