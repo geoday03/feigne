@@ -18,7 +18,7 @@ const AmongUs = () => {
       h="100%"
       mx="auto"
     >
-      <ProductRow rowTitle="Among Us: Sus Edition Collection" amount={69} />
+      <ProductRow rowTitle="Among Us Collection" amount={69} />
     </Center>
   );
 };
