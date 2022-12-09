@@ -88,12 +88,7 @@ export default function Product() {
         </Box>
 
         <Box>
-          <PurchaseMenu
-            title="Product Title"
-            price={3522}
-            image="https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
-            quantity={1}
-          />
+          <PurchaseMenu />
         </Box>
       </Flex>
 

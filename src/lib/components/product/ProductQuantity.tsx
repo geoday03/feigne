@@ -21,33 +21,23 @@ export default function ProductQuantity(props: {
   id: string;
 }) {
   const [quantity, setQuantity] = useState(props.quantity);
-
   const dispatch = useAppDispatch();
 
-  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
-    useNumberInput({
-      step: 1,
-      defaultValue: 1,
-      min: 0,
-      max: 100,
-      precision: 0,
-      onChange: (q: any) => {
-        setQuantity(q);
-
-        if (q == 0) {
-          dispatch({ type: "cart/remove", payload: props.id });
-          setQuantity(1);
-        }
-      },
-    });
-
-  const inc = getIncrementButtonProps();
-  const dec = getDecrementButtonProps();
-  const input = getInputProps();
+  useEffect(() => {
+    if (quantity == 0) {
+      dispatch({ type: "cart/remove", payload: props.id });
+      setQuantity(props.quantity);
+    }
+  }, [dispatch, props.id, props.quantity, quantity]);
 
   return (
     <HStack>
-      <Button size="sm" {...dec}>
+      <Button
+        size="sm"
+        onClick={() => {
+          return setQuantity(quantity - 1);
+        }}
+      >
         {props.quantity == 1 || props.quantity == 0 ? (
           <Icon
             as={DeleteIcon}
@@ -58,9 +48,9 @@ export default function ProductQuantity(props: {
         )}
       </Button>
 
-      <Input {...input} w="3.5rem" />
+      <Input w="3.5rem" defaultValue={quantity} />
 
-      <Button size="sm" {...inc}>
+      <Button size="sm" onClick={() => setQuantity(quantity + 1)}>
         +
       </Button>
     </HStack>

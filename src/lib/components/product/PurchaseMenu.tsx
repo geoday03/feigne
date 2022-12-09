@@ -16,12 +16,7 @@ import DeliveryLocation from "../user/DeliveryAddress";
 import ShippingMethod from "../user/ShippingMethod";
 
 // CartItemConfig to pass state here for the add to cart state functionality
-export default function PurchaseMenu(props: {
-  title: string;
-  price: number;
-  image: string;
-  quantity: number;
-}) {
+export default function PurchaseMenu(props: any) {
   let quantity = [];
 
   for (let i = 2; i < 101; i++) {
@@ -42,7 +37,7 @@ export default function PurchaseMenu(props: {
     currency: "USD",
   });
 
-  const [pQuantity, setPquantity] = useState(props.quantity);
+  const [pQuantity, setPquantity] = useState(1);
 
   return (
     <Box
@@ -89,9 +84,11 @@ export default function PurchaseMenu(props: {
           dispatch({
             type: "cart/append",
             payload: {
-              title: props.title,
-              price: props.price,
-              image: props.image,
+              title: "Product Title",
+              price: 3522,
+              image:
+                "https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg",
+
               quantity: pQuantity,
             },
           })
