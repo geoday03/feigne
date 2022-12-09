@@ -15,7 +15,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useAppDispatch } from "lib/app/hooks";
-import { useEffect, useState } from "react";
 
 export default function ProductQuantity(props: {
   quantity: number;
