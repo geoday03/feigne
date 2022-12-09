@@ -71,7 +71,7 @@ export default function Cart(props: any) {
           </DrawerHeader>
 
           <DrawerBody w="100%">
-            <HR />
+            <HR mb="1rem" />
             {cart.items.length > 0 ? (
               cart.items.map((item: CartItemConfig, i: number) => (
                 <Box>
