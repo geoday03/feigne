@@ -19,11 +19,12 @@ import { useEffect, useState } from "react";
 
 export default function ProductQuantity(props: {
   quantity: number;
+  setQuantity: Function;
   id: string;
 }) {
-  const [quantity, setQuantity] = useState(props.quantity);
-
   const dispatch = useAppDispatch();
+
+  const { quantity, setQuantity } = props;
 
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
