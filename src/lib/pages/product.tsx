@@ -17,7 +17,7 @@ import { NextSeo } from "next-seo";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
 import { productService } from "lib/features/product-service";
 
-export default function Product() {
+export default function Product(props: { product: ProductType }) {
   const backgroundColor = useColorModeValue(
     "background.light",
     "background.dark"
@@ -34,10 +34,11 @@ export default function Product() {
   const id = router.query.pid;
 
   useEffect(() => {
+    console.log(props.product);
     dispatch(getProduct(id as string))
       .unwrap()
       .then((p) => setProduct(p));
-  }, [dispatch, id]);
+  }, [dispatch, id, props.product]);
 
   return (
     <Box
@@ -164,9 +165,7 @@ export async function getStaticProps() {
 
   const id = router.query.pid;
 
-  const data = await productService.getProduct(id as string);
+  const product = productService.getProduct(id as string);
 
-  console.log(data);
-
-  return { props: { data }, revalidate: 1 };
+  return { props: { product }, revalidate: 1 };
 }
