@@ -47,7 +47,24 @@ export default function Product() {
       pt="60px"
       mx="auto"
     >
-      <NextSeo title={product?.title || "Product Title"} />
+      <NextSeo
+        title={product?.title || "Product Title"}
+        description={product?.description}
+        openGraph={{
+          url: `https://feigne.app/${product?.id}` || "https://feigne.app/404",
+          title: product?.title,
+          description: product?.description || "Product description",
+          images: [
+            {
+              url: product?.image || "https://www.example.ie/og-image-01.jpg",
+              width: 800,
+              height: 600,
+              alt: "Og Image Alt",
+              type: "image/jpeg",
+            },
+          ],
+        }}
+      />
 
       <Flex direction={{ base: "column", md: "row" }} gap="3rem">
         <Box w="100%" rounded="3xl">
