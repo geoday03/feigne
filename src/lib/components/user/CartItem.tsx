@@ -49,7 +49,7 @@ export default function CartItem(props: CartItemConfig) {
           >
             {props.title}
           </Text>
-          <br />
+
           <Text mt="15%" fontWeight={{ base: "semibold", md: "400" }}>
             {formatter.format(
               parseFloat(props.price.substring(1).replace(",", "")) * quantity
@@ -57,7 +57,7 @@ export default function CartItem(props: CartItemConfig) {
           </Text>
         </VStack>
 
-        <Box ml="auto">
+        <Box>
           <ProductQuantity
             quantity={quantity}
             setQuantity={setQuantity}
