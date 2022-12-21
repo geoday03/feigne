@@ -1,12 +1,6 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Image,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 import ProductRow from "lib/components/product/ProductRow";
+import { NextSeo } from "next-seo";
 
 const Electronics = () => {
   return (
@@ -16,8 +10,35 @@ const Electronics = () => {
       overflowX="clip"
       w="90%"
       mx="auto"
+      gap="2rem"
     >
-      <ProductRow rowTitle="Newest Electronics" amount={36} />
+      <NextSeo title="Electronics" />
+
+      <ProductRow
+        rowTitle="Gaming Headsets"
+        category="gamingHeadsets"
+        amount={5}
+      />
+
+      <ProductRow
+        rowTitle={"Gaming Laptops"}
+        category={"gamingLaptops"}
+        amount={5}
+      />
+
+      <ProductRow rowTitle={"RAM Sticks"} category={"ramSticks"} amount={5} />
+
+      <ProductRow
+        rowTitle={"Monitors"}
+        category={"computerMonitors"}
+        amount={5}
+      />
+
+      <ProductRow
+        rowTitle={"Solid State Hard Drives"}
+        category={"SSDs"}
+        amount={5}
+      />
     </Center>
   );
 };

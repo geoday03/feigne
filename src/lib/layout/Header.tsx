@@ -20,10 +20,23 @@ import Cart from "lib/components/user/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
 import ShippingMethod from "lib/components/user/ShippingMethod";
 import DeliveryLocation from "lib/components/user/DeliveryAddress";
+import { useScrollDirection } from "lib/hooks/useScrollDirection";
+import useScrollPosition from "lib/hooks/useScrollPosition";
 
 const Header = () => {
+  const scrollDir = useScrollDirection();
+  const scrollPos = useScrollPosition();
+
   return (
-    <Flex flexDirection="column" top="0" position="sticky" zIndex={100}>
+    <Flex
+      flexDirection="column"
+      top="0"
+      position="sticky"
+      zIndex={100}
+      transition="box-shadow .5s"
+      boxShadow={scrollPos > 5 ? useColorModeValue("lg", "xl") : "none"}
+      backgroundColor={useColorModeValue("background.light", "background.dark")}
+    >
       <Flex
         as="header"
         alignItems="center"
@@ -38,8 +51,8 @@ const Header = () => {
         <Center w="100%">
           <HeaderDrawer
             display={{
-              base: "none",
-              md: "flex",
+              base: "flex",
+              md: "none",
             }}
           />
 
@@ -48,6 +61,7 @@ const Header = () => {
               textDecor="none"
               _hover={{ textDecoration: "none" }}
               mr="6%"
+              ml={{ base: "0", md: 7 }}
               display={{
                 base: "none",
                 md: "flex",

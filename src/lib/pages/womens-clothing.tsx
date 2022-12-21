@@ -1,12 +1,8 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Image,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
+
 import ProductRow from "lib/components/product/ProductRow";
+
+import { NextSeo } from "next-seo";
 
 const WomensClothing = () => {
   return (
@@ -16,8 +12,27 @@ const WomensClothing = () => {
       overflowX="clip"
       w="90%"
       mx="auto"
+      gap="2rem"
     >
-      <ProductRow rowTitle="Women's Clothing" amount={36} />
+      <NextSeo title="Women's Clothing" />
+
+      <ProductRow
+        rowTitle="Women's Pants"
+        amount={10}
+        category={"womensPants"}
+      />
+
+      <ProductRow
+        rowTitle="Women's Shirts"
+        amount={10}
+        category={"womensShirts"}
+      />
+
+      <ProductRow
+        rowTitle="Women's Jackets"
+        amount={10}
+        category={"womensJackets"}
+      />
     </Center>
   );
 };

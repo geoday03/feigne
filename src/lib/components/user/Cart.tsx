@@ -27,7 +27,7 @@ export default function Cart(props: any) {
 
   const btnRef = useRef(null);
 
-  const cart = useAppSelector((state) => state);
+  const cart = useAppSelector((state) => state.cartSlice);
 
   const [itemCount, setItemCount] = useState(0);
 
@@ -44,7 +44,11 @@ export default function Cart(props: any) {
             ? "green"
             : useColorModeValue("blackAlpha", "gray")
         }
-        backgroundColor={cart.items.length > 0 ? "cart.green" : "gray.900"}
+        backgroundColor={
+          cart.items.length > 0
+            ? "cart.green"
+            : useColorModeValue("gray.900", "gray.700")
+        }
         leftIcon={<CartIcon boxSize="24px" fill="text.dark" />}
         onClick={onOpen}
         p="1rem"
@@ -74,7 +78,7 @@ export default function Cart(props: any) {
             <HR mb="1rem" />
             {cart.items.length > 0 ? (
               cart.items.map((item: CartItemConfig, i: number) => (
-                <Box>
+                <Box key={nanoid()}>
                   {
                     <CartItem
                       key={nanoid()}

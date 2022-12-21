@@ -3,4 +3,5 @@ export interface ProductCardConfig {
   title?: string;
   price?: string;
   image?: string;
+  reviewLength?: number;
 }

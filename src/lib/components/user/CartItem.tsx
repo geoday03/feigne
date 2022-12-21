@@ -9,6 +9,7 @@ export default function CartItem(props: CartItemConfig) {
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
+    maximumFractionDigits: 2,
   });
 
   const [quantity, setQuantity] = useState(props.quantity);
@@ -25,26 +26,34 @@ export default function CartItem(props: CartItemConfig) {
   return (
     <VStack>
       <Flex gap="1rem" align="center" w="100%" mb="15px">
-        <Image
-          src={props.image}
-          alt={props.title}
-          objectFit="cover"
-          w={{ base: "25%", md: "30%" }}
-          rounded="xl"
-        />
+        <Box w={100}>
+          <Image
+            src={props.image}
+            alt={props.title}
+            h={100}
+            mx="auto"
+            objectFit="contain"
+            rounded="xl"
+            mr={5}
+            mb="auto"
+          />
+        </Box>
 
-        <VStack mb="auto" mr="10px">
+        <VStack mb="auto" mr="10px" align="left">
           <Text
             fontSize={{ base: "15px", md: "1rem" }}
             lineHeight="1"
             fontWeight="bold"
-            maxW="8.75rem"
+            w={[100, 200, 200]}
+            noOfLines={2}
           >
             {props.title}
-            <br />
-            <Text mt="15%" fontWeight={{ base: "semibold", md: "400" }}>
-              {formatter.format(props.price * quantity)}
-            </Text>
+          </Text>
+          <br />
+          <Text mt="15%" fontWeight={{ base: "semibold", md: "400" }}>
+            {formatter.format(
+              parseFloat(props.price.substring(1).replace(",", "")) * quantity
+            )}
           </Text>
         </VStack>
 
