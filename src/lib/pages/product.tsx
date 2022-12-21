@@ -15,6 +15,7 @@ import { useAppDispatch } from "lib/app/hooks";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
+import { productService } from "lib/features/product-service";
 
 export default function Product() {
   const backgroundColor = useColorModeValue(
@@ -156,4 +157,16 @@ export default function Product() {
       </Box>
     </Box>
   );
+}
+
+export async function getStaticProps() {
+  const router = useRouter();
+
+  const id = router.query.pid;
+
+  const data = await productService.getProduct(id as string);
+
+  console.log(data);
+
+  return { props: { data }, revalidate: 1 };
 }
