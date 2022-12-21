@@ -66,6 +66,7 @@ export default function ProductRow(props: {
               <Stack key={nanoid()} p="25px">
                 <Skeleton
                   height="240px"
+                  w="40vw"
                   startColor={useColorModeValue(
                     "background.dark",
                     "background.light"
