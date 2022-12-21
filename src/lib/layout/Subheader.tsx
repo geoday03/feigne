@@ -31,7 +31,7 @@ export default function Subheader(props: any) {
     Shop: "/shop",
     "Men's Clothing": "/shop/clothing/men",
     "Women's Clothing": "/shop/clothing/women",
-    Jewelery: "/shop/jewelery",
+    Jewelry: "/shop/jewelry",
     Electronics: "/shop/electronics",
     "Among Us": "/shop/among-us",
   };

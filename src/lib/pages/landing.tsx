@@ -1,43 +1,54 @@
-import { MoonIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Center,
-  Image,
-  Text,
-  Card,
-  CardBody,
-  Button,
-  Heading,
-  CardFooter,
-  Divider,
-  Stack,
-  ButtonGroup,
-} from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
+
 import ProductRow from "lib/components/product/ProductRow";
+
+import { NextSeo } from "next-seo";
 
 const Landing = () => {
   return (
-    <Center
+    <Flex
       pt="20px"
       flexDirection="column"
+      alignItems="left"
       mb={8}
       w={{ base: "95%", md: "90%" }}
       mx="auto"
       px="5px"
+      gap="1rem"
     >
-      <Box pb="5px">
-        <ProductRow rowTitle="New Arrivals" amount={5} />
+      <NextSeo title="Landing" />
+      <Box>
+        <ProductRow
+          rowTitle="New Arrivals"
+          amount={5}
+          category="computerMonitors"
+        />
       </Box>
-
       <Box pb="5px">
+        <ProductRow
+          rowTitle="Shop Men's Clothing"
+          amount={5}
+          category="mensJackets"
+        />
+      </Box>
+      <Box pb="5px">
+        <ProductRow
+          rowTitle="Shop Women's Clothing"
+          amount={5}
+          category="womensJackets"
+        />
+      </Box>{" "}
+      */
+    </Flex>
+  );
+};
+{
+  /* <Box pb="5px">
         <ProductRow rowTitle="Shop Men's Clothing" amount={5} />
       </Box>
 
       <Box pb="5px">
         <ProductRow rowTitle="Shop Women's Clothing" amount={5} />
-      </Box>
-    </Center>
-  );
-};
-
+      </Box> */
+}
 export default Landing;

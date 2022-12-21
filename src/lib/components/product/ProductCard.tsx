@@ -18,28 +18,25 @@ import NextLink from "next/link";
 
 export default function ProductCard(product: ProductCardConfig) {
   return (
-    <LinkBox w="100%">
+    <LinkBox>
       <NextLink
-        href={{ pathname: "/product/[pid]", query: { pid: "1" } }}
+        href={{ pathname: "/product/[pid]", query: { pid: product.id } }}
         passHref
       >
         <LinkOverlay>
-          <Box
-            backgroundColor={useColorModeValue(
-              "background.light",
-              "background.dark"
-            )}
-            borderRadius="xl"
-          >
-            <Box mb="10px" rounded="xl">
+          <Box w={{ base: "40vw", md: "unset" }}>
+            <Box mb="10px" rounded="xl" h="full">
               <Image
                 src={
                   product.image ||
                   "https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
                 }
                 alt={product.title || "Product Title"}
-                rounded="xl"
-                w="100%"
+                mx="auto"
+                h={200}
+                w={[300, 400, 500]}
+                objectFit="contain"
+                overflow="hidden"
               />
             </Box>
 
@@ -63,21 +60,22 @@ export default function ProductCard(product: ProductCardConfig) {
                 color="gray.600"
                 fontSize="xs"
                 alignContent="center"
-                gap="3px"
                 flexDirection="row"
               >
-                <ShoppingBagFilledIcon
-                  fill={useColorModeValue(
-                    "background.dark",
-                    "background.light"
-                  )}
-                  boxSize="15px"
-                  width="15px"
-                />
+                <Center gap="4px">
+                  <ShoppingBagFilledIcon
+                    fill={useColorModeValue(
+                      "background.dark",
+                      "background.light"
+                    )}
+                    boxSize="15px"
+                    width="15px"
+                  />
 
-                <Text color={useColorModeValue("gray.700", "gray.500")}>
-                  One day delivery
-                </Text>
+                  <Text color={useColorModeValue("gray.600", "gray.500")}>
+                    One day delivery
+                  </Text>
+                </Center>
               </Flex>
 
               <Box display="flex" mt="2" alignItems="center">
@@ -92,7 +90,10 @@ export default function ProductCard(product: ProductCardConfig) {
                   color={useColorModeValue("gray.700", "gray.500")}
                   fontSize="sm"
                 >
-                  420 reviews
+                  {product.reviewLength && product.reviewLength > 0
+                    ? product.reviewLength
+                    : 420}{" "}
+                  reviews
                 </Box>
               </Box>
             </Stack>

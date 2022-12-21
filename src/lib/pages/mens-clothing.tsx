@@ -1,12 +1,8 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Image,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
+
 import ProductRow from "lib/components/product/ProductRow";
+
+import { NextSeo } from "next-seo";
 
 const MensClothing = () => {
   return (
@@ -17,8 +13,19 @@ const MensClothing = () => {
       w={{ base: "95%", md: "90%" }}
       pt="10px"
       mx="auto"
+      mb={8}
     >
-      <ProductRow rowTitle="Men's Clothing" amount={36} />
+      <NextSeo title="Men's Clothing" />
+
+      <ProductRow rowTitle="Men's Shirts" amount={10} category={"mensShirts"} />
+
+      <ProductRow
+        rowTitle="Men's Jackets"
+        amount={10}
+        category={"mensJackets"}
+      />
+
+      <ProductRow rowTitle="Men's Pants" amount={10} category={"mensPants"} />
     </Center>
   );
 };

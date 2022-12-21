@@ -1,12 +1,8 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Image,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
+
 import ProductRow from "lib/components/product/ProductRow";
+
+import { NextSeo } from "next-seo";
 
 const AmongUs = () => {
   return (
@@ -17,8 +13,21 @@ const AmongUs = () => {
       w="90%"
       h="100%"
       mx="auto"
+      gap="2rem"
     >
-      <ProductRow rowTitle="Among Us Collection" amount={69} />
+      <NextSeo title="Among Us" />
+
+      <ProductRow
+        rowTitle="Among Us Dolls"
+        category={"amongUsDolls"}
+        amount={30}
+      />
+
+      <ProductRow
+        rowTitle="Among Us Toys"
+        category={"amongUsToys"}
+        amount={30}
+      />
     </Center>
   );
 };
