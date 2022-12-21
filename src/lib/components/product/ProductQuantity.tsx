@@ -49,15 +49,16 @@ export default function ProductQuantity(props: {
   const textColor = useColorModeValue("text.light", "text.dark");
 
   return (
-    <HStack>
+    <HStack w="full">
       <Button size="sm" {...dec}>
         {quantity == 1 ? (
           <Icon
             as={DeleteIcon}
             fill={useColorModeValue("text.light", "text.dark")}
+            boxSize="12px"
           />
         ) : (
-          "-"
+          <Text boxSize="12px">-</Text>
         )}
       </Button>
 
