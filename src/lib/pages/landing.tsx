@@ -16,7 +16,7 @@ const Landing = () => {
       px="5px"
       gap="1rem"
     >
-      <NextSeo title="Feigne: A Mockup E-Commerce Application" />
+      <NextSeo title="Feigne" />
       <Box>
         <ProductRow
           rowTitle="New Arrivals"
@@ -37,8 +37,7 @@ const Landing = () => {
           amount={5}
           category="womensJackets"
         />
-      </Box>{" "}
-      */
+      </Box>
     </Flex>
   );
 };
