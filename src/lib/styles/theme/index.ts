@@ -6,13 +6,6 @@ import { config } from "./config";
 import { fonts } from "./fonts";
 
 const customTheme = extendTheme({
-  styles: {
-    global: (props: string[]) => ({
-      body: {
-        bg: useColorModeValue("background.light", "background.dark"),
-      },
-    }),
-  },
   fonts,
   colors,
   config,
