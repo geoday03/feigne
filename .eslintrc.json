@@ -1,11 +1,3 @@
 {
-  "extends": "next/core-web-vitals",
-  "rules": {
-    "react/no-unescaped-entities": "off",
-    "react/jsx-key": "off",
-    "@next/next/google-font-display": "off",
-    "jsx-a11y/alt-text": "off",
-    "react/no-children-prop": "off",
-    "react-hooks/rules-of-hooks": "off"
-  }
+  "extends": "next/core-web-vitals"
 }

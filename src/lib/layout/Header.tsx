@@ -8,6 +8,7 @@ import {
   Spacer,
   Wrap,
   WrapItem,
+  useColorMode,
 } from "@chakra-ui/react";
 import SubHeader from "./Subheader";
 import SearchBar from "lib/components/SearchBar";
@@ -27,6 +28,8 @@ const Header = () => {
   const scrollDir = useScrollDirection();
   const scrollPos = useScrollPosition();
 
+  const { colorMode } = useColorMode();
+
   return (
     <Flex
       flexDirection="column"
@@ -34,7 +37,7 @@ const Header = () => {
       position="sticky"
       zIndex={100}
       transition="box-shadow .5s"
-      boxShadow={scrollPos > 5 ? useColorModeValue("lg", "xl") : "none"}
+      boxShadow={scrollPos > 5 ? (colorMode == "light" ? "lg" : "xl") : "none"}
       backgroundColor={useColorModeValue("background.light", "background.dark")}
     >
       <Flex

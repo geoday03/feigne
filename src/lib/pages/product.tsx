@@ -17,7 +17,7 @@ import { NextSeo } from "next-seo";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
 import { productService } from "lib/features/product-service";
 
-export default function Product(props: { product: ProductType }) {
+export default function Product() {
   const backgroundColor = useColorModeValue(
     "background.light",
     "background.dark"
@@ -34,11 +34,11 @@ export default function Product(props: { product: ProductType }) {
   const id = router.query.pid;
 
   useEffect(() => {
-    console.log(props.product);
+    console.log(product);
     dispatch(getProduct(id as string))
       .unwrap()
       .then((p) => setProduct(p));
-  }, [dispatch, id, props.product]);
+  }, [dispatch, id, product]);
 
   return (
     <Box
@@ -76,6 +76,7 @@ export default function Product(props: { product: ProductType }) {
                 product?.image ||
                 "https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
               }
+              alt={product?.title}
               borderRadius="3xl"
               position="sticky"
               top="200"
@@ -88,6 +89,7 @@ export default function Product(props: { product: ProductType }) {
               product?.image ||
               "https://i.etsystatic.com/26514007/r/il/b310e5/3653094048/il_570xN.3653094048_d2ul.jpg"
             }
+            alt={product?.title}
             borderRadius="3xl"
             position="sticky"
             top="200"
@@ -158,14 +160,4 @@ export default function Product(props: { product: ProductType }) {
       </Box>
     </Box>
   );
-}
-
-export async function getStaticProps() {
-  const router = useRouter();
-
-  const id = router.query.pid;
-
-  const product = productService.getProduct(id as string);
-
-  return { props: { product }, revalidate: 1 };
 }

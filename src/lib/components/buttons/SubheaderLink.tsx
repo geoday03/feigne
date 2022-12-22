@@ -3,10 +3,14 @@ import { useRouter } from "next/router";
 
 import {
   Box,
+  Button,
+  color,
   Icon,
   Link,
   RadioProps,
   Text,
+  textDecoration,
+  useColorMode,
   useColorModeValue,
   useRadio,
 } from "@chakra-ui/react";
@@ -18,6 +22,7 @@ export default function SubheaderLink(props: {
   icon: any;
 }) {
   const router = useRouter();
+  const { colorMode } = useColorMode();
   const borderColor = useColorModeValue("text.light", "border.dark");
 
   const handleClick = (e: any) => {
@@ -25,55 +30,60 @@ export default function SubheaderLink(props: {
   };
 
   return (
-    <NextLink href={props.href} passHref>
-      <Link
-        colorScheme="gray"
-        variant="ghost"
-        onClick={handleClick}
-        _hover={{ textDecoration: "none" }}
-        mx="10px"
-      >
-        <Box
-          fill={
-            router.pathname == props.href
-              ? useColorModeValue("text.light", "text.dark")
-              : useColorModeValue("#717171", "#a3998d")
-          }
-          borderBottomWidth="2.5px"
-          borderBottomColor={
-            router.pathname == props.href
-              ? useColorModeValue("text.light", "text.dark")
-              : "rgba(0,0,0,0)"
-          }
-          color={
-            router.pathname == props.href
-              ? useColorModeValue("text.light", "text.dark")
-              : useColorModeValue("#717171", "#a3998d")
-          }
-          _hover={{
-            textDecoration: "none",
-            color: useColorModeValue("text.light", "text.dark"),
-            fill: useColorModeValue("text.light", "text.dark"),
+    <Button
+      as={NextLink}
+      href={props.href}
+      variant="unstyled"
+      rounded="none"
+      textAlign="center"
+      h="max-content"
+      p="15px"
+      borderBottomWidth="2.5px"
+      borderBottomColor={
+        router.pathname == props.href
+          ? colorMode == "light"
+            ? "text.light"
+            : "text.dark"
+          : "rgba(0,0,0,0)"
+      }
+      color={
+        router.pathname == props.href
+          ? colorMode == "light"
+            ? "text.light"
+            : "text.dark"
+          : colorMode == "light"
+          ? "#717171"
+          : "#a3998d"
+      }
+      fill={
+        router.pathname == props.href
+          ? colorMode == "light"
+            ? "text.light"
+            : "text.dark"
+          : colorMode == "light"
+          ? "#717171"
+          : "#a3998d"
+      }
+      _hover={{
+        textDecoration: "none",
+        color: colorMode == "light" ? "text.light" : "text.dark",
+        fill: colorMode == "light" ? "text.light" : "text.dark",
 
-            borderBottomColor:
-              router.pathname == props.href
-                ? useColorModeValue("text.light", "text.dark")
-                : useColorModeValue("gray.200", "gray.600"),
-          }}
-          px="10px"
-        >
-          <Icon w="100%" h="30px" mb="10px" as={props.icon} />
+        borderBottomColor:
+          router.pathname == props.href
+            ? colorMode == "light"
+              ? "text.light"
+              : "text.dark"
+            : colorMode == "light"
+            ? "gray.200"
+            : "gray.600",
+      }}
+    >
+      <Icon as={props.icon} boxSize={30} mb={5} w="full" />
 
-          <Text
-            borderColor={borderColor}
-            pb="20px"
-            whiteSpace="nowrap"
-            fontSize={{ base: "14px", md: "15px" }}
-          >
-            {props.text}
-          </Text>
-        </Box>
-      </Link>
-    </NextLink>
+      <Text fontSize={15} whiteSpace="nowrap">
+        {props.text}
+      </Text>
+    </Button>
   );
 }
