@@ -9,13 +9,11 @@ import {
 } from "@chakra-ui/react";
 import { useAppDispatch } from "lib/app/hooks";
 import LockIcon from "lib/Icons/LockIcon";
-import { CartItemConfig } from "lib/types/cart-item-config";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BrandedButton from "../buttons/BrandedButton";
 import DeliveryLocation from "../user/DeliveryAddress";
 import ShippingMethod from "../user/ShippingMethod";
 
-// CartItemConfig to pass state here for the add to cart state functionality
 export default function PurchaseMenu(props: {
   title?: string;
   image?: string;
