@@ -37,7 +37,7 @@ const Header = () => {
       position="sticky"
       zIndex={100}
       transition="box-shadow .5s"
-      boxShadow={scrollPos > 5 ? (colorMode == "light" ? "lg" : "xl") : "none"}
+      boxShadow={scrollPos > 5 ? (colorMode == "light" ? "lg" : "2xl") : "none"}
       backgroundColor={useColorModeValue("background.light", "background.dark")}
     >
       <Flex
