@@ -6,8 +6,6 @@ import {
   Link,
   useColorModeValue,
   Spacer,
-  Wrap,
-  WrapItem,
   useColorMode,
 } from "@chakra-ui/react";
 import SubHeader from "./Subheader";

@@ -26,6 +26,11 @@ export default function ProductRow(props: {
 
   const [products, setProducts] = useState<Product[]>([]);
 
+  const backgroundColor = useColorModeValue(
+    "background.dark",
+    "background.light"
+  );
+
   useEffect(() => {
     dispatch(
       getProducts({ category: props.category, resultLimit: props.amount })
@@ -63,22 +68,17 @@ export default function ProductRow(props: {
               />
             ))
           : Array.from(Array(props.amount).fill(0).keys()).map(() => (
-              <Stack key={nanoid()} p="25px">
+              <Stack key={nanoid()} p="10px">
                 <Skeleton
-                  height="240px"
-                  w="40vw"
-                  startColor={useColorModeValue(
-                    "background.dark",
-                    "background.light"
-                  )}
+                  h={280}
+                  w={{ base: "280px", md: "unset" }}
+                  startColor={backgroundColor}
                 />
 
                 <SkeletonText
-                  height="6px"
-                  startColor={useColorModeValue(
-                    "background.dark",
-                    "background.light"
-                  )}
+                  height="full"
+                  w={{ base: "40vw", md: "unset" }}
+                  startColor={backgroundColor}
                 />
               </Stack>
             ))}
