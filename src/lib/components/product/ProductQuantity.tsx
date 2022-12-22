@@ -52,11 +52,7 @@ export default function ProductQuantity(props: {
     <HStack w="full">
       <Button size="sm" {...dec}>
         {quantity == 1 ? (
-          <Icon
-            as={DeleteIcon}
-            fill={useColorModeValue("text.light", "text.dark")}
-            boxSize="12px"
-          />
+          <Icon as={DeleteIcon} fill={textColor} boxSize="12px" />
         ) : (
           <Text boxSize="12px">-</Text>
         )}

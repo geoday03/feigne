@@ -42,13 +42,5 @@ const Landing = () => {
     </Flex>
   );
 };
-{
-  /* <Box pb="5px">
-        <ProductRow rowTitle="Shop Men's Clothing" amount={5} />
-      </Box>
 
-      <Box pb="5px">
-        <ProductRow rowTitle="Shop Women's Clothing" amount={5} />
-      </Box> */
-}
 export default Landing;

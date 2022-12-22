@@ -34,7 +34,6 @@ export default function Product() {
   const id = router.query.pid;
 
   useEffect(() => {
-    console.log(product);
     dispatch(getProduct(id as string))
       .unwrap()
       .then((p) => setProduct(p));

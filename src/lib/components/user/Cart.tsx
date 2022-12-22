@@ -13,6 +13,7 @@ import {
   Flex,
   Box,
   useColorModeValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import CartItem from "./CartItem";
@@ -29,6 +30,8 @@ export default function Cart(props: any) {
 
   const cart = useAppSelector((state) => state.cartSlice);
 
+  const { colorMode } = useColorMode();
+
   const [itemCount, setItemCount] = useState(0);
 
   return (
@@ -42,12 +45,16 @@ export default function Cart(props: any) {
         colorScheme={
           cart.items.length > 0
             ? "green"
-            : useColorModeValue("blackAlpha", "gray")
+            : colorMode == "light"
+            ? "blackAlpha"
+            : "gray"
         }
         backgroundColor={
           cart.items.length > 0
             ? "cart.green"
-            : useColorModeValue("gray.900", "gray.700")
+            : colorMode == "light"
+            ? "gray.900"
+            : "gray.700"
         }
         leftIcon={<CartIcon boxSize="24px" fill="text.dark" />}
         onClick={onOpen}

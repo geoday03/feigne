@@ -60,7 +60,7 @@ export default function Subheader(props: any) {
       mb="0"
       {...props}
     >
-      <Flex mx="auto" gap="20px" px="20px">
+      <Flex mx="auto" gap={10} px="20px">
         {Object.keys(navLinks).map((key, i) => {
           return (
             <SubheaderLink

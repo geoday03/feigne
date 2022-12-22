@@ -2,17 +2,14 @@ import React, { Component, ReactNode } from "react";
 import { useRouter } from "next/router";
 
 import {
-  Box,
   Button,
-  color,
+  Center,
+  Flex,
   Icon,
-  Link,
-  RadioProps,
   Text,
-  textDecoration,
   useColorMode,
   useColorModeValue,
-  useRadio,
+  VStack,
 } from "@chakra-ui/react";
 import NextLink, { LinkProps } from "next/link";
 
@@ -36,8 +33,7 @@ export default function SubheaderLink(props: {
       variant="unstyled"
       rounded="none"
       textAlign="center"
-      h="max-content"
-      p="15px"
+      h="full"
       borderBottomWidth="2.5px"
       borderBottomColor={
         router.pathname == props.href
@@ -79,11 +75,13 @@ export default function SubheaderLink(props: {
             : "gray.600",
       }}
     >
-      <Icon as={props.icon} boxSize={30} mb={5} w="full" />
+      <Flex flexDirection="column" gap={2.5} pb={3} px={3}>
+        <Icon as={props.icon} boxSize={30} w="full" mx="auto" />
 
-      <Text fontSize={15} whiteSpace="nowrap">
-        {props.text}
-      </Text>
+        <Text fontSize={15} whiteSpace="nowrap">
+          {props.text}
+        </Text>
+      </Flex>
     </Button>
   );
 }
