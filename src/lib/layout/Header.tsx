@@ -19,11 +19,9 @@ import Cart from "lib/components/user/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
 import ShippingMethod from "lib/components/user/ShippingMethod";
 import DeliveryLocation from "lib/components/user/DeliveryAddress";
-import { useScrollDirection } from "lib/hooks/useScrollDirection";
 import useScrollPosition from "lib/hooks/useScrollPosition";
 
 const Header = () => {
-  const scrollDir = useScrollDirection();
   const scrollPos = useScrollPosition();
 
   const { colorMode } = useColorMode();

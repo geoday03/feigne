@@ -8,14 +8,13 @@ import {
 } from "@chakra-ui/react";
 import ProductRow from "lib/components/product/ProductRow";
 import { nanoid } from "nanoid";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Product as ProductType } from "lib/types/product";
 import { getProduct } from "lib/features/product-slice";
 import { useAppDispatch } from "lib/app/hooks";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
-import { productService } from "lib/features/product-service";
 
 export default function Product() {
   const backgroundColor = useColorModeValue(
@@ -51,20 +50,6 @@ export default function Product() {
       <NextSeo
         title={product?.title || "Product Title"}
         description={product?.description}
-        openGraph={{
-          url: `https://feigne.app/${product?.id}` || "https://feigne.app/404",
-          title: product?.title,
-          description: product?.description || "Product description",
-          images: [
-            {
-              url: product?.image || "https://www.example.ie/og-image-01.jpg",
-              width: 800,
-              height: 600,
-              alt: "Og Image Alt",
-              type: "image/jpeg",
-            },
-          ],
-        }}
       />
 
       <Flex direction={{ base: "column", md: "row" }} gap="3rem">
