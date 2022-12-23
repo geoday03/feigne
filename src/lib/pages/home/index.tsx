@@ -10,7 +10,7 @@ const Landing = () => {
       pt="20px"
       flexDirection="column"
       alignItems="left"
-      mb={8}
+      pb={8}
       w={{ base: "95%", md: "90%" }}
       mx="auto"
       px="5px"

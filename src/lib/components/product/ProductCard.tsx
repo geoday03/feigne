@@ -24,7 +24,7 @@ export default function ProductCard(product: ProductCardConfig) {
       >
         <LinkOverlay>
           <Box w={{ base: "40vw", md: "unset" }}>
-            <Box mb="10px" rounded="xl" h="full">
+            <Box mb="10px" rounded="xl" h="full" overflow="hidden">
               <Image
                 src={
                   product.image ||
@@ -35,7 +35,7 @@ export default function ProductCard(product: ProductCardConfig) {
                 h={200}
                 w={[300, 400, 500]}
                 objectFit="contain"
-                overflow="hidden"
+                rounded="2xl"
               />
             </Box>
 
