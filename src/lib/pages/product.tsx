@@ -78,7 +78,7 @@ export default function Product(props: { product: ProductType }) {
 
         <Box w="100%" minW="15rem">
           <Box borderBottomWidth="1px" borderColor={borderColor} pb="30px">
-            <Text fontSize="2rem" mb="10px">
+            <Text fontSize="2rem" mb="10px" lineHeight="1">
               {product?.title || "Product Title"}
             </Text>
 
