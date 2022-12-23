@@ -16,7 +16,8 @@ const Landing = () => {
       px="5px"
       gap="1rem"
     >
-      <NextSeo title="Feigne" />
+      <NextSeo title="Feigne: Mockup E-Commerce Application" />
+
       <Box>
         <ProductRow
           rowTitle="New Arrivals"

@@ -8,11 +8,8 @@ import {
 } from "@chakra-ui/react";
 import ProductRow from "lib/components/product/ProductRow";
 import { nanoid } from "nanoid";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Product as ProductType } from "lib/types/product";
-import { getProduct } from "lib/features/product-slice";
-import { useAppDispatch } from "lib/app/hooks";
-import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
 
