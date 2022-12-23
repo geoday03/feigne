@@ -24,13 +24,10 @@ export default function Product(props: { product: ProductType }) {
     "background.dark"
   );
   const borderColor = useColorModeValue("border.light", "border.dark");
-  const textColor = useColorModeValue("text.light", "text.dark");
 
-  const router = useRouter();
-
-  const id = router.query.pid;
-
-  useEffect(() => console.log(product));
+  useEffect(() => {
+    console.log(product.title);
+  }, [product.title]);
 
   return (
     <Box
@@ -42,8 +39,23 @@ export default function Product(props: { product: ProductType }) {
       mx="auto"
     >
       <NextSeo
-        title={product?.title || "Product Title"}
+        title={product?.title}
         description={product?.description}
+        canonical={`https://feigne.app/${product.id}`}
+        openGraph={{
+          url: `https://feigne.app/${product.id}`,
+          title: product.title,
+          description: product.description,
+          images: [
+            {
+              url: product.image,
+              width: 800,
+              height: 600,
+              alt: product.title,
+              type: "image/jpeg",
+            },
+          ],
+        }}
       />
 
       <Flex direction={{ base: "column", md: "row" }} gap="3rem">
