@@ -28,8 +28,6 @@ export default function SubheaderLink(props: {
 
   return (
     <Button
-      as={NextLink}
-      href={props.href}
       variant="unstyled"
       rounded="none"
       textAlign="center"
@@ -75,13 +73,15 @@ export default function SubheaderLink(props: {
             : "gray.600",
       }}
     >
-      <Flex flexDirection="column" gap={2.5} pb={3} px={3}>
-        <Icon as={props.icon} boxSize={30} w="full" mx="auto" />
+      <NextLink href={props.href}>
+        <Flex flexDirection="column" gap={2.5} pb={3} px={3}>
+          <Icon as={props.icon} boxSize={30} w="full" mx="auto" />
 
-        <Text fontSize={15} whiteSpace="nowrap">
-          {props.text}
-        </Text>
-      </Flex>
+          <Text fontSize={15} whiteSpace="nowrap">
+            {props.text}
+          </Text>
+        </Flex>
+      </NextLink>
     </Button>
   );
 }
