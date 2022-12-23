@@ -32,10 +32,12 @@ export default function ProductCard(product: ProductCardConfig) {
                 }
                 alt={product.title || "Product Title"}
                 mx="auto"
-                h={200}
-                w={[300, 400, 500]}
+                w="auto"
+                h="auto"
+                maxH={200}
+                maxW={[300, 400, 500]}
+                rounded="xl"
                 objectFit="contain"
-                rounded="2xl"
               />
             </Box>
 
