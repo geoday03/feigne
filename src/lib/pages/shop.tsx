@@ -20,7 +20,7 @@ const Shop = () => {
       mx="auto"
       px="5px"
     >
-      <NextSeo title="Shop" />
+      <NextSeo title="Feigne: Shop" description="Shop today at feigne.app" />
 
       <Box pb="5px">
         <ProductRow

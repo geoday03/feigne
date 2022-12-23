@@ -12,7 +12,10 @@ const Electronics = () => {
       mx="auto"
       gap="2rem"
     >
-      <NextSeo title="Electronics" />
+      <NextSeo
+        title="Feigne: Electronics"
+        description="Shop electronics today at feigne.app"
+      />
 
       <ProductRow
         rowTitle="Gaming Headsets"

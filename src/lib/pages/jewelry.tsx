@@ -11,7 +11,10 @@ const Jewelry = () => {
       w="90%"
       mx="auto"
     >
-      <NextSeo title="Jewelry" />
+      <NextSeo
+        title="Feigne: Jewelry"
+        description="Shop jewelry today at feigne.app"
+      />
 
       <ProductRow rowTitle="Real Jewelry" amount={36} category={"jewelry"} />
     </Center>

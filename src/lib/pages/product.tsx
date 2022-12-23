@@ -27,7 +27,7 @@ export default function Product(props: { product: ProductType }) {
       mx="auto"
     >
       <NextSeo
-        title={product?.title}
+        title={`Feigne: ${product?.title}`}
         description={product?.description}
         canonical={`https://feigne.app/${product.id}`}
         openGraph={{

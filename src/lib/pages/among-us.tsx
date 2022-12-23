@@ -15,7 +15,10 @@ const AmongUs = () => {
       mx="auto"
       gap="2rem"
     >
-      <NextSeo title="Among Us" />
+      <NextSeo
+        title="Among Us"
+        description="Shop among us today at feigne.app"
+      />
 
       <ProductRow
         rowTitle="Among Us Dolls"

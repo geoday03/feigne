@@ -15,7 +15,10 @@ const MensClothing = () => {
       mx="auto"
       mb={8}
     >
-      <NextSeo title="Men's Clothing" />
+      <NextSeo
+        title="Feigne: Men's Clothing"
+        description="Shop men's clothing today at feigne.app"
+      />
 
       <ProductRow rowTitle="Men's Shirts" amount={10} category={"mensShirts"} />
 

@@ -14,7 +14,10 @@ const WomensClothing = () => {
       mx="auto"
       gap="2rem"
     >
-      <NextSeo title="Women's Clothing" />
+      <NextSeo
+        title="Feigne: Women's Clothing"
+        description="Shop women's clothing at feigne.app"
+      />
 
       <ProductRow
         rowTitle="Women's Pants"
