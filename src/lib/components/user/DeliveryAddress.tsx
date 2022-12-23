@@ -35,7 +35,7 @@ export default function DeliveryAddress(props: any) {
   const textColor = useColorModeValue("text.light", "text.dark");
 
   return (
-    <Box transition="0.5s ease-out">
+    <Box transition="0.5s ease-out" w="full">
       <Button
         p="0"
         size="md"
