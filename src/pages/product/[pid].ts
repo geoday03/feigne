@@ -9,9 +9,9 @@ export async function getStaticPaths() {
   return { paths, fallback: "blocking" };
 }
 
-export async function getStaticProps(params: { pid: string }) {
+export async function getStaticProps(props: { params: { pid: string } }) {
   return {
-    props: {},
+    props: { product: productService.getProduct(props.params.pid) },
     revalidate: 1,
   };
 }
