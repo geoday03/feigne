@@ -18,13 +18,15 @@ const ThemeToggle = () => {
     "background.dark"
   );
 
+  const colorScheme = useColorModeValue("blackAlpha", "gray");
+
   return (
     <Box>
       <IconButton
         ml="1rem"
         aria-label="theme toggle"
         color="brand.100"
-        colorScheme={useColorModeValue("blackAlpha", "gray")}
+        colorScheme={colorScheme}
         variant="ghost"
         backgroundColor={backgroundColor}
         icon={

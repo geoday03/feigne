@@ -8,12 +8,10 @@ import {
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  Input,
-  DrawerFooter,
   useColorModeValue,
   IconButton,
 } from "@chakra-ui/react";
-import ThemeToggle2 from "lib/layout/ThemeToggle2";
+import ThemeToggle2 from "lib/components/ThemeToggle2";
 import React from "react";
 
 export default function HeaderDrawer(props: any) {

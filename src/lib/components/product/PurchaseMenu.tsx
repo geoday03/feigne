@@ -25,10 +25,6 @@ export default function PurchaseMenu(props: {
     quantity.push(i);
   }
 
-  const backgroundColor = useColorModeValue(
-    "background.light",
-    "background.dark"
-  );
   const borderColor = useColorModeValue("border.light", "border.dark");
   const textColor = useColorModeValue("text.light", "text.dark");
 

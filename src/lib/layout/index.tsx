@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Stack } from "@chakra-ui/react";
+import { Box, useColorMode } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 
 import Footer from "./Footer";
@@ -10,20 +10,18 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
+  const { colorMode } = useColorMode();
+
   return (
-    <Box>
+    <Box
+      margin="0 auto"
+      transition="0.5s ease-out"
+      bgColor={colorMode == "light" ? "background.light" : "background.dark"}
+      minH="100vh"
+    >
       <Header />
 
-      <Box
-        as="main"
-        margin="auto auto"
-        p="0"
-        m="0"
-        maxW="100%"
-        transition="0.5s ease-out"
-      >
-        {children}
-      </Box>
+      <Box as="main">{children}</Box>
 
       <MobileBottomNavigation display={{ base: "flex", md: "none" }} />
     </Box>

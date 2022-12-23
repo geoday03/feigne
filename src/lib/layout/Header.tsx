@@ -4,7 +4,6 @@ import {
   Box,
   Heading,
   Link,
-  useColorModeValue,
   Spacer,
   useColorMode,
 } from "@chakra-ui/react";
@@ -13,7 +12,7 @@ import SearchBar from "lib/components/SearchBar";
 import NextLink from "next/link";
 import HeaderDrawer from "lib/components/HeaderDrawer";
 
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "../components/ThemeToggle";
 import AddressModal from "lib/components/user/DeliveryAddress";
 import Cart from "lib/components/user/Cart";
 import ShoppingBagFilledIcon from "lib/Icons/ShoppingBagFilledIcon";
@@ -32,21 +31,12 @@ const Header = () => {
       top="0"
       position="sticky"
       zIndex={100}
-      transition="box-shadow .5s"
       boxShadow={scrollPos > 5 ? (colorMode == "light" ? "lg" : "2xl") : "none"}
-      backgroundColor={useColorModeValue("background.light", "background.dark")}
+      bgColor={colorMode == "light" ? "background.light" : "background.dark"}
+      as="header"
+      transition="0.5s ease-out"
     >
-      <Flex
-        as="header"
-        alignItems="center"
-        backgroundColor={useColorModeValue(
-          "background.light",
-          "background.dark"
-        )}
-        maxW="100%"
-        padding="10px"
-        gap="1rem"
-      >
+      <Flex alignItems="center" maxW="100%" padding="10px" gap="1rem">
         <Center w="100%">
           <HeaderDrawer
             display={{
@@ -140,18 +130,13 @@ const Header = () => {
 
       <Box
         pt="20px"
-        borderTopColor={useColorModeValue("gray.200", "rgba(0,0,0,0)")}
+        borderTopColor={colorMode == "light" ? "gray.200" : "rgba(0,0,0,0)"}
+        transition="0.5s ease-out"
         borderTopWidth="1px"
-        bgColor={useColorModeValue("background.light", "background.dark")}
       >
         <SubHeader />
       </Box>
-      <Flex
-        bgColor={useColorModeValue("background.light", "background.dark")}
-        display={{ base: "flex", md: "none" }}
-        px="3px"
-        boxShadow="base"
-      >
+      <Flex display={{ base: "flex", md: "none" }} px="3px" boxShadow="base">
         <DeliveryLocation w="100%" mx="auto" />
       </Flex>
     </Flex>

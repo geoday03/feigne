@@ -2,11 +2,6 @@ import { Button, useColorModeValue } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 
 export default function BrandedButton(props: any) {
-  const backgroundColor = useColorModeValue(
-    "background.light",
-    "background.dark"
-  );
-
   return (
     <Button
       w="100%"

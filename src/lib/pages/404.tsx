@@ -5,19 +5,21 @@ import {
   Image,
   Text,
   Link as ChakraLink,
-  useColorModeValue,
   Flex,
+  useColorMode,
 } from "@chakra-ui/react";
 import MotionBox from "lib/components/motion/Box";
 import Link from "next/link";
 
 const Page404 = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <Box
       display={{ md: "flex" }}
       flexDirection="column"
       overflowX="clip"
-      bgColor={useColorModeValue("background.light", "background.dark")}
+      bgColor={colorMode == "light" ? "background.light" : "background.dark"}
       height="87.4vh"
       width="200vh"
     >
@@ -55,7 +57,11 @@ const Page404 = () => {
               <Text>It&apos;s Okay!</Text>
               <Link href="/" passHref>
                 <Button
-                  backgroundColor={useColorModeValue("gray.300", "teal.500")}
+                  bgColor={
+                    colorMode == "light"
+                      ? "background.light"
+                      : "background.dark"
+                  }
                 >
                   Let&apos;s Head Back
                 </Button>

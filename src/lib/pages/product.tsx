@@ -16,19 +16,10 @@ import PurchaseMenu from "lib/components/product/PurchaseMenu";
 export default function Product(props: { product: ProductType }) {
   const { product } = props;
 
-  const backgroundColor = useColorModeValue(
-    "background.light",
-    "background.dark"
-  );
   const borderColor = useColorModeValue("border.light", "border.dark");
-
-  useEffect(() => {
-    console.log(product.title);
-  }, [product.title]);
 
   return (
     <Box
-      backgroundColor={backgroundColor}
       h="100%"
       w={{ sm: "full", md: "95%", lg: "95%", xl: "85%" }}
       p="1rem"

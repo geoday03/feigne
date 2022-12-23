@@ -19,8 +19,8 @@ import {
   Text,
   Center,
   Box,
+  useColorMode,
 } from "@chakra-ui/react";
-import { LocationIcon } from "lib/Icons/LocationIconSet";
 import TruckIcon from "lib/Icons/TruckIcon";
 import { useState } from "react";
 
@@ -29,23 +29,27 @@ export default function ShippingMethod(props: any) {
 
   const [value, setValue] = useState("1");
 
+  const { colorMode } = useColorMode();
+
+  const textColor = useColorModeValue("text.light", "text.dark");
+
   return (
     <>
       <Button
         size="md"
         p="0"
-        backgroundColor="rgba(0,0,0,0)"
         variant="ghost"
-        colorScheme={useColorModeValue("blackAlpha", "gray")}
+        colorScheme={colorMode == "light" ? "blackAlpha" : "gray"}
         onClick={onOpen}
         leftIcon={
           <TruckIcon
             backgroundColor="rgba(0,0,0,0)"
             boxSize="24px"
-            fill={useColorModeValue("text.light", "text.dark")}
+            fill={textColor}
+            transition="0.5s ease-out"
           />
         }
-        color={useColorModeValue("text.light", "text.dark")}
+        color={textColor}
         {...props}
       >
         <Text maxW="100%" textOverflow="ellipsis">
@@ -75,7 +79,7 @@ export default function ShippingMethod(props: any) {
                   <Radio borderColor="border.light" mr="auto" size="md">
                     <Center>
                       <Text
-                        color={useColorModeValue("text.light", "text.dark")}
+                        color={textColor}
                         fontWeight="semibold"
                         ml="50px"
                         fontSize="xl"

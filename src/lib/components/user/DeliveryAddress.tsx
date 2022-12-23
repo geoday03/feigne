@@ -20,6 +20,7 @@ import {
   Center,
   Box,
   HStack,
+  useColorMode,
 } from "@chakra-ui/react";
 import { LocationIcon } from "lib/Icons/LocationIconSet";
 import { useState } from "react";
@@ -29,15 +30,19 @@ export default function DeliveryAddress(props: any) {
 
   const [value, setValue] = useState("1");
 
+  const { colorMode } = useColorMode();
+
+  const textColor = useColorModeValue("text.light", "text.dark");
+
   return (
-    <>
+    <Box transition="0.5s ease-out">
       <Button
         p="0"
         size="md"
         onClick={onOpen}
         variant="ghost"
-        colorScheme={useColorModeValue("blackAlpha", "gray")}
-        color={useColorModeValue("text.light", "text.dark")}
+        colorScheme={colorMode == "light" ? "blackAlpha" : "gray"}
+        color={textColor}
         {...props}
       >
         <HStack>
@@ -45,7 +50,8 @@ export default function DeliveryAddress(props: any) {
             backgroundColor="rgba(0,0,0,0)"
             height="24px"
             width="24px"
-            fill={useColorModeValue("text.light", "text.dark")}
+            fill={textColor}
+            transition="0.5s ease-out"
           />
           <Text maxW="100%" textOverflow="ellipsis">
             1337 Got Root Ave
@@ -71,16 +77,16 @@ export default function DeliveryAddress(props: any) {
               </InputLeftElement>
               <Input
                 size="md"
-                boxShadow={useColorModeValue("md", "dark-lg")}
+                boxShadow={colorMode == "light" ? "md" : "dark-lg"}
                 borderColor="rgba(0,0,0,0)"
                 rounded="3xl"
                 placeholder="Add address"
                 _placeholder={{
                   pl: "5px",
-                  color: useColorModeValue(
-                    "placeholder.light",
-                    "placeholder.dark"
-                  ),
+                  color:
+                    colorMode == "light"
+                      ? "placeholder.light"
+                      : "placeholder.dark",
                 }}
               />
             </InputGroup>
@@ -97,7 +103,7 @@ export default function DeliveryAddress(props: any) {
                   <Radio borderColor="border.light" mr="auto" size="md">
                     <Center>
                       <Text
-                        color={useColorModeValue("text.light", "text.dark")}
+                        color={textColor}
                         fontWeight="semibold"
                         ml="50px"
                         fontSize="xl"
@@ -114,6 +120,6 @@ export default function DeliveryAddress(props: any) {
           </ModalBody>
         </ModalContent>
       </Modal>
-    </>
+    </Box>
   );
 }

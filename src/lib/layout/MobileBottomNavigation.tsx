@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Spacer, useColorModeValue } from "@chakra-ui/react";
+import { Box, Center, Flex, Spacer, useColorMode } from "@chakra-ui/react";
 import ShopButton from "lib/components/buttons/ShopButton";
 import WishlistButton from "lib/components/buttons/WishlistButton";
 import HeaderDrawer from "lib/components/HeaderDrawer";
@@ -6,6 +6,8 @@ import Cart from "lib/components/user/Cart";
 import React from "react";
 
 export default function MobileBottomNavigation(props: any) {
+  const { colorMode } = useColorMode();
+
   return (
     <Flex
       bottom="0"
@@ -13,7 +15,7 @@ export default function MobileBottomNavigation(props: any) {
       position="sticky"
       overflow="hidden"
       zIndex={100}
-      bgColor={useColorModeValue("background.light", "background.dark")}
+      bgColor={colorMode == "light" ? "background.light" : "background.dark"}
       boxShadow="xs"
       {...props}
     >

@@ -1,14 +1,4 @@
-import {
-  border,
-  Box,
-  Center,
-  Flex,
-  Link,
-  Spacer,
-  Text,
-  useColorModeValue,
-  useRadioGroup,
-} from "@chakra-ui/react";
+import { Flex, useColorMode, useRadioGroup } from "@chakra-ui/react";
 import SubheaderLink from "lib/components/buttons/SubheaderLink";
 import BlouseIcon from "lib/Icons/BlouseIcon";
 import CrewmateIcon from "lib/Icons/CrewmateIcon";
@@ -20,12 +10,6 @@ import NextLink from "next/link";
 import PhoneIcon from "lib/Icons/PhoneIcon";
 
 export default function Subheader(props: any) {
-  const borderColor = useColorModeValue("text.light", "border.dark");
-
-  const { value, getRadioProps, getRootProps } = useRadioGroup({
-    defaultValue: "Home",
-  });
-
   const navLinks = {
     Home: "/",
     Shop: "/shop",
@@ -46,14 +30,17 @@ export default function Subheader(props: any) {
     CrewmateIcon,
   ];
 
+  const { colorMode } = useColorMode();
+
   return (
     <Flex
       w="100%"
-      backgroundColor={useColorModeValue("background.light", "background.dark")}
+      transition="0.5s ease-out"
+      bgColor={colorMode == "light" ? "background.light" : "background.dark"}
       fontFamily="body"
       fontWeight="500"
       fontSize="15px"
-      color={useColorModeValue("text.light", "text.dark")}
+      color={colorMode == "light" ? "text.light" : "text.dark"}
       lineHeight="1"
       overflow="auto"
       pb="0"

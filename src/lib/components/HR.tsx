@@ -5,7 +5,7 @@ export default function HR(props: any) {
     <Box
       height="1px"
       width="100%"
-      backgroundColor="rgba(89, 89, 89, .2)"
+      bgColor="rgba(89, 89, 89, .2)"
       alignSelf="center"
       {...props}
     />

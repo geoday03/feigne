@@ -3,11 +3,13 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 
+import defaultSEOConfig from "../../next-seo.config";
 import { Chakra } from "lib/components/Chakra";
 import Layout from "lib/layout";
 import "lib/styles/globals.css";
 import { Provider } from "react-redux";
 import { store } from "lib/app/store";
+import { DefaultSeo } from "next-seo";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -19,6 +21,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <Provider store={store}>
+        <DefaultSeo {...defaultSEOConfig} />
         <Layout>
           <Component {...pageProps} />
 
