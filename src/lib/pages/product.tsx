@@ -16,7 +16,7 @@ import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import PurchaseMenu from "lib/components/product/PurchaseMenu";
 
-export default function Product() {
+export default function Product(product: ProductType) {
   const backgroundColor = useColorModeValue(
     "background.light",
     "background.dark"
@@ -28,15 +28,7 @@ export default function Product() {
 
   const dispatch = useAppDispatch();
 
-  const [product, setProduct] = useState<ProductType>();
-
   const id = router.query.pid;
-
-  useEffect(() => {
-    dispatch(getProduct(id as string))
-      .unwrap()
-      .then((p) => setProduct(p));
-  }, [dispatch, id, product]);
 
   return (
     <Box
