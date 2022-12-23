@@ -9,6 +9,7 @@ import {
   Skeleton,
   Stack,
   SkeletonText,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { nanoid } from "@reduxjs/toolkit";
 import { useAppDispatch } from "lib/app/hooks";
@@ -40,20 +41,12 @@ export default function ProductRow(props: {
   }, [dispatch, props.amount, props.category]);
 
   return (
-    <Box pb="15px">
+    <Box pb="15px" w="full">
       <Text fontWeight="500" fontSize="22px" mb="10px">
         {props.rowTitle}
       </Text>
 
-      <Grid
-        templateColumns={{
-          base: "repeat(2, 1fr)",
-          md: "repeat(3, 1fr)",
-          lg: "repeat(4, 1fr)",
-          xl: "repeat(5, 1fr)",
-        }}
-        gap={10}
-      >
+      <SimpleGrid columns={[2, 3, 4, 5]} spacing={10}>
         {products.length > 0
           ? products.map((product: Product) => (
               <ProductCard
@@ -68,21 +61,13 @@ export default function ProductRow(props: {
               />
             ))
           : Array.from(Array(props.amount).fill(0).keys()).map(() => (
-              <Stack key={nanoid()} p="10px">
-                <Skeleton
-                  h={280}
-                  w={{ base: "280px", md: "unset" }}
-                  startColor={backgroundColor}
-                />
+              <Stack key={nanoid()} p="10px" w="full">
+                <Skeleton h={280} startColor={backgroundColor} />
 
-                <SkeletonText
-                  height="full"
-                  w={{ base: "40vw", md: "unset" }}
-                  startColor={backgroundColor}
-                />
+                <SkeletonText height="full" startColor={backgroundColor} />
               </Stack>
             ))}
-      </Grid>
+      </SimpleGrid>
     </Box>
   );
 }
