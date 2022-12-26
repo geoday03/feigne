@@ -20,8 +20,8 @@ const Landing = () => {
         title="Feigne: Mockup E-Commerce Application"
         openGraph={{
           url: `https://feigne.app`,
-          title: "Feigne: Shop Today!",
-          description: "Mockup E-Commerce Application",
+          title: "Feigne: Mockup E-Commerce Application",
+          description: "Shop our latest arrivals today!",
           images: [
             {
               url: "/feigne-snapshot.png",
