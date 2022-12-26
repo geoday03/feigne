@@ -25,8 +25,8 @@ const Landing = () => {
           images: [
             {
               url: "/feigne-snapshot.png",
-              width: 1200,
-              height: 800,
+              width: 600,
+              height: 400,
               alt: "Feigne Snapshot",
               type: "image/png",
             },
