@@ -16,7 +16,28 @@ const Landing = () => {
       px="5px"
       gap="1rem"
     >
-      <NextSeo title="Feigne: Mockup E-Commerce Application" />
+      <NextSeo
+        title="Feigne: Mockup E-Commerce Application"
+        openGraph={{
+          url: `https://feigne.app`,
+          title: "Feigne: Shop Today!",
+          description: "Mockup E-Commerce Application",
+          images: [
+            {
+              url: "/feigne-snapshot.png",
+              width: 1200,
+              height: 800,
+              alt: "Feigne Snapshot",
+              type: "image/png",
+            },
+          ],
+        }}
+        twitter={{
+          handle: "Feigne: Mockup E-Commerce Application",
+          site: `https://feigne.app`,
+          cardType: "summary_large_image",
+        }}
+      />
 
       <Box>
         <ProductRow

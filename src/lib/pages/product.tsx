@@ -44,6 +44,11 @@ export default function Product(props: { product: ProductType }) {
             },
           ],
         }}
+        twitter={{
+          handle: product.title,
+          site: `https://feigne.app/${product.id}`,
+          cardType: "summary_large_image",
+        }}
       />
 
       <Flex direction={{ base: "column", md: "row" }} gap="3rem">
