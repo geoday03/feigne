@@ -37,7 +37,7 @@ export default function Product(props: { product: ProductType }) {
           images: [
             {
               url: product.image,
-              width: 400,
+              width: 250,
               height: 200,
               alt: product.title,
               type: "image/jpeg",
