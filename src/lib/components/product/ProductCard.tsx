@@ -23,7 +23,7 @@ export default function ProductCard(product: ProductCardConfig) {
         passHref
       >
         <LinkOverlay>
-          <Box w={{ base: "40vw", md: "unset" }}>
+          <Box w="full">
             <Box mb="10px" rounded="xl" h="full" overflow="hidden">
               <Image
                 src={
